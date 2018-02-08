@@ -102,7 +102,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -111,7 +117,9 @@
     <None Include="BinanKiosk_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\leftarrow.png" />
     <Content Include="Assets\logobinan.png" />
+    <Content Include="Assets\rightarrow.png" />
     <Content Include="Assets\Slides\10.jpg" />
     <Content Include="Assets\Slides\11.jpg" />
     <Content Include="Assets\Slides\13.jpg" />
@@ -125,8 +133,10 @@
     <Content Include="Assets\jobIcon.png" />
     <Content Include="Assets\mapIcon.png" />
     <Content Include="Assets\servicesIcon.png" />
+    <Content Include="Assets\Binan city.png" />
     <Content Include="Assets\srchicon.png" />
     <Content Include="Assets\undermenu.png" />
+    <Content Include="Assets\uppermenu.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -148,6 +158,14 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup />

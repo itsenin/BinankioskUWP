@@ -62,9 +62,17 @@ namespace BinanKiosk
 
         private void Timer_Tick(object sender, object e)
         {
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy")+ System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
         }
 
+        private void Right_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void Left_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
