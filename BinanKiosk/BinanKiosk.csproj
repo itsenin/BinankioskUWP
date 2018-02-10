@@ -117,6 +117,7 @@
     <None Include="BinanKiosk_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\button1.png" />
     <Content Include="Assets\leftarrow.png" />
     <Content Include="Assets\logobinan.png" />
     <Content Include="Assets\rightarrow.png" />
@@ -135,6 +136,7 @@
     <Content Include="Assets\servicesIcon.png" />
     <Content Include="Assets\Binan city.png" />
     <Content Include="Assets\srchicon.png" />
+    <Content Include="Assets\trans2.png" />
     <Content Include="Assets\undermenu.png" />
     <Content Include="Assets\uppermenu.png" />
     <Content Include="Properties\Default.rd.xml" />
