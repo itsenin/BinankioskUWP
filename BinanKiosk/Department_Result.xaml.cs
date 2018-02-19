@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BinanKiosk.Models;
+using BinanKiosk.Repository;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +14,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,58 +22,23 @@ namespace BinanKiosk
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    /// 
-
-    public class MenuItem
-    { 
-        public string IName
-        {
-            get; set;
-        }
-    }
-    public sealed partial class Home : Page
+    public sealed partial class Department_Result : Page
     {
+        DepartmentRepository departmentRepository = new DepartmentRepository();
+        OfficialRepository OfficialRepository = new OfficialRepository();
         DispatcherTimer Timer = new DispatcherTimer();
-        public Home()
+        private Official official;
+        public Department_Result()
         {
             this.InitializeComponent();
-
-            DataContext = this;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
-
-            ObservableCollection<MenuItem> items = new ObservableCollection<MenuItem>();
-            items.Add(new MenuItem()
-            {
-                IName = "ms-appx:///Assets/Slides/10.jpg"
-            });
-            items.Add(new MenuItem()
-            {
-                IName = "ms-appx:///Assets/Slides/11.jpg"
-            });
-            items.Add(new MenuItem()
-            {
-                IName = "ms-appx:///Assets/Slides/13.jpg"
-            });
-            
-            ROTtest.ItemsSource = items;
         }
-        
         private void Timer_Tick(object sender, object e)
         {
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy")+ System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-        }
-
-        private void Right_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Left_Click(object sender, RoutedEventArgs e)
-        {
-
+            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
         }
         private void JobButton_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +51,17 @@ namespace BinanKiosk
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Home));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            official = (Official)e.Parameter;
+            string Schedule = "Monday to Friday excluding Holidays 8:00 am to 5:00 pm (No Noon Break)";
+            tb_DeptName.Text = official.department.Department_Name;
+            tb_Department_Description.Text = official.department.Department_Description;
+            tb_Official_Name.Text = official.First_Name + " " + official.Middle_Initial + " " + official.Last_Name + " " + official.Suffix;
+            tb_Schedule.Text = Schedule;
         }
     }
 }
