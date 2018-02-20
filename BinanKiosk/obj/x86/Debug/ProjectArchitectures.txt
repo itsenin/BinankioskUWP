@@ -1,1 +1,1 @@
-C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\BinanKiosk.csproj;x86
+C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\BinanKiosk.csproj;x86

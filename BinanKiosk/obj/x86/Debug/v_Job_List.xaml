@@ -18,7 +18,7 @@
         <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
         <!--Uppermenu-->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Assets/uppermenu.png" />
             </Rectangle.Fill>
@@ -26,27 +26,17 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4.1*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
 
-            <SymbolIcon Symbol="BrowsePhotos" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <TextBlock x:ConnectionId='10' x:Name="MainTitle" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap"> JOBS</TextBlock>
-            <AppBarButton Icon="Help" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="12" Label="FAQs"/>
-            <TextBlock x:ConnectionId='11' x:Name="tb_FAQ" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="13" Grid.ColumnSpan="2" TextWrapping="Wrap"> FAQs</TextBlock>
+            <SymbolIcon Symbol="BrowsePhotos" Foreground="White" Grid.Column="0"/>
+            <TextBlock x:ConnectionId='10' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOBS"/>
+            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
 
         <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
@@ -77,15 +67,15 @@
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
             <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='4' x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                         />
+            <AppBarButton x:ConnectionId='4' x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                      />
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='5' x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                           />
+            <AppBarButton x:ConnectionId='5' x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                     />
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                          />
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
+            <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                      />
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:ConnectionId='9' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>

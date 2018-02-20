@@ -2,17 +2,17 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="IName" />
-    <RootPropertyPathName Name="Job_Name" />
-    <RootPropertyPathName Name="Job_Description" />
-    <RootPropertyPathName Name="Job_Company" />
-    <RootPropertyPathName Name="Job_Location" />
-    <RootPropertyPathName Name="Job_Types" />
     <RootPropertyPathName Name="Category" />
     <RootPropertyPathName Name="Thumbnail" />
     <RootPropertyPathName Name="CurrentItem" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Objectname" />
     <RootPropertyPathName Name="Service_Name" />
+    <RootPropertyPathName Name="Job_Name" />
+    <RootPropertyPathName Name="Job_Description" />
+    <RootPropertyPathName Name="Job_Company" />
+    <RootPropertyPathName Name="Job_Location" />
+    <RootPropertyPathName Name="Job_Types" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -28,10 +28,10 @@
       <RootProperty Name="Children" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="MinHeight" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="MinHeight" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetColumnSpan" />
@@ -77,9 +77,9 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Style" />
-      <RootProperty Name="TextTrimming" />
-      <RootProperty Name="Inlines" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Inlines" />
+      <RootProperty Name="TextTrimming" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarSeparator">
       <RootProperty Name="Margin" />
@@ -103,8 +103,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon">
       <RootProperty Name="Symbol" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -162,29 +160,6 @@
       <RootProperty Name="Property" />
     </RootType>
     <RootType FullName="BinanKiosk.Home" />
-    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView">
-      <RootProperty Name="Name" />
-      <RootProperty Name="OneRowModeEnabled" />
-      <RootProperty Name="ItemHeight" />
-      <RootProperty Name="DesiredWidth" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ItemTemplate" />
-      <RootEvent Name="ItemClick" />
-    </RootType>
-    <RootType FullName="BinanKiosk.Job_Category" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="Name" />
-      <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="ItemContainerStyle" />
-      <RootEvent Name="SelectionChanged" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Control">
-      <RootProperty Name="HorizontalContentAlignment" />
-      <RootProperty Name="Padding" />
-    </RootType>
-    <RootType FullName="BinanKiosk.Job_List" />
     <RootType FullName="BinanKiosk.Language" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="VerticalAlignment" />
@@ -228,8 +203,6 @@
     <RootType FullName="BinanKiosk.Map_3f" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
     <RootType FullName="BinanKiosk.MasterPage" />
-    <RootType FullName="BinanKiosk.Officer_Info" />
-    <RootType FullName="BinanKiosk.Officer_Result" />
     <RootType FullName="BinanKiosk.Official_Result" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
@@ -241,6 +214,16 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
       <RootEvent Name="TextChanged" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView">
+      <RootProperty Name="Name" />
+      <RootProperty Name="OneRowModeEnabled" />
+      <RootProperty Name="ItemHeight" />
+      <RootProperty Name="DesiredWidth" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="MinWidth" />
@@ -255,6 +238,17 @@
     <RootType FullName="BinanKiosk.Search" />
     <RootType FullName="BinanKiosk.Services" />
     <RootType FullName="BinanKiosk.v_Job_Category" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="Name" />
+      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="ItemContainerStyle" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Padding" />
+    </RootType>
     <RootType FullName="BinanKiosk.v_Job_List" />
   </Roots.RootTypes>
 </Roots>
