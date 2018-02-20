@@ -17,7 +17,7 @@ namespace BinanKiosk.Repository
         //Get All Job Categories
         public IList<M_Job_Category> GetAll_JobCategories()
         {
-            IList<M_Job_Category> _Categories = new List<M_Job_Category>();
+            IList<M_Job_Category>  _Categories = new List<M_Job_Category>();
             query = @"SELECT * from jobs";
             Objects = Get(query, null);
             for (int i = 0; i < (Objects.Count / 2); i++)
@@ -46,7 +46,7 @@ namespace BinanKiosk.Repository
             }
             return _Job_Type;
         }
-        //Get All Job Types using a category
+
         public IList<M_Job_Type> GetAll_JobTypes(M_Job_Category _Category)
         {
             IList<M_Job_Type> _Job_Type = new List<M_Job_Type>();
@@ -55,15 +55,9 @@ namespace BinanKiosk.Repository
             Objects = Get(query, myDictionaryData);
             for (int i = 0; i < (Objects.Count / 7); i++)
             {
-                _Job_Type.Add(new M_Job_Type
-                {
-                    JobType_ID = Int32.Parse(Objects[i * 7].ToString()),
-                    Job_Types = Objects[1 + (i * 7)].ToString(),
-                    Job_Description = Objects[2 + (i * 7)].ToString(),
-                    Job_Location = Objects[3 + (i * 7)].ToString(),
-                    Job_Company = Objects[4 + (i * 7)].ToString(),
-                    Category = new M_Job_Category { Job_ID = int.Parse(Objects[5 + (i * 7)].ToString()), Job_Name = Objects[6 + (i * 7)].ToString() }
-                });
+                _Job_Type.Add(new M_Job_Type { JobType_ID = Int32.Parse(Objects[i * 7].ToString()), Job_Types = Objects[1 + (i * 7)].ToString(),
+                    Job_Description = Objects[2 + (i * 7)].ToString(), Job_Location = Objects[3 + (i * 7)].ToString(),
+                    Job_Company = Objects[4 + (i * 7)].ToString(), Category = new M_Job_Category { Job_ID = int.Parse(Objects[5 + (i * 7)].ToString()), Job_Name = Objects[6 + (i * 7)].ToString() } });
             }
             return _Job_Type;
         }

@@ -210,7 +210,7 @@ namespace BinanKiosk
                 }
                 else
                 {
-                    var Filtered_Jobs = Job_Categories.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    List<M_Job_Category> Filtered_Jobs = Job_Categories.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower())).ToList<M_Job_Category>();
                     foreach (var Job_Category in Filtered_Jobs)
                     {
                         items.Add(new Items()
@@ -255,18 +255,29 @@ namespace BinanKiosk
 
             return items;
         }
-        private void JobButton_Click(object sender, RoutedEventArgs e)
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(v_Job_Category));
+            this.Frame.Navigate(typeof(Home));
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Search));
+            this.Frame.Navigate(typeof(Search));
         }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Home));
+            this.Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Services));
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(v_Job_Category));
         }
     }
 }

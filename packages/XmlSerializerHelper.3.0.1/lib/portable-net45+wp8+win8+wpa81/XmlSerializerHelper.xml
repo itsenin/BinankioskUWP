@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XmlSerializerHelper</name>
+    </assembly>
+    <members>
+        <member name="T:System.Xml.Serialization.IXmlSerializerHelper">
+            <summary>
+            Abstraction of the XmlSerializerHelper.
+            </summary>
+        </member>
+        <member name="P:System.Xml.Serialization.IXmlSerializerHelper.Encoding">
+            <summary>
+            The encoding used to serialize and deserialize xml strings.
+            </summary>
+        </member>
+        <member name="M:System.Xml.Serialization.IXmlSerializerHelper.SerializeToXml(System.Xml.XmlWriter,System.Object)">
+            <summary>
+            Serializes XML-serializable objects to XML documents.
+            </summary>
+        </member>
+        <member name="M:System.Xml.Serialization.IXmlSerializerHelper.SerializeToXml(System.Object,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Serializes objects into XML strings.
+            </summary>
+            <param name="value">The object to be serialized.</param>
+            <param name="preserveTypeInformation">
+            Instructs the serializer to preserve the original type of the given value.
+            This flag must be set to <value>true</value> when you intend to deserialize to an interface type.
+            Default value is <value>false</value>..</param>
+            <param name="encoding">The string encoding.</param>
+            <returns>The serialized XML string.</returns>
+        </member>
+        <member name="M:System.Xml.Serialization.IXmlSerializerHelper.DeserializeFromXml``1(System.String,System.Text.Encoding)">
+            <summary>
+            Deserializes XML strings into objects of given type T.
+            </summary>
+            <typeparam name="T">Target type T.</typeparam>
+            <param name="xmlString">The serialized XML string.</param>
+            <param name="encoding">The string encoding.</param>
+            <returns>The deserialized object of target type.</returns>
+        </member>
+        <member name="M:System.Xml.Serialization.IXmlSerializerHelper.DeserializeFromXml(System.Type,System.String,System.Text.Encoding)">
+            <summary>
+            Deserializes XML strings into objects of given targetType.
+            </summary>
+            <typeparam name="T">Target type T.</typeparam>
+            <param name="targetType">Target type.</param>
+            <param name="xmlString">The serialized XML string.</param>
+            <param name="encoding">The string encoding.</param>
+            <returns>The deserialized object of target type.</returns>
+        </member>
+        <member name="M:System.Xml.Serialization.IXsdValidator.Validate(System.String,System.String)">
+            <summary>
+            Validates the given <param name="xmlContent">xmlContent</param> against the given XSD schema <param name="xsdContent">xsdContent</param>.
+            </summary>
+            <param name="xmlContent">The XML content as string.</param>
+            <param name="xsdContent">The XSD schema as string.</param>
+            <returns>The validation result which indicates success/failure.</returns>
+        </member>
+        <member name="T:System.Xml.Serialization.ValidationResult">
+            <summary>
+            The validation result indicates success/failure of an XSD schema validation.
+            </summary>
+        </member>
+        <member name="P:System.Xml.Serialization.XmlSerializerHelper.Encoding">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Xml.Serialization.XmlSerializerHelper.SerializeToXml(System.Xml.XmlWriter,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Xml.Serialization.XmlSerializerHelper.SerializeToXml(System.Object,System.Boolean,System.Text.Encoding)">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Xml.Serialization.XmlSerializerHelper.DeserializeFromXml(System.Type,System.String,System.Text.Encoding)">
+            <inheritdoc />
+        </member>
+        <member name="M:System.Xml.Serialization.XmlSerializerHelper.DeserializeFromXml``1(System.String,System.Text.Encoding)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

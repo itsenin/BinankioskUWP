@@ -26,27 +26,16 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4.1*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
-
-            <SymbolIcon Symbol="Zoom" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <TextBlock x:Name="MainTitle" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Grid.ColumnSpan="5" TextWrapping="Wrap"> SEARCH RESULT</TextBlock>
-            <AppBarButton Icon="Help" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="12" Label="FAQs"/>
-            <TextBlock x:Name="tb_FAQ" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="13" Grid.ColumnSpan="2" TextWrapping="Wrap"> FAQs</TextBlock>
+            <SymbolIcon Symbol="Zoom" Foreground="White" Grid.Column="0"/>
+            <TextBlock x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SEARCH RESULTS"/>
+            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
 
         <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
@@ -73,19 +62,19 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
+            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/logobinan.png" Grid.Column="0" Margin="0,10,3.5,4"/>
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
             <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="HomeButton_Click"/>
+            <AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" Click="Homebtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="SearchButton_Click"/>
+            <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="JobButton_Click"/>
+            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>

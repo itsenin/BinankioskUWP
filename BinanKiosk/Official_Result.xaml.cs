@@ -40,19 +40,7 @@ namespace BinanKiosk
         {
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
         }
-        private void JobButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(v_Job_Category));
-        }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Search));
-        }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Home));
-        }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -62,6 +50,31 @@ namespace BinanKiosk
             tb_Position.Text = Official.position.Position_Name;
             tb_Department.Text = Official.department.Department_Name;
             tb_Location.Text = Official.department.Room.Room_Label;
+        }
+
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Home));
+        }
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Search));
+        }
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Services));
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(v_Job_Category));
         }
     }
 }

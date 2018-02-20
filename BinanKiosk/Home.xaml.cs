@@ -32,16 +32,17 @@ namespace BinanKiosk
     }
     public sealed partial class Home : Page
     {
-        DispatcherTimer Timer = new DispatcherTimer();
         public Home()
         {
-            this.InitializeComponent();
 
+            this.InitializeComponent();
+            DispatcherTimer Timer = new DispatcherTimer();
             DataContext = this;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
             Timer.Tick += Timer_Tick;
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
+
 
             ObservableCollection<MenuItem> items = new ObservableCollection<MenuItem>();
             items.Add(new MenuItem()
@@ -60,6 +61,7 @@ namespace BinanKiosk
             ROTtest.ItemsSource = items;
         }
         
+
         private void Timer_Tick(object sender, object e)
         {
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy")+ System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
@@ -74,17 +76,30 @@ namespace BinanKiosk
         {
 
         }
-        private void JobButton_Click(object sender, RoutedEventArgs e)
+
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(v_Job_Category));
+            this.Frame.Navigate(typeof(Home));
         }
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Search));
+            this.Frame.Navigate(typeof(Search));
         }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Home));
+            this.Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Services));
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(v_Job_Category));
         }
     }
 }

@@ -78,18 +78,29 @@ namespace BinanKiosk
             MessageDialog md = new MessageDialog(output.Job_Company);
             await md.ShowAsync();
         }
-
-        private void JobButton_Click(object sender, RoutedEventArgs e)
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(v_Job_Category));
+            Frame.Navigate(typeof(Home));
         }
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Search));
         }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Home));
+            Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Services));
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(v_Job_Category));
         }
     }
 }

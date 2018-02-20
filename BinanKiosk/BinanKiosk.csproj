@@ -11,7 +11,7 @@
     <AssemblyName>BinanKiosk</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -102,8 +102,26 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Job_Category.xaml.cs">
+      <DependentUpon>Job_Category.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Job_List.xaml.cs">
+      <DependentUpon>Job_List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Language.xaml.cs">
+      <DependentUpon>Language.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map_1f.xaml.cs">
+      <DependentUpon>Map_1f.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map_2f.xaml.cs">
+      <DependentUpon>Map_2f.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map_3f.xaml.cs">
+      <DependentUpon>Map_3f.xaml</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
@@ -117,6 +135,12 @@
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Officer_Info.xaml.cs">
+      <DependentUpon>Officer_Info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Officer_Result.xaml.cs">
+      <DependentUpon>Officer_Result.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Official_Result.xaml.cs">
       <DependentUpon>Official_Result.xaml</DependentUpon>
     </Compile>
@@ -128,6 +152,9 @@
     <Compile Include="Repository\ServiceRepository.cs" />
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services.xaml.cs">
+      <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
     <Compile Include="v_Job_Category.xaml.cs">
       <DependentUpon>v_Job_Category.xaml</DependentUpon>
@@ -143,30 +170,30 @@
     <None Include="BinanKiosk_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\binan.png" />
     <Content Include="Assets\binanlogo.png" />
+    <Content Include="Assets\Biñan_City_Hall.jpg" />
     <Content Include="Assets\box.png" />
+    <Content Include="Assets\boxes.png" />
     <Content Include="Assets\button1.png" />
+    <Content Include="Assets\First_Floor_Colored.png" />
     <Content Include="Assets\leftarrow.png" />
     <Content Include="Assets\logobinan.png" />
     <Content Include="Assets\rightarrow.png" />
     <Content Include="Assets\Slides\10.jpg" />
     <Content Include="Assets\Slides\11.jpg" />
     <Content Include="Assets\Slides\13.jpg" />
-    <Content Include="Assets\bch-logo %281%29.png" />
     <Content Include="Assets\bgopacity3.png" />
-    <Content Include="Assets\binancity-nav-logo.png" />
-    <Content Include="Assets\btnHome.png" />
     <Content Include="Assets\fahead.png" />
-    <Content Include="Assets\homebtn.PNG" />
-    <Content Include="Assets\homeIcon.png" />
-    <Content Include="Assets\jobIcon.png" />
-    <Content Include="Assets\mapIcon.png" />
-    <Content Include="Assets\servicesIcon.png" />
     <Content Include="Assets\Binan city.png" />
-    <Content Include="Assets\srchicon.png" />
+    <Content Include="Assets\tap.gif" />
+    <Content Include="Assets\tapping.gif" />
     <Content Include="Assets\trans2.png" />
     <Content Include="Assets\undermenu.png" />
     <Content Include="Assets\uppermenu.png" />
+    <Content Include="Assets\welcome to6.png" />
+    <Content Include="Assets\zoomIN.gif" />
+    <Content Include="Assets\zoomout.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -189,11 +216,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Job_Category.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Job_List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Language.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Map_1f.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Map_2f.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Map_3f.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Officer_Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Officer_Result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +261,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Services.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,10 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data.RT">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

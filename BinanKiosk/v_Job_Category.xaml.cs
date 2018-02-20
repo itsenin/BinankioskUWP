@@ -55,15 +55,27 @@ namespace BinanKiosk
             Frame.Navigate(typeof(v_Job_List), _Category);
         }
 
-        private void JobButton_Click(object sender, RoutedEventArgs e)
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(v_Job_Category));
         }
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Services));
+        }
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Search));
         }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
+
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Home));
         }

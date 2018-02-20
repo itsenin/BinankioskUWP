@@ -15,7 +15,7 @@ namespace BinanKiosk.Repository
         Dictionary<string, Object> myDictionaryData;
 
 
-        //Get All Services
+        //Get All Job Categories
         public IList<Service> GetAll_Service()
         {
             IList<Service> services = new List<Service>();

@@ -1,0 +1,158 @@
+﻿<Page
+    x:Class="BinanKiosk.v_Job_List"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BinanKiosk"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height="4.1*"/>
+            <RowDefinition Height=".6*"/>
+        </Grid.RowDefinitions>
+
+        <!--Background-->
+        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+
+        <!--Uppermenu-->
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Assets/uppermenu.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <SymbolIcon Symbol="BrowsePhotos" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <TextBlock x:ConnectionId='10' x:Name="MainTitle" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap"> JOBS</TextBlock>
+            <AppBarButton Icon="Help" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="12" Label="FAQs"/>
+            <TextBlock x:ConnectionId='11' x:Name="tb_FAQ" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="13" Grid.ColumnSpan="2" TextWrapping="Wrap"> FAQs</TextBlock>
+        </Grid>
+
+        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Assets/undermenu.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".35*"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
+            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
+
+            <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
+            <AppBarButton x:ConnectionId='4' x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                         />
+            <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
+            <AppBarButton x:ConnectionId='5' x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                           />
+            <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
+            <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
+            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
+            <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
+            <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+            <TextBlock x:ConnectionId='9' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Image Source="Assets/bgopacity3.png" Stretch="Fill"/>
+            <Image x:ConnectionId='1' x:Name="img_trans" Source="Assets/trans2.png" Visibility="Collapsed" Stretch="Fill" VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBlock x:ConnectionId='2' x:Name="tb_Result"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="40" FontFamily="Arial Narrow" FontWeight="Bold"
+                       Text="No Result" Foreground="White"
+                       TextTrimming="CharacterEllipsis" 
+                       TextWrapping="Wrap" />
+            <!--A List view for populating the items through the database-->
+            <ListView x:ConnectionId='3' Name="listViewControl"                                                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid MinHeight="170" Background="LightGray">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="ToolkitLogo"
+                   Grid.Column="0"
+                   Width="170"
+                   Height="170"
+                   Margin="0,0,50,0"
+                   Stretch="UniformToFill"
+                   Source="ms-appx:///Assets//binanlogo.png" />
+                            <TextBlock Grid.Column="1"
+                       FontWeight="Bold"
+                       FontSize="24"
+                       VerticalAlignment="Top"
+                       Text="{Binding Job_Types}"
+                       TextTrimming="CharacterEllipsis" />
+
+                            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="0,-50,50,0"
+                       Text="{Binding Job_Location}"
+                       TextTrimming="CharacterEllipsis" />
+
+                            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="350,-50,50,0"
+                       Text="{Binding Job_Company}"
+                       TextTrimming="CharacterEllipsis" />
+
+                            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="0,50,50,0"
+                       Text="{Binding Job_Description}"
+                       TextTrimming="CharacterEllipsis" 
+                       TextWrapping="Wrap" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="Padding" Value="12,12,24,12" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
+
