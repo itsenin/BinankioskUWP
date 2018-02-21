@@ -210,7 +210,7 @@ namespace BinanKiosk
                 }
                 else
                 {
-                    var Filtered_Jobs = Job_Categories.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    List<M_Job_Category> Filtered_Jobs = Job_Categories.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower())).ToList<M_Job_Category>();
                     foreach (var Job_Category in Filtered_Jobs)
                     {
                         items.Add(new Items()

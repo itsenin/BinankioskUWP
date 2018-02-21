@@ -102,12 +102,6 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Job_Category.xaml.cs">
-      <DependentUpon>Job_Category.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Job_List.xaml.cs">
-      <DependentUpon>Job_List.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Language.xaml.cs">
       <DependentUpon>Language.xaml</DependentUpon>
     </Compile>
@@ -135,12 +129,6 @@
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Officer_Info.xaml.cs">
-      <DependentUpon>Officer_Info.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Officer_Result.xaml.cs">
-      <DependentUpon>Officer_Result.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Official_Result.xaml.cs">
       <DependentUpon>Official_Result.xaml</DependentUpon>
     </Compile>
@@ -216,14 +204,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Job_Category.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Job_List.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Language.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,14 +225,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MasterPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Officer_Info.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Officer_Result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,7 +18,7 @@
         <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
         <!--Uppermenu-->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Assets/uppermenu.png" />
             </Rectangle.Fill>
@@ -26,17 +26,27 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="4.1*"/>
-                <ColumnDefinition Width=".2*"/>
-                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <SymbolIcon Symbol="Zoom" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='11' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SEARCH RESULT"/>
-            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
-            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
+            <SymbolIcon Symbol="Zoom" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <TextBlock x:ConnectionId='11' x:Name="MainTitle" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Grid.ColumnSpan="5" TextWrapping="Wrap"> SEARCH RESULT</TextBlock>
+            <AppBarButton Icon="Help" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="12" Label="FAQs"/>
+            <TextBlock x:ConnectionId='12' x:Name="tb_FAQ" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="13" Grid.ColumnSpan="2" TextWrapping="Wrap"> FAQs</TextBlock>
         </Grid>
 
         <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
