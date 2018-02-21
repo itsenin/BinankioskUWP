@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-21T02:49:16.534</Modified>
+      <Modified>2018-02-21T06:00:33.675</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
-      <Modified>2018-02-21T02:48:55.638</Modified>
+      <Modified>2018-02-21T06:00:28.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -708,7 +708,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.xr.xml">
       <PackagePath>BinanKiosk.xr.xml</PackagePath>
-      <Modified>2018-02-21T02:48:54.148</Modified>
+      <Modified>2018-02-21T05:59:37.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -865,11 +865,11 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-21T02:49:03.283</Modified>
+      <Modified>2018-02-21T06:00:29.666</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
       <PackagePath>BinanKiosk.exe</PackagePath>
-      <Modified>2018-02-21T02:49:16.511</Modified>
+      <Modified>2018-02-21T06:00:33.668</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

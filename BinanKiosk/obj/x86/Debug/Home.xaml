@@ -19,8 +19,9 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height=".3*"/>
-            <RowDefinition Height="4.1*"/>
+            <RowDefinition Height="3.9*"/>
             <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".3*"/>
         </Grid.RowDefinitions>
 
         <!--Background-->
@@ -44,7 +45,7 @@
 
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup>
-                    <VisualState x:ConnectionId='10' x:Name="Narrow">
+                    <VisualState x:ConnectionId='12' x:Name="Narrow">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="0" />
                         </VisualState.StateTriggers>
@@ -52,7 +53,7 @@
                             <Setter Target="MainTitle.FontSize" Value="36" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:ConnectionId='11' x:Name="Normal">
+                    <VisualState x:ConnectionId='13' x:Name="Normal">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="600" />
                         </VisualState.StateTriggers>
@@ -60,7 +61,7 @@
                             <Setter Target="MainTitle.FontSize" Value="2" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:ConnectionId='12' x:Name="Wide">
+                    <VisualState x:ConnectionId='14' x:Name="Wide">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="1000" />
                         </VisualState.StateTriggers>
@@ -72,7 +73,7 @@
             </VisualStateManager.VisualStateGroups>
 
             <SymbolIcon Symbol="Home" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='13' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="HOME"/>
+            <TextBlock x:ConnectionId='15' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="HOME"/>
             <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
             <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
@@ -83,6 +84,52 @@
                 <ImageBrush ImageSource="Assets/undermenu.png" />
             </Rectangle.Fill>
         </Rectangle>
+
+        <Grid Grid.Row="3" Background="Green">
+            <Grid.Resources>
+                <Storyboard x:ConnectionId='10' x:Name="Storyboard1">
+                    <DoubleAnimation
+                            Storyboard.TargetName="fahead"
+                        
+                            Storyboard.TargetProperty="(Canvas.Left)"
+                            Duration="0:0:30" From="1310"
+                            To="-100"
+                            RepeatBehavior="Forever"/>
+                </Storyboard>
+            </Grid.Resources>
+            <Canvas Height="100">
+                <Canvas.Clip>
+                    <RectangleGeometry Rect="0, 0, 2000, 2000" />
+                </Canvas.Clip>
+                <StackPanel x:ConnectionId='11' Name="fahead" Height="57" Canvas.Top="-10" Orientation="Horizontal">
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                </StackPanel>
+                
+                
+            </Canvas>
+        </Grid>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -130,6 +177,8 @@
                 <ColumnDefinition Width="5.2*"/>
                 <ColumnDefinition Width=".4*"/>
             </Grid.ColumnDefinitions>
+
+
 
             <controls:RotatorTile x:ConnectionId='1' x:Name="ROTtest" HorizontalAlignment="Stretch" Direction="Left" VerticalAlignment="Stretch" Width="1250" Height="800" Padding="0" BorderThickness="0" ItemTemplate="{StaticResource photos}" Grid.Row="1" Grid.ColumnSpan="2" Margin="121,2,4,1.5"/>
 

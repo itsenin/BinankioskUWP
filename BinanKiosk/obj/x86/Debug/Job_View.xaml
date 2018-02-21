@@ -26,32 +26,22 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4.1*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
-
-            <SymbolIcon Symbol="Zoom" Foreground="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-            <TextBlock x:ConnectionId='9' x:Name="MainTitle" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Grid.ColumnSpan="5" TextWrapping="Wrap"> SEARCH RESULT</TextBlock>
-            <AppBarButton Icon="Help" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="12" Label="FAQs"/>
-            <TextBlock x:ConnectionId='10' x:Name="tb_FAQ" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="13" Grid.ColumnSpan="2" TextWrapping="Wrap"> FAQs</TextBlock>
+            <SymbolIcon Symbol="BrowsePhotos" Foreground="White" Grid.Column="0"/>
+            <TextBlock x:ConnectionId='9' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOB RESULT"/>
+            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
 
+        <!--Undermenu-->
         <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/undermenu4.png" />
+                <ImageBrush ImageSource="Assets/undermenu.png" />
             </Rectangle.Fill>
         </Rectangle>
 

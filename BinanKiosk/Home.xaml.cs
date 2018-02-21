@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Collections.ObjectModel;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -43,6 +44,7 @@ namespace BinanKiosk
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
 
+            this.NavigationCacheMode = NavigationCacheMode.Required;
 
             ObservableCollection<MenuItem> items = new ObservableCollection<MenuItem>();
             items.Add(new MenuItem()
@@ -100,6 +102,10 @@ namespace BinanKiosk
         private void Jobsbtn_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(v_Job_Category));
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Storyboard1.Begin();
         }
     }
 }

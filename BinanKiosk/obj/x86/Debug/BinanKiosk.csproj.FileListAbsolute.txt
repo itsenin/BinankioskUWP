@@ -618,3 +618,13 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Microsof
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Marque.g.i.cs
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Marque.g.cs
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Marque.xaml
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Marque.xbf
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Marque.xbf
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BlankPage1.xbf
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\BlankPage1.g.i.cs
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\BlankPage1.g.cs
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\BlankPage1.xaml
+C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\BlankPage1.xbf
