@@ -22,10 +22,10 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Map_2f : Page
     {
+        DispatcherTimer Timer = new DispatcherTimer();
         public Map_2f()
         {
             this.InitializeComponent();
-            DispatcherTimer Timer = new DispatcherTimer();
             DataContext = this;
             Timer.Tick += Timer_Tick;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");

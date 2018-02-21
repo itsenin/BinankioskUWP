@@ -10,19 +10,19 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>469bbf1a-be74-4dd1-8f4a-8edd701d3432</PackageIdentityName>
     <PackageIdentityPublisher>CN=doratheexplorer</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
@@ -427,109 +427,109 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Win2D.uwp\1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\binan.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\binan.png">
       <PackagePath>Assets\binan.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\binanlogo.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\binanlogo.png">
       <PackagePath>Assets\binanlogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\box.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\box.png">
       <PackagePath>Assets\box.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\boxes.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\boxes.png">
       <PackagePath>Assets\boxes.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\button1.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\button1.png">
       <PackagePath>Assets\button1.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\First_Floor_Colored.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\First_Floor_Colored.png">
       <PackagePath>Assets\First_Floor_Colored.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\leftarrow.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\leftarrow.png">
       <PackagePath>Assets\leftarrow.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\logobinan.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\logobinan.png">
       <PackagePath>Assets\logobinan.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\rightarrow.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\rightarrow.png">
       <PackagePath>Assets\rightarrow.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\bgopacity3.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\bgopacity3.png">
       <PackagePath>Assets\bgopacity3.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\fahead.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\fahead.png">
       <PackagePath>Assets\fahead.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Binan city.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Binan city.png">
       <PackagePath>Assets\Binan city.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\trans2.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\trans2.png">
       <PackagePath>Assets\trans2.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\undermenu.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\undermenu.png">
       <PackagePath>Assets\undermenu.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\uppermenu.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\uppermenu.png">
       <PackagePath>Assets\uppermenu.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\welcome to6.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\welcome to6.png">
       <PackagePath>Assets\welcome to6.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Biñan_City_Hall.jpg">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Biñan_City_Hall.jpg">
       <PackagePath>Assets\Biñan_City_Hall.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Slides\10.jpg">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Slides\10.jpg">
       <PackagePath>Assets\Slides\10.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Slides\11.jpg">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Slides\11.jpg">
       <PackagePath>Assets\Slides\11.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\Slides\13.jpg">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Slides\13.jpg">
       <PackagePath>Assets\Slides\13.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\tap.gif">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\tap.gif">
       <PackagePath>Assets\tap.gif</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\tapping.gif">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\tapping.gif">
       <PackagePath>Assets\tapping.gif</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\zoomIN.gif">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\zoomIN.gif">
       <PackagePath>Assets\zoomIN.gif</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Assets\zoomout.gif">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\zoomout.gif">
       <PackagePath>Assets\zoomout.gif</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\bin\x86\Debug\BinanKiosk.xr.xml">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.xr.xml">
       <PackagePath>BinanKiosk.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
@@ -646,11 +646,11 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Microsoft.Toolkit.Uwp.UI.Controls\2.1.1\lib\uap10.0\Microsoft.Toolkit.Uwp.UI.Controls\TileControl\TileControl.xaml">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls\TileControl\TileControl.xaml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinanKiosk\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
       <PackagePath>BinanKiosk.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -24856,10 +24856,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\doratheexplorer\\Desktop\\BinanKiosk\\BinanKiosk\\BinanKiosk.csproj",
+      "projectUniqueName": "C:\\Users\\doratheexplorer\\Desktop\\BinankioskUWP\\BinanKiosk\\BinanKiosk.csproj",
       "projectName": "BinanKiosk",
-      "projectPath": "C:\\Users\\doratheexplorer\\Desktop\\BinanKiosk\\BinanKiosk\\BinanKiosk.csproj",
-      "projectJsonPath": "C:\\Users\\doratheexplorer\\Desktop\\BinanKiosk\\BinanKiosk\\project.json",
+      "projectPath": "C:\\Users\\doratheexplorer\\Desktop\\BinankioskUWP\\BinanKiosk\\BinanKiosk.csproj",
+      "projectJsonPath": "C:\\Users\\doratheexplorer\\Desktop\\BinankioskUWP\\BinanKiosk\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

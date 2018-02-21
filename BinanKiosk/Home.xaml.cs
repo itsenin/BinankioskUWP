@@ -32,11 +32,11 @@ namespace BinanKiosk
     }
     public sealed partial class Home : Page
     {
+        DispatcherTimer Timer = new DispatcherTimer();
         public Home()
         {
 
             this.InitializeComponent();
-            DispatcherTimer Timer = new DispatcherTimer();
             DataContext = this;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
             Timer.Tick += Timer_Tick;

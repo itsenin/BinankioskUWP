@@ -70,7 +70,7 @@ namespace BinanKiosk
 
         private void Servicesbtn_Click(object sender, RoutedEventArgs e)
         {
-            //this.Frame.Navigate(typeof(Services));
+            this.Frame.Navigate(typeof(Services));
         }
 
         private void Jobsbtn_Click(object sender, RoutedEventArgs e)
