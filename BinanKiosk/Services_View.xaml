@@ -14,9 +14,6 @@
             <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
 
-        <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
-
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Rectangle.Fill>
@@ -67,30 +64,20 @@
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
             <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" Click="Homebtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>
 
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1"></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="1"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.05*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="0.05*"/>
-            </Grid.ColumnDefinitions>
             <ScrollViewer x:Name="MyScrollViewer" MinZoomFactor="0.5530364" MaxZoomFactor="3"
                               Background="White"
                               
@@ -98,8 +85,8 @@
                               HorizontalScrollBarVisibility="Hidden" 
                               VerticalScrollMode="Enabled" 
                               VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.Column="1"
-                              Grid.ColumnSpan="1" Grid.RowSpan="13" SizeChanged="OnSizeChanged" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image x:Name="theImage" Source="Assets/First_Floor_Colored.png" Stretch="Uniform"/>
+                              Grid.ColumnSpan="1" Grid.RowSpan="13" SizeChanged="OnSizeChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.99">
+                <Image x:Name="theImage" Source="Assets/Certification of Tax Clearance.jpg" Stretch="Uniform"/>
             </ScrollViewer>
         </Grid>
     </Grid>

@@ -25,18 +25,37 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Search : Page
     {
+        #region Variables
         DispatcherTimer Timer = new DispatcherTimer();
-
-        private IList<M_Job_Category> Job_Categories;
-        private IList<Official> Officials;
-        private IList<Service> Services;
 
         private JobRepository jobRepository;
         private OfficialRepository officialRepository;
-        private DepartmentRepository departmentRepository;
         private ServiceRepository serviceRepository;
 
         private Categories SelectedItem;
+
+        private IList<Service> Service_postsList = new List<Service>(); //Given List
+        private IList<Service> Service_displayPostsList = new List<Service>(); //List to be displayed in ListView
+
+        private IList<M_Job_Category> Job_postsList = new List<M_Job_Category>(); //Given List
+        private IList<M_Job_Category> Job_displayPostsList = new List<M_Job_Category>(); //List to be displayed in ListView
+
+        private IList<Official> Official_postsList = new List<Official>(); //Given List
+        private IList<Official> Official_displayPostsList = new List<Official>(); //List to be displayed in ListView
+
+        ObservableCollection<Items> All_postsList = new ObservableCollection<Items>(); //Given List
+        private IList<Items> All_displayPostsList = new List<Items>(); //List to be displayed in ListView
+
+        int pageIndex = -1;
+        int pageSize = 15; //Set the size of the page
+        int Service_totalPage = 0, Job_totalPage = 0, Official_totalPage = 0, All_totalPage;
+        #endregion
+
+        #region Enums
+        private enum Categories { Officer, Office, Service, Job, All }
+        private enum SearchType { All, Filtered }
+        #endregion
+
         private class Items
         {
             public string Objectname { get; set; }
@@ -44,8 +63,7 @@ namespace BinanKiosk
             public Categories itemCategory { get; set; }
 
         }
-        private enum Categories { Officer, Office, Service, Job, All }
-        private enum SearchType { All, Filtered }
+
         //Constructor
         public Search()
         {
@@ -56,16 +74,130 @@ namespace BinanKiosk
             Timer.Start();
             jobRepository = new JobRepository();
             officialRepository = new OfficialRepository();
-            departmentRepository = new DepartmentRepository();
             serviceRepository = new ServiceRepository();
 
-            Job_Categories = jobRepository.GetAll_JobCategories();
-            Officials = officialRepository.GetAll_Official();
-            Services = serviceRepository.GetAll_Service();
+            
+
+            //populates the list
+            Job_postsList = jobRepository.GetAll_JobCategories();
+            Official_postsList = officialRepository.GetAll_Official();
+            Service_postsList = serviceRepository.GetAll_Service();
+
+            //computes for the total number of pages
+            Service_totalPage = Service_postsList.Count / 15;
+            Job_totalPage = Job_postsList.Count / 15;
+            Official_totalPage = Official_postsList.Count / 15;
+            All_totalPage = (Service_postsList.Count + Job_postsList.Count + Official_postsList.Count) / 15;
         }
+
         private void Timer_Tick(object sender, object e)
         {
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+        }
+
+        private void Right_Click(object sender, RoutedEventArgs e)
+        {
+            bool Next = false;
+            switch (SelectedItem)
+            {
+                case Categories.Officer:
+                    if ((pageIndex + 1) <= Official_totalPage)
+                    {
+                        pageIndex++;
+                        Next = true;
+                    }
+                    break;
+                case Categories.Office:
+                    if ((pageIndex + 1) <= Official_totalPage)
+                    {
+                        pageIndex++;
+                        Next = true;
+                    }
+                    break;
+                case Categories.Service:
+                    if ((pageIndex + 1) <= Service_totalPage)
+                    {
+                        pageIndex++;
+                        Next = true;
+                    }
+                    break;
+                case Categories.Job:
+                    if ((pageIndex + 1) <= Job_totalPage)
+                    {
+                        pageIndex++;
+                        Next = true;
+                    }
+                    break;
+                case Categories.All:
+                    if ((pageIndex + 1) <= All_totalPage)
+                    {
+                        pageIndex++;
+                        Next = true;
+                    }
+                    break;
+            }
+
+            if (Next)
+            {
+                if (tb_Search.Text.Equals(""))
+                    AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.All);
+                else
+                    AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.Filtered);
+            }
+
+
+        }
+
+        private void Left_Click(object sender, RoutedEventArgs e)
+        {
+            bool GoBack = false;
+            switch (SelectedItem)
+            {
+                case Categories.Officer:
+                    if ((pageIndex + Official_totalPage) > Official_totalPage)
+                    {
+                        pageIndex--;
+                        GoBack = true;
+                    }
+                    break;
+                case Categories.Office:
+                    if ((pageIndex + Official_totalPage) > Official_totalPage)
+                    {
+                        pageIndex--;
+                        GoBack = true;
+                    }
+                    break;
+                case Categories.Service:
+                    if ((pageIndex + Service_totalPage) > Service_totalPage)
+                    {
+                        pageIndex--;
+                        GoBack = true;
+                    }
+                    break;
+                case Categories.Job:
+                    if ((pageIndex + Job_totalPage) > Job_totalPage)
+                    {
+                        pageIndex--;
+                        GoBack = true;
+                    }
+                    break;
+                case Categories.All:
+                    if ((pageIndex + All_totalPage) > All_totalPage)
+                    {
+                        pageIndex--;
+                        GoBack = true;
+                    }
+                    break;
+            }
+
+            if (GoBack)
+            {
+                if (tb_Search.Text.Equals(""))
+                    AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.All);
+                else
+                    AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.Filtered);
+            }
+
         }
 
         private void AdaptiveGridViewControl_ItemClick(object sender, ItemClickEventArgs e)
@@ -82,6 +214,7 @@ namespace BinanKiosk
                     break;
 
                 case Categories.Service:
+                    Frame.Navigate(typeof(Services_View));
                     break;
 
                 case Categories.Job:
@@ -95,8 +228,11 @@ namespace BinanKiosk
             //Frame.Navigate(typeof(Job_List), _Category);
 
         }
+
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
+            tb_Search.Text = "";
+            pageIndex = 0;
             RadioButton rb = sender as RadioButton;
             //MessageDialog md;
             if (rb != null)
@@ -104,21 +240,21 @@ namespace BinanKiosk
                 string CategoryType = rb.Tag.ToString();
                 switch (CategoryType)
                 {
-                    case "Officers":
+                    case "Official":
                         SelectedItem = Categories.Officer;
-                        Officials = officialRepository.GetAll_Official();
+                        Official_postsList = officialRepository.GetAll_Official();
                         break;
-                    case "Offices":
+                    case "Department":
                         SelectedItem = Categories.Office;
-                        Officials = officialRepository.GetAll_Official();
+                        Official_postsList = officialRepository.GetAll_Official();
                         break;
                     case "Services":
                         SelectedItem = Categories.Service;
-                        Services = serviceRepository.GetAll_Service();
+                        Service_postsList = serviceRepository.GetAll_Service();
                         break;
                     case "Jobs":
                         SelectedItem = Categories.Job;
-                        Job_Categories = jobRepository.GetAll_JobCategories();
+                        Job_postsList = jobRepository.GetAll_JobCategories();
                         break;
                     case "All":
                         SelectedItem = Categories.All;
@@ -128,10 +264,12 @@ namespace BinanKiosk
             }
 
         }
+
         private void tb_Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.Filtered);
         }
+
         private ObservableCollection<Items> PopulateGrid(Categories category, SearchType searchType)
         {
             ObservableCollection<Items> items = new ObservableCollection<Items>();
@@ -139,7 +277,11 @@ namespace BinanKiosk
             {
                 if (searchType.Equals(SearchType.All))
                 {
-                    foreach (var official in Officials)
+                    if (category.Equals(Categories.Officer))
+                        Official_displayPostsList = Official_postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Official_displayPostsList = Official_postsList;
+                    foreach (var official in Official_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -151,9 +293,14 @@ namespace BinanKiosk
                 }
                 else
                 {
+
                     //checks the official list then check if it contains the string in the textbox
-                    var Filtered_Officials = Officials.Where(stringToCheck => (stringToCheck.First_Name + " " + stringToCheck.Middle_Initial + " " + stringToCheck.Last_Name + " " + stringToCheck.Suffix).ToLower().Contains(tb_Search.Text.ToLower()));
-                    foreach (var official in Filtered_Officials)
+                    var Filtered_Officials = Official_postsList.Where(stringToCheck => (stringToCheck.First_Name + " " + stringToCheck.Middle_Initial + " " + stringToCheck.Last_Name + " " + stringToCheck.Suffix).ToLower().Contains(tb_Search.Text.ToLower()));
+                    if (category.Equals(Categories.Officer))
+                        Official_displayPostsList = Filtered_Officials.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Official_displayPostsList = Filtered_Officials.ToList();
+                    foreach (var official in Official_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -169,7 +316,11 @@ namespace BinanKiosk
             {
                 if (searchType.Equals(SearchType.All))
                 {
-                    foreach (var official in Officials)
+                    if (category.Equals(Categories.Office))
+                        Official_displayPostsList = Official_postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Official_displayPostsList = Official_postsList;
+                    foreach (var official in Official_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -181,7 +332,12 @@ namespace BinanKiosk
                 }
                 else
                 {
-                    var Filtered_Offices = Officials.Where(stringToCheck => stringToCheck.department.Department_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    var Filtered_Offices = Official_postsList.Where(stringToCheck => stringToCheck.department.Department_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    if (category.Equals(Categories.Officer))
+                        Official_displayPostsList = Filtered_Offices.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Official_displayPostsList = Filtered_Offices.ToList();
+
                     foreach (var official in Filtered_Offices)
                     {
                         items.Add(new Items()
@@ -198,7 +354,11 @@ namespace BinanKiosk
             {
                 if (searchType.Equals(SearchType.All))
                 {
-                    foreach (var Job_Category in Job_Categories)
+                    if (category.Equals(Categories.Job))
+                        Job_displayPostsList = Job_postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Job_displayPostsList = Job_postsList;
+                    foreach (var Job_Category in Job_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -210,8 +370,13 @@ namespace BinanKiosk
                 }
                 else
                 {
-                    List<M_Job_Category> Filtered_Jobs = Job_Categories.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower())).ToList<M_Job_Category>();
-                    foreach (var Job_Category in Filtered_Jobs)
+                    var Filtered_Jobs = Job_postsList.Where(stringToCheck => stringToCheck.Job_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    if (category.Equals(Categories.Job))
+                        Job_displayPostsList = Filtered_Jobs.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Job_displayPostsList = Filtered_Jobs.ToList();
+
+                    foreach (var Job_Category in Job_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -227,7 +392,11 @@ namespace BinanKiosk
             {
                 if (searchType.Equals(SearchType.All))
                 {
-                    foreach (var service in Services)
+                    if (category.Equals(Categories.Service))
+                        Service_displayPostsList = Service_postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Service_displayPostsList = Service_postsList;
+                    foreach (var service in Service_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -240,8 +409,12 @@ namespace BinanKiosk
                 else
                 {
                     //checks the official list then check if it contains the string in the textbox
-                    var Filtered_Services = Services.Where(stringToCheck => stringToCheck.Service_Name.ToLower().Contains(tb_Search.Text.ToLower()));
-                    foreach (var service in Filtered_Services)
+                    var Filtered_Services = Service_postsList.Where(stringToCheck => stringToCheck.Service_Name.ToLower().Contains(tb_Search.Text.ToLower()));
+                    if (category.Equals(Categories.Service))
+                        Service_displayPostsList = Filtered_Services.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                    else
+                        Service_displayPostsList = Filtered_Services.ToList();
+                    foreach (var service in Service_displayPostsList)
                     {
                         items.Add(new Items()
                         {
@@ -252,8 +425,24 @@ namespace BinanKiosk
                     }
                 }
             }
-
-            return items;
+            if (category.Equals(Categories.All))
+            {
+                All_postsList = items;
+                All_displayPostsList = All_postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+                items.Clear();
+                foreach (var item in All_displayPostsList)
+                {
+                    items.Add(new Items()
+                    {
+                        Objectname = item.Objectname,
+                        itemObject = item.itemObject,
+                        itemCategory = item.itemCategory
+                    });
+                }
+                return items;
+            }
+            else
+                return items;
         }
         private void Homebtn_Click(object sender, RoutedEventArgs e)
         {
@@ -279,9 +468,11 @@ namespace BinanKiosk
         {
             this.Frame.Navigate(typeof(v_Job_Category));
         }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            //Set default selected item is all
+            SelectedItem = Categories.All;
+
             //aSystem.Diagnostics.Process.Start("osk.exe");
         }
     }

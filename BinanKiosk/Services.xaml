@@ -13,15 +13,20 @@
             <Grid
                 Background="Transparent"
                 BorderBrush="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
                 <Image
                     Source="ms-appx:///Assets//boxes.png"
                     Stretch="Fill"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center" />
-                <TextBlock HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
+                    VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" />
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap"
                            Text="{Binding Service_Name}"  Style="{StaticResource BaseTextBlockStyle}"
                            FontFamily="Arial Narrow" FontWeight="Bold" FontSize="16" Foreground="White"
-                           VerticalAlignment="Center" Name="HAHAHA"/>
+                           VerticalAlignment="Center" Grid.Column="1"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -171,7 +176,7 @@
                                    Grid.Row="3"
                                    Grid.ColumnSpan="18"
                                    Grid.RowSpan="13"        
-                                   ItemTemplate="{StaticResource DataTemplate}"
+                                   ItemTemplate="{StaticResource DataTemplate}" StretchContentForSingleRow="False"
                                    >
                 </controls:AdaptiveGridView>
             </Grid>

@@ -42,5 +42,29 @@ namespace BinanKiosk
         {
             theImage.Height = MyScrollViewer.ViewportHeight;
         }
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Home));
+        }
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Search));
+        }
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Services));
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(v_Job_Category));
+        }
     }
 }

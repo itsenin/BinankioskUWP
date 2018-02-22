@@ -68,7 +68,7 @@ namespace BinanKiosk
 
         private void Left_Click(object sender, RoutedEventArgs e)
         {
-            if ((pageIndex + 1) >= totalPage)
+            if ((pageIndex + totalPage) > totalPage)
             {
                 pageIndex--;
                 AdaptiveGridViewControl.ItemsSource = Service_Populator();
