@@ -20,23 +20,23 @@ namespace BinanKiosk
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Marque : Page
+    public sealed partial class Services_View : Page
     {
-        public Marque()
+        DispatcherTimer Timer = new DispatcherTimer();
+        public Services_View()
         {
             this.InitializeComponent();
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            DataContext = this;
+            Timer.Tick += Timer_Tick;
+            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Start();
         }
-        
 
-        /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
-        /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void Timer_Tick(object sender, object e)
         {
-            Storyboard1.Begin();
+            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
         }
     }
 }
+

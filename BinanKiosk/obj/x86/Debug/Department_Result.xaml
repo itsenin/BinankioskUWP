@@ -131,24 +131,24 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="Assets/binanlogo.png" Stretch="Fill" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Grid.RowSpan="7"/>
                 <!--For the Name Row-->
-                <TextBlock Text="Name" FontSize="18" TextWrapping="Wrap" Grid.Column="7" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                <TextBlock Text=":" FontSize="18" TextWrapping="Wrap" Grid.Column="9" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="Name" FontSize="20" TextWrapping="Wrap" Grid.Column="7" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text=":" FontSize="20" TextWrapping="Wrap" Grid.Column="9" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 <TextBlock x:ConnectionId='1' Name="tb_DeptName" Text="" FontSize="16" TextWrapping="Wrap" Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="9" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
                 <!--For the Personnel info Row-->
-                <TextBlock Text="Assigned" FontSize="18" TextWrapping="Wrap" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                <TextBlock Text="Personnels" FontSize="18" TextWrapping="Wrap" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                <TextBlock Text=":" FontSize="18" TextWrapping="Wrap" Grid.Column="9" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="Assigned" FontSize="20" TextWrapping="Wrap" Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="Personnels" FontSize="20" TextWrapping="Wrap" Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text=":" FontSize="20" TextWrapping="Wrap" Grid.Column="9" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 <TextBlock x:ConnectionId='2' Name="tb_Official_Name" Text="" FontSize="16" TextWrapping="Wrap" Grid.Column="10" Grid.Row="4" Grid.ColumnSpan="9" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
                 <!--For the Description Row-->
-                <TextBlock Text="Description" FontSize="18" TextWrapping="Wrap" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                <TextBlock Text=":" FontSize="18" TextWrapping="Wrap" Grid.Column="9" Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="Description" FontSize="20" TextWrapping="Wrap" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text=":" FontSize="20" TextWrapping="Wrap" Grid.Column="9" Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 <TextBlock x:ConnectionId='3' Name="tb_Department_Description" Text="" FontSize="16" TextWrapping="Wrap" Grid.Column="10" Grid.Row="7" Grid.ColumnSpan="9" Grid.RowSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
 
                 <!--For the Schedule Row-->
-                <TextBlock Text="Schedule" FontSize="18" TextWrapping="NoWrap" Grid.Column="7" Grid.Row="13" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-                <TextBlock Text=":" FontSize="18" TextWrapping="NoWrap" Grid.Column="9" Grid.Row="13" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="Schedule" FontSize="20" TextWrapping="NoWrap" Grid.Column="7" Grid.Row="13" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                <TextBlock Text=":" FontSize="20" TextWrapping="NoWrap" Grid.Column="9" Grid.Row="13" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
                 <TextBlock x:ConnectionId='4' Name="tb_Schedule" Text="" FontSize="16" TextWrapping="Wrap" Grid.Column="10" Grid.Row="13" Grid.ColumnSpan="9" Grid.RowSpan="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             </Grid>
         </Grid>

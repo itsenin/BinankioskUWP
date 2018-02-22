@@ -86,7 +86,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.05*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>
+            <!--<Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>-->
             <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -131,12 +131,15 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <ScrollViewer Name="MyScrollViewer" MinZoomFactor="1" 
+                              Background="White"
+                              BorderThickness="1"
+                              BorderBrush="Gray"
                               ZoomMode="Enabled" HorizontalScrollMode="Enabled" 
                               HorizontalScrollBarVisibility="Hidden" 
                               VerticalScrollMode="Enabled" 
-                              VerticalScrollBarVisibility="Hidden" Grid.Row="3" Grid.Column="2"
-                              Grid.ColumnSpan="16" Grid.RowSpan="13">
-                    <Image Name="Imm_Visualizzata" Source="Assets/First_Floor_Colored.png"/>
+                              VerticalScrollBarVisibility="Hidden" Grid.Row="1"
+                              Grid.ColumnSpan="20" Grid.RowSpan="16" Margin="10,9.5,-0.5,-0.5">
+                    <Image Name="Imm_Visualizzata" Source="Assets/First_Floor_Colored.png" Height="437" Width="691"/>
                 </ScrollViewer>
             </Grid>
         </Grid>

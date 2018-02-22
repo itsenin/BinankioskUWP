@@ -42,8 +42,6 @@
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="BinanKiosk.BlankPage1" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
@@ -165,7 +163,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Clip" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Width" />
       <RootMethod Name="GetTop" />
       <RootMethod Name="SetTop" />
     </RootType>
@@ -201,11 +198,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Name" />
       <RootProperty Name="MinZoomFactor" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="ZoomMode" />
       <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="BinanKiosk.Job_View" />
@@ -237,7 +238,6 @@
     <RootType FullName="BinanKiosk.Map_1f" />
     <RootType FullName="BinanKiosk.Map_2f" />
     <RootType FullName="BinanKiosk.Map_3f" />
-    <RootType FullName="BinanKiosk.Marque" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
     <RootType FullName="BinanKiosk.MasterPage" />
     <RootType FullName="BinanKiosk.Official_Result" />
@@ -274,6 +274,8 @@
     </RootType>
     <RootType FullName="BinanKiosk.Search" />
     <RootType FullName="BinanKiosk.Services" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="BinanKiosk.Services_View" />
     <RootType FullName="BinanKiosk.v_Job_Category" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="Name" />

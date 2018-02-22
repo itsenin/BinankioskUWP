@@ -52,8 +52,8 @@
         <Image x:ConnectionId='3' x:Name="BinanCity" Grid.Column="7" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/binan.png"/>
         <Image x:ConnectionId='4' x:Name="English_Trans" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/trans2.png" Stretch="Fill"/>
         <Image x:ConnectionId='5' x:Name="Fil_Trans" Grid.Column="10" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/trans2.png" Stretch="Fill"/>
-        <TextBlock Grid.Column="4" Grid.ColumnSpan="10" HorizontalAlignment="Stretch"  Grid.Row="8" Grid.RowSpan="4" TextWrapping="Wrap" Text="Select language" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36"/>
-        <TextBlock Grid.Column="11" Grid.ColumnSpan="9" HorizontalAlignment="Stretch"  Grid.Row="8" Grid.RowSpan="4" TextWrapping="Wrap" Text="Pumili ng wika" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36"/>
+        <TextBlock Grid.Column="4" Grid.ColumnSpan="11" HorizontalAlignment="Stretch"  Grid.Row="9" Grid.RowSpan="3" TextWrapping="Wrap" Text="Select language" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36" Margin="0.5,0.5,81,-0.5"/>
+        <TextBlock Grid.Column="11" Grid.ColumnSpan="7" HorizontalAlignment="Stretch"  Grid.Row="9" Grid.RowSpan="3" TextWrapping="Wrap" Text="Pumili ng wika" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36" Margin="0,0.5,0,-0.5"/>
         <Button x:ConnectionId='6' x:Name="btEnglish" Content="English" Grid.Column="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Grid.Row="10" Grid.RowSpan="2" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36" Foreground="#FFF7F1F1">
             <Button.Background>
                 <ImageBrush Stretch="Fill" ImageSource="Assets/button1.png"/>

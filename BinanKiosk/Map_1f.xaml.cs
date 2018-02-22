@@ -26,6 +26,18 @@ namespace BinanKiosk
         public Map_1f()
         {
             this.InitializeComponent();
+
+            ContentDialog InstructionDialog = new ContentDialog()
+            {
+                Title = "Tap the Rooms",
+                Content = new Image
+                {
+                    Source = tapping.gif,
+                },
+                CloseButtonText = "Ok"
+            };
+
+
             DataContext = this;
             Timer.Tick += Timer_Tick;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");

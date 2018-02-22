@@ -96,9 +96,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BlankPage1.xaml.cs">
-      <DependentUpon>BlankPage1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Department_Result.xaml.cs">
       <DependentUpon>Department_Result.xaml</DependentUpon>
     </Compile>
@@ -123,12 +120,6 @@
     <Compile Include="Map_3f.xaml.cs">
       <DependentUpon>Map_3f.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Marque.xaml.cs">
-      <DependentUpon>Marque.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPage.xaml.cs">
-      <DependentUpon>MasterPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Floor.cs" />
     <Compile Include="Models\M_Job_Category.cs" />
@@ -152,6 +143,9 @@
     </Compile>
     <Compile Include="Services.xaml.cs">
       <DependentUpon>Services.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services_View.xaml.cs">
+      <DependentUpon>Services_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="v_Job_Category.xaml.cs">
       <DependentUpon>v_Job_Category.xaml</DependentUpon>
@@ -205,10 +199,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BlankPage1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Department_Result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,14 +231,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Marque.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MasterPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Official_Result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -258,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Services_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

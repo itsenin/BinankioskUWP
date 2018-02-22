@@ -90,7 +90,6 @@
                 <Storyboard x:ConnectionId='10' x:Name="Storyboard1">
                     <DoubleAnimation
                             Storyboard.TargetName="fahead"
-                        
                             Storyboard.TargetProperty="(Canvas.Left)"
                             Duration="0:0:30" From="1310"
                             To="-100"
@@ -101,28 +100,28 @@
                 <Canvas.Clip>
                     <RectangleGeometry Rect="0, 0, 2000, 2000" />
                 </Canvas.Clip>
-                <StackPanel x:ConnectionId='11' Name="fahead" Height="57" Canvas.Top="-10" Orientation="Horizontal">
+                <StackPanel x:ConnectionId='11' Name="fahead" Height="60" Canvas.Top="-10" Orientation="Horizontal" >
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                 </StackPanel>
