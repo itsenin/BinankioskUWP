@@ -33,7 +33,7 @@
                 <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
             <SymbolIcon Symbol="Page2" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='9' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SERVICE RESULT"/>
+            <TextBlock x:ConnectionId='9' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SEARCH RESULT"/>
             <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
             <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
@@ -81,67 +81,26 @@
         </Grid>
 
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.05*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="0.05*"/>
             </Grid.ColumnDefinitions>
-            <!--<Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>-->
-            <Grid Grid.Column="1" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <ScrollViewer x:ConnectionId='1' Name="MyScrollViewer" MinZoomFactor="1" 
+            <ScrollViewer x:ConnectionId='1' x:Name="MyScrollViewer" MinZoomFactor="0.5530364" MaxZoomFactor="3"
                               Background="White"
-                              BorderThickness="1"
-                              BorderBrush="Gray"
+                              
                               ZoomMode="Enabled" HorizontalScrollMode="Enabled" 
                               HorizontalScrollBarVisibility="Hidden" 
                               VerticalScrollMode="Enabled" 
-                              VerticalScrollBarVisibility="Hidden" Grid.Row="1"
-                              Grid.ColumnSpan="20" Grid.RowSpan="16" Margin="10,9.5,-0.5,-0.5">
-                    <Image x:ConnectionId='2' Name="Imm_Visualizzata" Source="Assets/First_Floor_Colored.png" Height="437" Width="691"/>
-                </ScrollViewer>
-            </Grid>
+                              VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.Column="1"
+                              Grid.ColumnSpan="1" Grid.RowSpan="13"                             HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:ConnectionId='2' x:Name="theImage" Source="Assets/First_Floor_Colored.png" Stretch="Uniform"/>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

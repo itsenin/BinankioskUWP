@@ -21,6 +21,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
       <RootProperty Name="Resources" />
+      <RootEvent Name="Loaded" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
@@ -53,14 +54,12 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Fill" />
-      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -196,18 +195,18 @@
     </RootType>
     <RootType FullName="BinanKiosk.Home" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Name" />
       <RootProperty Name="MinZoomFactor" />
+      <RootProperty Name="MaxZoomFactor" />
       <RootProperty Name="Background" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="BorderBrush" />
       <RootProperty Name="ZoomMode" />
       <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Content" />
+      <RootEvent Name="SizeChanged" />
     </RootType>
     <RootType FullName="BinanKiosk.Job_View" />
     <RootType FullName="BinanKiosk.Language" />
@@ -238,11 +237,10 @@
     <RootType FullName="BinanKiosk.Map_1f" />
     <RootType FullName="BinanKiosk.Map_2f" />
     <RootType FullName="BinanKiosk.Map_3f" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
-    <RootType FullName="BinanKiosk.MasterPage" />
     <RootType FullName="BinanKiosk.Official_Result" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Text" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
@@ -274,7 +272,6 @@
     </RootType>
     <RootType FullName="BinanKiosk.Search" />
     <RootType FullName="BinanKiosk.Services" />
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="BinanKiosk.Services_View" />
     <RootType FullName="BinanKiosk.v_Job_Category" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">

@@ -62,5 +62,15 @@ namespace BinanKiosk
         {
             this.Frame.Navigate(typeof(v_Job_Category));
         }
+
+        private void fstFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void sndFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_2f));
+        }
     }
 }

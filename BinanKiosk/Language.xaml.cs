@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using BinanKiosk.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +26,16 @@ namespace BinanKiosk
         public Language()
         {
             this.InitializeComponent();
+        }
+
+        private void EnglishButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Home));
+        }
+        private void FilipinoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Global.language = "Filipino";
+            Frame.Navigate(typeof(Home));
         }
     }
 }

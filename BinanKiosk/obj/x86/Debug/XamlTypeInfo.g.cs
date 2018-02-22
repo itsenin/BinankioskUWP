@@ -156,7 +156,7 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[34];
+            _typeNameTable = new string[31];
             _typeNameTable[0] = "BinanKiosk.Department_Result";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -188,11 +188,8 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
             _typeNameTable[28] = "BinanKiosk.Services_View";
             _typeNameTable[29] = "BinanKiosk.v_Job_Category";
             _typeNameTable[30] = "BinanKiosk.v_Job_List";
-            _typeNameTable[31] = "BinanKiosk.Zoom";
-            _typeNameTable[32] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[33] = "Windows.UI.Xaml.Controls.ContentControl";
 
-            _typeTable = new global::System.Type[34];
+            _typeTable = new global::System.Type[31];
             _typeTable[0] = typeof(global::BinanKiosk.Department_Result);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -224,9 +221,6 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
             _typeTable[28] = typeof(global::BinanKiosk.Services_View);
             _typeTable[29] = typeof(global::BinanKiosk.v_Job_Category);
             _typeTable[30] = typeof(global::BinanKiosk.v_Job_List);
-            _typeTable[31] = typeof(global::BinanKiosk.Zoom);
-            _typeTable[32] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[33] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -277,7 +271,6 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
         private object Activate_28_Services_View() { return new global::BinanKiosk.Services_View(); }
         private object Activate_29_v_Job_Category() { return new global::BinanKiosk.v_Job_Category(); }
         private object Activate_30_v_Job_List() { return new global::BinanKiosk.v_Job_List(); }
-        private object Activate_31_Zoom() { return new global::BinanKiosk.Zoom(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -480,21 +473,6 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
                 userType.Activator = Activate_30_v_Job_List;
                 userType.SetIsLocalType();
                 xamlType = userType;
-                break;
-
-            case 31:   //  BinanKiosk.Zoom
-                userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_31_Zoom;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 32:   //  Windows.UI.Xaml.Controls.ContentDialog
-                xamlType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 33:   //  Windows.UI.Xaml.Controls.ContentControl
-                xamlType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;

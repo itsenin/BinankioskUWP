@@ -77,6 +77,7 @@ namespace BinanKiosk
             var output = e.AddedItems[0] as M_Job_Type;
             MessageDialog md = new MessageDialog(output.Job_Company);
             await md.ShowAsync();
+            Frame.Navigate(typeof(Job_View));
         }
         private void Homebtn_Click(object sender, RoutedEventArgs e)
         {

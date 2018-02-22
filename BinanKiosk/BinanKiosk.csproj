@@ -99,6 +99,7 @@
     <Compile Include="Department_Result.xaml.cs">
       <DependentUpon>Department_Result.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -161,13 +162,16 @@
     <None Include="BinanKiosk_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\3rd Floor.PNG" />
     <Content Include="Assets\binan.png" />
     <Content Include="Assets\binanlogo.png" />
     <Content Include="Assets\Biñan_City_Hall.jpg" />
     <Content Include="Assets\box.png" />
     <Content Include="Assets\boxes.png" />
     <Content Include="Assets\button1.png" />
+    <Content Include="Assets\Certification of Tax Clearance.jpg" />
     <Content Include="Assets\First_Floor_Colored.png" />
+    <Content Include="Assets\floor_2.PNG" />
     <Content Include="Assets\leftarrow.png" />
     <Content Include="Assets\logobinan.png" />
     <Content Include="Assets\rightarrow.png" />

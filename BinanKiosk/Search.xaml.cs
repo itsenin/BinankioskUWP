@@ -279,5 +279,10 @@ namespace BinanKiosk
         {
             this.Frame.Navigate(typeof(v_Job_Category));
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //aSystem.Diagnostics.Process.Start("osk.exe");
+        }
     }
 }

@@ -5,7 +5,7 @@
     xmlns:local="using:BinanKiosk"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -115,7 +115,7 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1">
+                    <Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Click="sndFlr_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -126,7 +126,7 @@
                         </Button.Template>
                     </Button>
 
-                    <Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2">
+                    <Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Click="trdFlr_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -143,13 +143,13 @@
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="GROUND FLOOR"/>
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>
+                    <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
                 </Grid>
 
                 <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="2" />
-                <Grid Grid.Column="1" Grid.Row="2">
+                <!--<Grid Grid.Column="1" Grid.Row="2">
                     <Image Source="Assets/tap.gif" Stretch="Fill" Margin="10,10,9,10"  />
-                </Grid>
+                </Grid>-->
             </Grid>
         </Grid>
     </Grid>

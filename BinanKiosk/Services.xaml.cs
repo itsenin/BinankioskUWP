@@ -81,8 +81,9 @@ namespace BinanKiosk
         }
         private void AdaptiveGridViewControl_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var _Category = e.ClickedItem as M_Job_Category;
-            Frame.Navigate(typeof(v_Job_List), _Category);
+            //var _Category = e.ClickedItem as M_Job_Category;
+            //Frame.Navigate(typeof(Services_View), _Category);
+            Frame.Navigate(typeof(Services_View));
         }
 
         private void Homebtn_Click(object sender, RoutedEventArgs e)

@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,25 +27,12 @@ namespace BinanKiosk
         public Map_1f()
         {
             this.InitializeComponent();
-
-            ContentDialog InstructionDialog = new ContentDialog()
-            {
-                Title = "Tap the Rooms",
-                Content = new Image
-                {
-                    Source = tapping.gif,
-                },
-                CloseButtonText = "Ok"
-            };
-
-
             DataContext = this;
             Timer.Tick += Timer_Tick;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
             Timer.Interval = new TimeSpan(0, 0, 1);
             Timer.Start();
         }
-
         private void Timer_Tick(object sender, object e)
         {
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
@@ -73,6 +61,31 @@ namespace BinanKiosk
         private void Jobsbtn_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(v_Job_Category));
+        }
+
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            ContentDialog InstructionDialog = new ContentDialog()
+            {
+                Title = "Tap the Rooms",
+                Content = new Image
+                {
+                    Source = new BitmapImage(new Uri("ms-appx:///Assets/tapping.gif"))
+                },
+                CloseButtonText = "Ok"
+            };
+
+            await InstructionDialog.ShowAsync();
+        }
+
+        private void sndFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_2f));
+        }
+
+        private void trdFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_3f));
         }
     }
 }

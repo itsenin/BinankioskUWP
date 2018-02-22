@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+
 
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -81,67 +81,15 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.05*"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="0.05*"/>
-            </Grid.ColumnDefinitions>
-            <!--<Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1"/>-->
-            <Grid Grid.Column="1" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <ScrollViewer x:ConnectionId='1' Name="MyScrollViewer" MinZoomFactor="1" 
+            <ScrollViewer x:ConnectionId='1' x:Name="MyScrollViewer" MinZoomFactor="0.5530364" MaxZoomFactor="3"
                               Background="White"
-                              BorderThickness="1"
-                              BorderBrush="Gray"
+                              
                               ZoomMode="Enabled" HorizontalScrollMode="Enabled" 
                               HorizontalScrollBarVisibility="Hidden" 
                               VerticalScrollMode="Enabled" 
-                              VerticalScrollBarVisibility="Hidden" Grid.Row="1"
-                              Grid.ColumnSpan="20" Grid.RowSpan="16" Margin="10,9.5,-0.5,-0.5">
-                    <Image x:ConnectionId='2' Name="Imm_Visualizzata" Source="Assets/First_Floor_Colored.png" Height="437" Width="691"/>
-                </ScrollViewer>
-            </Grid>
+                              VerticalScrollBarVisibility="Hidden"                             HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:ConnectionId='2' x:Name="theImage" Source="Assets/First_Floor_Colored.png" Stretch="Uniform"/>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

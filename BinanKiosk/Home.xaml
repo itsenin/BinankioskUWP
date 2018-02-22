@@ -10,7 +10,7 @@
 
     <Page.Resources>
         <DataTemplate x:Key="photos">
-            <Grid Background="WhiteSmoke" Margin="10,0,150,220">
+            <Grid Background="WhiteSmoke" Margin="10,0,150,235">
                 <Image Source="{Binding IName}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"/>
             </Grid>
         </DataTemplate>
@@ -19,9 +19,9 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height=".3*"/>
-            <RowDefinition Height="3.9*"/>
-            <RowDefinition Height=".6*"/>
+            <RowDefinition Height="3.8*"/>
             <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
 
         <!--Background-->
@@ -79,13 +79,13 @@
         </Grid>
 
         <!--Undermenu-->
-        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
+        <Rectangle VerticalAlignment="Stretch" Grid.Row="3">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Assets/undermenu.png" />
             </Rectangle.Fill>
         </Rectangle>
 
-        <Grid Grid.Row="3" Background="Green">
+        <Grid Grid.Row="2" Background="White">
             <Grid.Resources>
                 <Storyboard x:Name="Storyboard1">
                     <DoubleAnimation
@@ -96,32 +96,32 @@
                             RepeatBehavior="Forever"/>
                 </Storyboard>
             </Grid.Resources>
-            <Canvas Height="100">
+            <Canvas Height="40">
                 <Canvas.Clip>
                     <RectangleGeometry Rect="0, 0, 2000, 2000" />
                 </Canvas.Clip>
                 <StackPanel Name="fahead" Height="60" Canvas.Top="-10" Orientation="Horizontal" >
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="White" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                     <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
                 </StackPanel>
@@ -130,7 +130,7 @@
             </Canvas>
         </Grid>
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".35*"/>
                 <ColumnDefinition Width=".5*"/>
@@ -182,13 +182,13 @@
             <controls:RotatorTile x:Name="ROTtest" HorizontalAlignment="Stretch" Direction="Left" VerticalAlignment="Stretch" Width="1250" Height="800" Padding="0" BorderThickness="0" ItemTemplate="{StaticResource photos}" Grid.Row="1" Grid.ColumnSpan="2" Margin="121,2,4,1.5"/>
 
             <!--Leftbutton-->
-            <Button x:Name="Left" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Click="Left_Click">
-                <Image Source="Assets/rightarrow.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Button x:Name="Left" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1" Click="Left_Click">
+                <Image Source="Assets/rightarrow.png" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Left" />
             </Button>
 
             <!--Righttbutton-->
-            <Button x:Name="Right" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="1" Click="Right_Click">
-                <Image Source="Assets/leftarrow.png" Stretch="Fill" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Button x:Name="Right" HorizontalAlignment="Left" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="1" Click="Right_Click">
+                <Image Source="Assets/leftarrow.png" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
             </Button>
         </Grid>
     </Grid>

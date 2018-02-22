@@ -427,6 +427,9 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Win2D.uwp\1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\3rd Floor.PNG">
+      <PackagePath>Assets\3rd Floor.PNG</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\binan.png">
       <PackagePath>Assets\binan.png</PackagePath>
     </AppxPackagedFile>
@@ -444,6 +447,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\First_Floor_Colored.png">
       <PackagePath>Assets\First_Floor_Colored.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\floor_2.PNG">
+      <PackagePath>Assets\floor_2.PNG</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\leftarrow.png">
       <PackagePath>Assets\leftarrow.png</PackagePath>
@@ -504,6 +510,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Biñan_City_Hall.jpg">
       <PackagePath>Assets\Biñan_City_Hall.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Certification of Tax Clearance.jpg">
+      <PackagePath>Assets\Certification of Tax Clearance.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\Slides\10.jpg">
       <PackagePath>Assets\Slides\10.jpg</PackagePath>

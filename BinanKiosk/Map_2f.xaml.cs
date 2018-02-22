@@ -38,5 +38,42 @@ namespace BinanKiosk
         {
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
         }
+
+        private void fstFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_1f));
+
+        }
+
+        private void trdFlr_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_3f));
+
+        }
+
+        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(v_Job_Category));
+        }
+
+        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Services));
+        }
+
+        private void Mapbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Map_1f));
+        }
+
+        private void Searchbtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Search));
+        }
+
+        private void Homebtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Home));
+        }
     }
 }

@@ -315,7 +315,6 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\MainPage
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Map_1f.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Map_2f.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Map_3f.xbf
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\MasterPage.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Official_Result.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Search.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Services.xbf
@@ -482,8 +481,6 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_2f.g
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_2f.g.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_3f.g.i.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_3f.g.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MasterPage.g.i.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MasterPage.g.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Official_Result.g.i.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Official_Result.g.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Search.g.i.cs
@@ -505,7 +502,6 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MainPage
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_1f.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_2f.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_3f.xaml
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MasterPage.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Official_Result.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Search.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services.xaml
@@ -520,7 +516,6 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MainPage
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_1f.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_2f.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Map_3f.xbf
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\MasterPage.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Official_Result.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Search.xbf
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services.xbf
@@ -623,11 +618,3 @@ C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services_View.g.cs
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services_View.xaml
 C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Services_View.xbf
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zooming.g.i.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zooming.g.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zooming.xaml
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zooming.xbf
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zoom.g.i.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zoom.g.cs
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zoom.xaml
-C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\obj\x86\Debug\Zoom.xbf
