@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+        <Image Source="Assets/bgblue.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
@@ -120,7 +120,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Grid>
                                     <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
+                                    <TextBlock Name="sFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
                                 </Grid>
                             </ControlTemplate>
                         </Button.Template>
@@ -131,7 +131,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Grid>
                                     <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
+                                    <TextBlock x:Name="tFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
                                 </Grid>
                             </ControlTemplate>
                         </Button.Template></Button>

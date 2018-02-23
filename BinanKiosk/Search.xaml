@@ -40,7 +40,7 @@
         </Grid.RowDefinitions>
 
         <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+        <Image Source="Assets/bgblue.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
@@ -104,14 +104,16 @@
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>
+        
+        
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height=".3*"/>
                 <RowDefinition Height=".5*"/>
                 <RowDefinition Height="1*"/>
-                <RowDefinition Height="2.7*"/>
-                <RowDefinition Height="2.3*"/>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="2.5*"/>
                 <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -119,6 +121,82 @@
                 <ColumnDefinition Width="4.6*"/>
                 <ColumnDefinition Width=".5*"/>
             </Grid.ColumnDefinitions>
+
+            <!--<Grid Grid.Column="1" Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch"  Grid.Row="0"  Orientation="Horizontal">
+                    <Button BorderBrush="Gray"  Content="1" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="2" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="3" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="4" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="5" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="6" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="7" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="8" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="9" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="0" FontSize="30"  Height="52" Width="52"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="1"  Orientation="Horizontal">
+                    <Button BorderBrush="Gray" Content="Q" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="W" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="E" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="R" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="T" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="Y" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="U" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="I" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="O" FontSize="30"   Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="P" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" FontSize="30"  Height="52" Width="52" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <CompositeTransform Rotation="180"/>
+                        </Button.RenderTransform>
+                        <SymbolIcon Symbol="OpenPane" Foreground="Black"/>
+                    </Button>
+
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Grid.Row="2"  Orientation="Horizontal">
+                    <Button BorderBrush="Gray" Content="A" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="S" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="D" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="F" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="G" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="H" FontSize="30"   Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="J" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="K" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="L" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="CLEAR" FontSize="15"  Height="52" Width="103"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Grid.Row="3" Orientation="Horizontal">
+                    <Button BorderBrush="Gray" Content=",.!@#" FontSize="30"  Height="52" Width="103"/>
+                    <Button BorderBrush="Gray" Content="Z" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="X" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="C" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="V" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="B" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="N" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="M" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="-" FontSize="30"  Height="52" Width="52"/>
+                    <Button BorderBrush="Gray" Content="." FontSize="30"  Height="52" Width="52"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Grid.Row="4" Orientation="Horizontal">
+                    <Button BorderBrush="Gray" Content="SPACE" FontSize="15"  Height="52" Width="570"/>
+                </StackPanel>
+
+
+
+            </Grid>-->
 
             <Grid Grid.Row="1" Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -137,41 +215,51 @@
                     <RadioButton MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="Official">
                         <SymbolIcon Symbol="People"/>
                     </RadioButton>
-                    <TextBlock FontSize="20" FontWeight="Bold" Height="34"><Run Text="Officials"/></TextBlock>
+                    <TextBlock x:Name="tbOfficers" FontSize="20" FontWeight="Bold" Height="34"><Run Text="Officials"/></TextBlock>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <RadioButton MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="Department">
                         <SymbolIcon Symbol="Street"/>
                     </RadioButton>
-                    <TextBlock FontSize="20" FontWeight="Bold" Height="34"><Run Text="Department"/></TextBlock>
+                    <TextBlock x:Name="tbOffices" FontSize="20" FontWeight="Bold" Height="34"><Run Text="Department"/></TextBlock>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <RadioButton MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="Services">
                         <SymbolIcon Symbol="Page2"/>
                     </RadioButton>
-                    <TextBlock FontSize="20" FontWeight="Bold" Height="34"><Run Text="Services"/></TextBlock>
+                    <TextBlock x:Name="tbServices" FontSize="20" FontWeight="Bold" Height="34"><Run Text="Services"/></TextBlock>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <RadioButton MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="Jobs">
                         <SymbolIcon Symbol="BrowsePhotos"/>
                     </RadioButton>
-                    <TextBlock FontSize="20" FontWeight="Bold" Height="34"><Run Text="Jobs"/></TextBlock>
+                    <TextBlock x:Name="tbJobs" FontSize="20" FontWeight="Bold" Height="34"><Run Text="Jobs"/></TextBlock>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <RadioButton MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="All">
+                    <RadioButton x:Name="rb_All" MinWidth="55" GroupName="Category" Checked="RadioButton_Checked" Tag="All">
                         <SymbolIcon Symbol="AllApps"/>
                     </RadioButton>
-                    <TextBlock FontSize="20" FontWeight="Bold" Height="34"><Run Text="All"/></TextBlock>
+                    <TextBlock x:Name="tbAll" FontSize="20" FontWeight="Bold" Height="34"><Run Text="All"/></TextBlock>
                 </StackPanel>
             </Grid>
 
             <TextBox Name="tb_Search" PlaceholderText="SEARCH..." Text="" HorizontalAlignment="Stretch" Margin="60,12.5,60,0" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" FontSize="35" VerticalAlignment="Top" Height="61" TextChanged="tb_Search_TextChanged"/>
             <!--tabtip.exe open when touch the textbox-->
 
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5.5*"/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontFamily="Arial Narrow" FontWeight="Bold" FontSize="20" Foreground="Black" Text="PAGE 1/3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+
+            </Grid>
+
+            <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="3"/>
             <!--Leftbutton-->
             <Button x:Name="Left" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Click="Left_Click">
                 <Image Source="Assets/rightarrow.png" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Left" />

@@ -132,6 +132,18 @@ namespace BinanKiosk
             }
             return items;
         }
-        
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Global.language == "Filipino")
+            {
+                Searchbtn.Label = "Hanapin";
+                Mapbtn.Label = "Mapa";
+                Servicesbtn.Label = "Mga Serbisyo";
+                Jobsbtn.Label = "Mga Trabaho";
+
+                MainTitle.Text = "MGA SERBISYO";
+            }
+        }
     }
 }

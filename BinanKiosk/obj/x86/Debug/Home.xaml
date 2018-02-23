@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="BinanKiosk.Home"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,26 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    mc:Ignorable="d">
+    mc:Ignorable="d"                     >
 
     <Page.Resources>
         <DataTemplate x:Key="photos">
-            <Grid Background="WhiteSmoke" Margin="10,0,150,235">
+            <Grid Background="WhiteSmoke">
                 <Image Source="{Binding IName}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="White">
+    <Grid Background="WhiteSmoke">
         <Grid.RowDefinitions>
             <RowDefinition Height=".3*"/>
-            <RowDefinition Height="3.8*"/>
-            <RowDefinition Height=".3*"/>
+            <RowDefinition Height="4.1*"/>
             <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
 
         <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+        <Image Source="Assets/bgblue.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
@@ -45,7 +44,7 @@
 
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup>
-                    <VisualState x:ConnectionId='12' x:Name="Narrow">
+                    <VisualState x:ConnectionId='11' x:Name="Narrow">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="0" />
                         </VisualState.StateTriggers>
@@ -53,7 +52,7 @@
                             <Setter Target="MainTitle.FontSize" Value="36" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:ConnectionId='13' x:Name="Normal">
+                    <VisualState x:ConnectionId='12' x:Name="Normal">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="600" />
                         </VisualState.StateTriggers>
@@ -61,7 +60,7 @@
                             <Setter Target="MainTitle.FontSize" Value="2" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:ConnectionId='14' x:Name="Wide">
+                    <VisualState x:ConnectionId='13' x:Name="Wide">
                         <VisualState.StateTriggers>
                             <AdaptiveTrigger MinWindowWidth="1000" />
                         </VisualState.StateTriggers>
@@ -73,64 +72,21 @@
             </VisualStateManager.VisualStateGroups>
 
             <SymbolIcon Symbol="Home" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='15' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="HOME"/>
+            <TextBlock x:ConnectionId='14' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="HOME"/>
             <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
             <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
 
         <!--Undermenu-->
-        <Rectangle VerticalAlignment="Stretch" Grid.Row="3">
+        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Assets/undermenu.png" />
             </Rectangle.Fill>
         </Rectangle>
 
-        <Grid Grid.Row="2" Background="White">
-            <Grid.Resources>
-                <Storyboard x:ConnectionId='10' x:Name="Storyboard1">
-                    <DoubleAnimation
-                            Storyboard.TargetName="fahead"
-                            Storyboard.TargetProperty="(Canvas.Left)"
-                            Duration="0:0:30" From="1310"
-                            To="-100"
-                            RepeatBehavior="Forever"/>
-                </Storyboard>
-            </Grid.Resources>
-            <Canvas Height="40">
-                <Canvas.Clip>
-                    <RectangleGeometry Rect="0, 0, 2000, 2000" />
-                </Canvas.Clip>
-                <StackPanel x:ConnectionId='11' Name="fahead" Height="60" Canvas.Top="-10" Orientation="Horizontal" >
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <TextBlock Text="ANNOUNCEMENT" Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
-                </StackPanel>
-                
-                
-            </Canvas>
-        </Grid>
+      
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".35*"/>
                 <ColumnDefinition Width=".5*"/>
@@ -152,22 +108,22 @@
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
             <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='4' x:Name="Homebtn" Icon="Home" Label="Home"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='5' x:Name="Homebtn" Icon="Home" Label="Home"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='5' x:Name="Searchbtn" Icon="Zoom" Label="Search"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='6' x:Name="Searchbtn" Icon="Zoom" Label="Search"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps"                      FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='7' x:Name="Mapbtn" Icon="Map" Label="Maps"                      FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='8' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='9' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-            <TextBlock x:ConnectionId='9' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+            <TextBlock x:ConnectionId='10' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height=".05*"/>
+                <RowDefinition Height=".1*"/>
                 <RowDefinition Height="4*"/>
                 <RowDefinition Height=".1*"/>
             </Grid.RowDefinitions>
@@ -179,16 +135,16 @@
 
 
 
-            <controls:RotatorTile x:ConnectionId='1' x:Name="ROTtest" HorizontalAlignment="Stretch" Direction="Left" VerticalAlignment="Stretch" Width="1250" Height="800" Padding="0" BorderThickness="0" ItemTemplate="{StaticResource photos}" Grid.Row="1" Grid.ColumnSpan="2" Margin="121,2,4,1.5"/>
+            <controls:RotatorTile x:ConnectionId='2' x:Name="ROTtest" HorizontalAlignment="Stretch" Direction="Left" VerticalAlignment="Stretch" ItemTemplate="{StaticResource photos}" Grid.Row="1" Grid.Column="1"/>
 
             <!--Leftbutton-->
-            <Button x:ConnectionId='2' x:Name="Left" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1"                   >
-                <Image Source="Assets/rightarrow.png" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Button x:ConnectionId='3' x:Name="Left" HorizontalAlignment="Right" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1"                   >
+                <Image Source="Assets/rightarrow.png" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             </Button>
 
             <!--Righttbutton-->
-            <Button x:ConnectionId='3' x:Name="Right" HorizontalAlignment="Left" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="1"                    >
-                <Image Source="Assets/leftarrow.png" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Button x:ConnectionId='4' x:Name="Right" HorizontalAlignment="Left" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="1"                    >
+                <Image Source="Assets/leftarrow.png" Stretch="Uniform" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             </Button>
         </Grid>
     </Grid>

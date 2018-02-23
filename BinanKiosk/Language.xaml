@@ -47,13 +47,48 @@
             <ColumnDefinition Width="72*" />
             <ColumnDefinition Width="71*" />
         </Grid.ColumnDefinitions>
+
+        <!--<Grid Grid.Row="18" Background="White" Grid.ColumnSpan="18">
+            <Grid.Resources>
+                <Storyboard x:Name="Storyboard1">
+                    <DoubleAnimation
+                            Storyboard.TargetName="fahead"
+                            Storyboard.TargetProperty="(Canvas.Left)"
+                            Duration="0:0:30" From="1310"
+                            To="-100"
+                            RepeatBehavior="Forever"/>
+                </Storyboard>
+            </Grid.Resources>
+            <Canvas Height="40">
+                <Canvas.Clip>
+                    <RectangleGeometry Rect="0, 0, 2000, 2000" />
+                </Canvas.Clip>
+                <StackPanel Name="fahead" Height="60" Canvas.Top="-10" Orientation="Horizontal" >
+                    --><!--<Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>--><!--
+                    <TextBlock Text="WELCOME TO BINAN CITY HALL                                 ." Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    --><!--<Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>--><!--
+                    <TextBlock Text="   WELCOME TO BINAN CITY HALL                                 ." Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    --><!--<Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>--><!--
+                    <TextBlock Text="   WELCOME TO BINAN CITY HALL                                 ." Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    --><!--<Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>--><!--
+                    <TextBlock Text="   WELCOME TO BINAN CITY HALL                                 ." Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                    --><!--<Image  Source="Assets/Fahead.png" Height="47" Width="41"/>
+                    <Image  Source="Assets/Fahead.png" Height="47" Width="41"/>--><!--
+                    <TextBlock Text="   WELCOME TO BINAN CITY HALL                                 ." Margin="0,19,0,0" Foreground="Black" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+            </Canvas>
+        </Grid>-->
         <Image x:Name="Welcome" Grid.Column="4" Grid.RowSpan="5" Grid.ColumnSpan="9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/welcome to6.png"/>
         <Image x:Name="BinanLogo" Grid.Column="4" Grid.Row="4" Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/binanlogo.png" Stretch="Fill"/>
         <Image x:Name="BinanCity" Grid.Column="7" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/binan.png"/>
         <Image x:Name="English_Trans" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="5"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/trans2.png" Stretch="Fill"/>
         <Image x:Name="Fil_Trans" Grid.Column="10" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/trans2.png" Stretch="Fill"/>
-        <TextBlock Grid.Column="4" Grid.ColumnSpan="10" HorizontalAlignment="Stretch"  Grid.Row="8" Grid.RowSpan="4" TextWrapping="Wrap" Text="Select language" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36"/>
-        <TextBlock Grid.Column="11" Grid.ColumnSpan="9" HorizontalAlignment="Stretch"  Grid.Row="8" Grid.RowSpan="4" TextWrapping="Wrap" Text="Pumili ng wika" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36"/>
+        <TextBlock Grid.Column="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch"  Grid.Row="9" TextWrapping="Wrap" Text="Select language" VerticalAlignment="Stretch" FontFamily="Arial Narrow" FontWeight="Bold" FontSize="36" Margin="0.5,0.5,9.5,0"/>
+        <TextBlock Grid.Column="11" Grid.ColumnSpan="4" HorizontalAlignment="Stretch"  Grid.Row="8" TextWrapping="Wrap" Text="Pumili ng wika" VerticalAlignment="Stretch" FontFamily="Arial Narrow" FontWeight="Bold" FontSize="36" Margin="0,71,0,0" Grid.RowSpan="2"/>
         <Button x:Name="btEnglish" Content="English" Grid.Column="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Grid.Row="10" Grid.RowSpan="2" VerticalAlignment="Stretch" FontFamily="Arial" FontSize="36" Foreground="#FFF7F1F1" Click="EnglishButton_Click">
             <Button.Background>
                 <ImageBrush Stretch="Fill" ImageSource="Assets/button1.png"/>

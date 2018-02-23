@@ -76,8 +76,6 @@ namespace BinanKiosk
             officialRepository = new OfficialRepository();
             serviceRepository = new ServiceRepository();
 
-            
-
             //populates the list
             Job_postsList = jobRepository.GetAll_JobCategories();
             Official_postsList = officialRepository.GetAll_Official();
@@ -472,8 +470,25 @@ namespace BinanKiosk
         {
             //Set default selected item is all
             SelectedItem = Categories.All;
-
+            rb_All.IsChecked = true;
             //aSystem.Diagnostics.Process.Start("osk.exe");
+
+            if (Global.language == "Filipino")
+            {
+                Searchbtn.Label = "Hanapin";
+                Mapbtn.Label = "Mapa";
+                Servicesbtn.Label = "Mga Serbisyo";
+                Jobsbtn.Label = "Mga Trabaho";
+
+                MainTitle.Text = "HANAPIN";
+
+                tbOfficers.Text = "Mga Opisyal";
+                tbOffices.Text = "Kagawaran";
+                tbServices.Text = "Mga Serbisyo";
+                tbJobs.Text = "Mga Trabaho";
+                tbAll.Text = "Lahat";
+
+            }
         }
     }
 }

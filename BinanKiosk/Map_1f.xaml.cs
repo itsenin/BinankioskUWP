@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using BinanKiosk.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -76,6 +77,18 @@ namespace BinanKiosk
             };
 
             await InstructionDialog.ShowAsync();
+
+            if (Global.language == "Filipino")
+            {
+                Searchbtn.Label = "Hanapin";
+                Mapbtn.Label = "Mapa";
+                Servicesbtn.Label = "Mga Serbisyo";
+                Jobsbtn.Label = "Mga Trabaho";
+
+                //sFlr.Label = "Pangalawang Palapag";
+
+                MainTitle.Text = "MAPA";
+            }
         }
 
         private void sndFlr_Click(object sender, RoutedEventArgs e)

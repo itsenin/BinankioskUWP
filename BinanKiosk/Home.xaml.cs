@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Media.Animation;
+using BinanKiosk.Models;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -103,9 +104,20 @@ namespace BinanKiosk
         {
             this.Frame.Navigate(typeof(v_Job_Category));
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //    Storyboard1.Begin();
+        //}
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Storyboard1.Begin();
+            if (Global.language == "Filipino")
+            {
+                Searchbtn.Label = "Hanapin";
+                Mapbtn.Label = "Mapa";
+                Servicesbtn.Label = "Mga Serbisyo";
+                Jobsbtn.Label = "Mga Trabaho";
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Page.Resources>
         <DataTemplate x:Key="DataTemplate">
@@ -20,7 +20,7 @@
                     VerticalAlignment="Center" />
                 <TextBlock HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
                            Text="{Binding Job_Name}"  Style="{StaticResource BaseTextBlockStyle}"
-                           FontFamily="Arial Narrow" FontWeight="Bold" FontSize="24" Foreground="White"
+                           FontFamily="Arial Narrow" FontWeight="Bold" FontSize="22" Foreground="White"
                            VerticalAlignment="Center" Name="HAHAHA"/>
             </Grid>
         </DataTemplate>
@@ -97,20 +97,38 @@
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>
+        <Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
+
 
         <Grid Grid.Row="1">
-            <Image Source="Assets/bgopacity3.png" Stretch="Fill"></Image>
-            <!--Here are the properties of the Item that will be populated-->
-            <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
-                                   OneRowModeEnabled="False"
-                                   ItemHeight="100"
-                                   DesiredWidth="350"
-                                   SelectionMode="Single"
-                                   IsItemClickEnabled="True"
-                                   ItemClick="AdaptiveGridViewControl_ItemClick"
-                                   ItemTemplate="{StaticResource DataTemplate}"
-                                   >
-            </controls:AdaptiveGridView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4.5*"/>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Job Category" FontSize="40" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
+                <!--Here are the properties of the Item that will be populated-->
+
+                <controls:AdaptiveGridView Name="AdaptiveGridViewControl"
+                                       OneRowModeEnabled="False"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       ItemHeight="85"
+                                       DesiredWidth="310"
+                                       SelectionMode="Single"
+                                       IsItemClickEnabled="True"
+                                       ItemClick="AdaptiveGridViewControl_ItemClick"
+                                       ItemTemplate="{StaticResource DataTemplate}"
+                                       >
+                </controls:AdaptiveGridView>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

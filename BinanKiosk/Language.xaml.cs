@@ -37,5 +37,10 @@ namespace BinanKiosk
             Global.language = "Filipino";
             Frame.Navigate(typeof(Home));
         }
+
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+        //    Storyboard1.Begin();
+        //}
     }
 }

@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\3rd Floor.PNG" />
+    <Content Include="Assets\bgblue.png" />
     <Content Include="Assets\binan.png" />
     <Content Include="Assets\binanlogo.png" />
     <Content Include="Assets\Biñan_City_Hall.jpg" />
