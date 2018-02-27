@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-27T05:07:08.144</Modified>
+      <Modified>2018-02-27T07:37:08.921</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
-      <Modified>2018-02-27T05:07:00.597</Modified>
+      <Modified>2018-02-27T07:37:04.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -600,6 +600,10 @@
       <PackagePath>Assets\button1.png</PackagePath>
       <Modified>2018-02-23T00:03:33.735</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\downrow.png">
+      <PackagePath>Assets\downrow.png</PackagePath>
+      <Modified>2018-02-27T05:18:43.356</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\First_Floor_Colored.png">
       <PackagePath>Assets\First_Floor_Colored.png</PackagePath>
       <Modified>2018-02-23T00:03:33.399</Modified>
@@ -612,6 +616,10 @@
       <PackagePath>Assets\leftarrow.png</PackagePath>
       <Modified>2018-02-23T00:03:33.921</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\leftrow.png">
+      <PackagePath>Assets\leftrow.png</PackagePath>
+      <Modified>2018-02-27T05:18:43.363</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\logobinan.png">
       <PackagePath>Assets\logobinan.png</PackagePath>
       <Modified>2018-02-23T00:03:33.932</Modified>
@@ -619,6 +627,10 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\rightarrow.png">
       <PackagePath>Assets\rightarrow.png</PackagePath>
       <Modified>2018-02-23T00:03:33.937</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\rightrow.png">
+      <PackagePath>Assets\rightrow.png</PackagePath>
+      <Modified>2018-02-27T05:18:43.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\bgopacity3.png">
       <PackagePath>Assets\bgopacity3.png</PackagePath>
@@ -643,6 +655,10 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\uppermenu.png">
       <PackagePath>Assets\uppermenu.png</PackagePath>
       <Modified>2018-02-23T00:03:33.992</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\uprow.png">
+      <PackagePath>Assets\uprow.png</PackagePath>
+      <Modified>2018-02-27T05:18:43.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\welcome to6.png">
       <PackagePath>Assets\welcome to6.png</PackagePath>
@@ -881,11 +897,11 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-27T05:07:03.437</Modified>
+      <Modified>2018-02-27T07:37:04.973</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
       <PackagePath>BinanKiosk.exe</PackagePath>
-      <Modified>2018-02-27T05:07:08.126</Modified>
+      <Modified>2018-02-27T07:37:08.913</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -68,7 +68,7 @@
             <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:ConnectionId='6' x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                      />
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Searchbtn" Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
+            <AppBarButton x:ConnectionId='7' x:Name="Searchbtn" Icon="Zoom" Label="Search" Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:ConnectionId='8' x:Name="Mapbtn" Icon="Map" Label="Maps" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                     />
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>

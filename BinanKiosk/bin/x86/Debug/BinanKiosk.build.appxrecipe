@@ -448,6 +448,9 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\button1.png">
       <PackagePath>Assets\button1.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\downrow.png">
+      <PackagePath>Assets\downrow.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\First_Floor_Colored.png">
       <PackagePath>Assets\First_Floor_Colored.png</PackagePath>
     </AppxPackagedFile>
@@ -457,11 +460,17 @@
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\leftarrow.png">
       <PackagePath>Assets\leftarrow.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\leftrow.png">
+      <PackagePath>Assets\leftrow.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\logobinan.png">
       <PackagePath>Assets\logobinan.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\rightarrow.png">
       <PackagePath>Assets\rightarrow.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\rightrow.png">
+      <PackagePath>Assets\rightrow.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\bgopacity3.png">
       <PackagePath>Assets\bgopacity3.png</PackagePath>
@@ -480,6 +489,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\uppermenu.png">
       <PackagePath>Assets\uppermenu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\uprow.png">
+      <PackagePath>Assets\uprow.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\doratheexplorer\Desktop\BinankioskUWP\BinanKiosk\Assets\welcome to6.png">
       <PackagePath>Assets\welcome to6.png</PackagePath>

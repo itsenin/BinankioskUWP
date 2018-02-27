@@ -171,11 +171,14 @@
     <Content Include="Assets\boxes.png" />
     <Content Include="Assets\button1.png" />
     <Content Include="Assets\Certification of Tax Clearance.jpg" />
+    <Content Include="Assets\downrow.png" />
     <Content Include="Assets\First_Floor_Colored.png" />
     <Content Include="Assets\floor_2.PNG" />
     <Content Include="Assets\leftarrow.png" />
+    <Content Include="Assets\leftrow.png" />
     <Content Include="Assets\logobinan.png" />
     <Content Include="Assets\rightarrow.png" />
+    <Content Include="Assets\rightrow.png" />
     <Content Include="Assets\Slides\10.jpg" />
     <Content Include="Assets\Slides\11.jpg" />
     <Content Include="Assets\Slides\13.jpg" />
@@ -187,6 +190,7 @@
     <Content Include="Assets\trans2.png" />
     <Content Include="Assets\undermenu.png" />
     <Content Include="Assets\uppermenu.png" />
+    <Content Include="Assets\uprow.png" />
     <Content Include="Assets\welcome to6.png" />
     <Content Include="Assets\zoomIN.gif" />
     <Content Include="Assets\zoomout.gif" />
