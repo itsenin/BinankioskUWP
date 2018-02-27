@@ -15,8 +15,6 @@ namespace BinanKiosk
 
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
-        private global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView AdaptiveGridViewControl; 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
         private global::Windows.UI.Xaml.Controls.AppBarButton Homebtn; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
         private global::Windows.UI.Xaml.Controls.AppBarButton Searchbtn; 
