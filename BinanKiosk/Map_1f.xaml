@@ -15,8 +15,7 @@
         </Grid.RowDefinitions>
 
         <!--Background-->
-        <Image Source="Assets/bgblue.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
-
+        <Image Source="Assets/trans2.png" Grid.Row="1" Stretch="Fill"/>
         <!--Uppermenu-->
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
             <Rectangle.Fill>
@@ -71,7 +70,7 @@
             <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click"  FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" Background="#1f7d1f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>

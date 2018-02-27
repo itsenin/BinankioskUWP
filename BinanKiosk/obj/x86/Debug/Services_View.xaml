@@ -70,7 +70,7 @@
             <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps"                      FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>

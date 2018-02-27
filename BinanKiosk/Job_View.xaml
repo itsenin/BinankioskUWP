@@ -75,7 +75,7 @@
             <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
             <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
             <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
             <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
             <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
         </Grid>

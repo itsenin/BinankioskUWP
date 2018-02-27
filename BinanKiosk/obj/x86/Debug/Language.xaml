@@ -9,7 +9,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="Assets/Biñan_City_Hall.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/bgopacity3.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition />
