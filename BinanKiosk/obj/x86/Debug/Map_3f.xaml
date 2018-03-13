@@ -5,154 +5,402 @@
     xmlns:local="using:BinanKiosk"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     mc:Ignorable="d"                     >
+	<Page.Resources>
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+			<Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+			<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+			<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+			<Setter Property="Padding" Value="8,4,8,4"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+			<Setter Property="FontWeight" Value="Normal"/>
+			<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+			<Setter Property="UseSystemFocusVisuals" Value="True"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal">
+										<Storyboard>
+											<PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="PointerOver">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".3*"/>
-            <RowDefinition Height="4.1*"/>
-            <RowDefinition Height=".6*"/>
-        </Grid.RowDefinitions>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".3*"/>
+			<RowDefinition Height="4.1*"/>
+			<RowDefinition Height=".6*"/>
+		</Grid.RowDefinitions>
 
-        <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+		<!--Background-->
+		<Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
-        <!--Uppermenu-->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/uppermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<!--Uppermenu-->
+		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/uppermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="4.1*"/>
-                <ColumnDefinition Width=".2*"/>
-                <ColumnDefinition Width=".3*"/>
-            </Grid.ColumnDefinitions>
-            <SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='10' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
-            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
-            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
-        </Grid>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="4.1*"/>
+				<ColumnDefinition Width=".2*"/>
+				<ColumnDefinition Width=".3*"/>
+			</Grid.ColumnDefinitions>
+			<SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
+			<TextBlock x:ConnectionId='50' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
+			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
+		</Grid>
 
-        <!--Undermenu-->
-        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/undermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<!--Undermenu-->
+		<Rectangle VerticalAlignment="Stretch" Grid.Row="2">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/undermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".35*"/>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".35*"/>
+				<ColumnDefinition Width=".5*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
 
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
-            <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='4' x:Name="Homebtn" Icon="Home" Label="Home"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='5' x:Name="Searchbtn" Icon="Zoom" Label="Search"                          FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='6' x:Name="Mapbtn" Icon="Map" Label="Maps"                      Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='8' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-            <TextBlock x:ConnectionId='9' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
-        </Grid>
+			<AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='44' x:Name="Homebtn" Icon="Home" Label="Home"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='45' x:Name="Searchbtn" Icon="Zoom" Label="Search"                          FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='46' x:Name="Mapbtn" Icon="Map" Label="Maps"                      Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='47' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='48' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<TextBlock x:ConnectionId='49' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+		</Grid>
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height=".2*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.2*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width="4.6*"/>
-                <ColumnDefinition Width=".1*"/>
-            </Grid.ColumnDefinitions>
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height=".2*"/>
+				<RowDefinition Height="5*"/>
+				<RowDefinition Height=".2*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.2*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width="4.6*"/>
+				<ColumnDefinition Width=".1*"/>
+			</Grid.ColumnDefinitions>
 
-            <Image Grid.Column="2" Grid.Row="1" Source="Assets/3rd Floor.PNG" Stretch="Fill"></Image>
+			<Image Grid.Column="2" Grid.Row="1" Source="Assets/3rd_Floor_HD.png" Stretch="Fill"></Image>
+			<Grid Grid.Column="2" Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
 
-            <Grid Grid.Row="1" Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-                <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="1" />
+				</Grid.ColumnDefinitions>
+				<!--Name Format for optional Room : img_rOptional_[room numbers such as r301 as 1 r302 as 2]-->
+				<!--Name Format for combined Room : img_[first room number (R301)]_[another room number (302)]-->
+				<!--Start Entrance Arrows-->
+				<Image x:ConnectionId='4' x:Name="img_Base" Grid.Column="24" Grid.Row="19"  Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible" />
 
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
+				<!--R301 && R304-->
+				<Image x:ConnectionId='5' x:Name="img_rOptional_1_7" Grid.Column="22" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="visible"/>
+				<Image x:ConnectionId='6' x:Name="img_R301_304_1" Grid.Column="20" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:ConnectionId='7' x:Name="img_R301_304_2" Grid.Column="18" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:ConnectionId='8' x:Name="img_rOptional_1_5" Grid.Column="16" Grid.Row="19" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='9' x:Name="img_R301_304_3" Grid.Column="16" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:ConnectionId='10' x:Name="img_R301_304_4" Grid.Column="14" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='11' x:Name="img_rOptional_1_2_4" Grid.Column="12" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform"/>
+				
+				<!--R302 && R303-->
+				<Image x:ConnectionId='12' x:Name="img_R302_R303_1" Grid.Column="10" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='13' x:Name="img_R302_R303_2" Grid.Column="8" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='14' x:Name="img_rOptional_2_3" Grid.Column="6" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
 
-                    <Button x:ConnectionId='2' x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1"                     >
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="First Floor"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+				<!--R305-->
+				<Image x:ConnectionId='15' x:Name="img_R305_1" Grid.Column="16" Grid.Row="17" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='16' x:Name="img_R305_2" Grid.Column="16" Grid.Row="15" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='17' x:Name="img_R305_3" Grid.Column="15" Grid.Row="14" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				
+				<!--R306-->
+				<Image x:ConnectionId='18' x:Name="img_R306_1" Grid.Column="16" Grid.Row="13" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='19' x:Name="img_R306_2" Grid.Column="16" Grid.Row="11" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='20' x:Name="img_R306_3" Grid.Column="16" Grid.Row="9" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='21' x:Name="img_R306_4" Grid.Column="15" Grid.Row="8" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				
+				<!--R307-->
+				<Image x:ConnectionId='22' x:Name="img_R307_1" Grid.Column="22" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform" Visibility="visible"/>
+				
+				<!--R309-->
+				<Image x:ConnectionId='23' x:Name="img_R309_1" Grid.Column="26" Grid.Row="19"  Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='24' x:Name="img_R309_2" Grid.Column="28" Grid.Row="19"  Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='25' x:Name="img_R309_3" Grid.Column="30" Grid.Row="19" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
-                    <Button x:ConnectionId='3' x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2"                     >
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </Grid>
+				<!--R308-->
+				<Image x:ConnectionId='26' x:Name="img_R308_1" Grid.Column="29" Grid.Row="18" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='27' x:Name="img_R308_2" Grid.Column="29" Grid.Row="16"  Source="Assets/uprow.png" Stretch="Uniform"/>
 
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition Height="3*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="THIRD FLOOR"/>
-                    <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
-                </Grid>
+				<!--R311-->
+				<Image x:ConnectionId='28' x:Name="img_R311_1" Grid.Column="29" Grid.Row="20" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='29' x:Name="img_R311_2" Grid.Column="30" Grid.Row="21" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='30' x:Name="img_rOptional_10_11" Grid.Column="32" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform"/>
 
-                <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="2" />
-                <!--<Grid Grid.Column="1" Grid.Row="2">
+				<!--R310-->
+				<Image x:ConnectionId='31' x:Name="img_R310_1" Grid.Column="34" Grid.Row="21" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='32' x:Name="img_R310_2" Grid.Column="36" Grid.Row="21" Source="Assets/uprow.png" Stretch="Uniform"/>
+				
+				<!--Buttons-->
+				<Button x:ConnectionId='33' x:Name="btn_R301" Content="R301" Grid.Column="11" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='34' x:Name="btn_R302" Content="R302" Grid.Column="4" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='35' x:Name="btn_R303" Content="R303" Grid.Column="3" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='36' x:Name="btn_R304" Content="R304" Grid.Column="9" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='37' x:Name="btn_R305" Content="R305" Grid.Column="10" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='38' x:Name="btn_R306" Content="R306" Grid.Column="10" Grid.Row="8" Grid.RowSpan="5" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='39' x:Name="btn_R307" Content="R307" Grid.Column="15" Grid.Row="21" Grid.RowSpan="7" Grid.ColumnSpan="15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					
+				</Button>
+				<Button x:ConnectionId='40' x:Name="btn_R308" Content="R308" Grid.Column="29" Grid.Row="8" Grid.RowSpan="7" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='41' x:Name="btn_R309" Content="R309" Grid.Column="30" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='42' x:Name="btn_R310" Content="R310" Grid.Column="34" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='43' x:Name="btn_R311" Content="R311" Grid.Column="30" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+			</Grid>
+
+			<Grid Grid.Row="1" Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width=".5*"/>
+					<ColumnDefinition Width="5*"/>
+				</Grid.ColumnDefinitions>
+				<Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="1" />
+
+				<Grid Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+
+					<Button x:ConnectionId='2' x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1"                     >
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Grid>
+									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="First Floor"/>
+								</Grid>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+
+					<Button x:ConnectionId='3' x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2"                     >
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Grid>
+									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
+								</Grid>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+				</Grid>
+
+				<Grid Grid.Row="1" Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="3*"/>
+						<RowDefinition Height="3*"/>
+					</Grid.RowDefinitions>
+					<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="THIRD FLOOR"/>
+					<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
+				</Grid>
+
+				<Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="2" />
+				<!--<Grid Grid.Column="1" Grid.Row="2">
                     <Image Source="Assets/tap.gif" Stretch="Fill" Margin="10,10,9,10"  />
                 </Grid>-->
-            </Grid>
-        </Grid>
-    </Grid>
+			</Grid>
+		</Grid>
+	</Grid>
 </Page>
 

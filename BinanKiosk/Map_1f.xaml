@@ -1,4 +1,4 @@
-﻿<Page
+<Page
     x:Class="BinanKiosk.Map_1f"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,193 +6,417 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="Page_Loaded">
+	<Page.Resources>
+		<Style TargetType="Button">
+			<Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+			<Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+			<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+			<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+			<Setter Property="Padding" Value="8,4,8,4"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+			<Setter Property="FontWeight" Value="Normal"/>
+			<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+			<Setter Property="UseSystemFocusVisuals" Value="True"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal">
+										<Storyboard>
+											<PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="PointerOver">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPointerOver}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<PointerUpThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundPressed}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<PointerDownThemeAnimation Storyboard.TargetName="RootGrid"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="RootGrid">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Transparent"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".3*"/>
-            <RowDefinition Height="4.1*"/>
-            <RowDefinition Height=".6*"/>
-        </Grid.RowDefinitions>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".3*"/>
+			<RowDefinition Height="4.1*"/>
+			<RowDefinition Height=".6*"/>
+		</Grid.RowDefinitions>
 
-        <!--Background-->
-        <Image Source="Assets/trans2.png" Grid.Row="1" Stretch="Fill"/>
-        <!--Uppermenu-->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/uppermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<!--Background-->
+		<Image Source="Assets/trans2.png" Grid.Row="1" Stretch="Fill"/>
+		<!--Uppermenu-->
+		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/uppermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="4.1*"/>
-                <ColumnDefinition Width=".2*"/>
-                <ColumnDefinition Width=".3*"/>
-            </Grid.ColumnDefinitions>
-            <SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
-            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
-            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
-        </Grid>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="4.1*"/>
+				<ColumnDefinition Width=".2*"/>
+				<ColumnDefinition Width=".3*"/>
+			</Grid.ColumnDefinitions>
+			<SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
+			<TextBlock x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
+			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
+		</Grid>
 
-        <!--Undermenu-->
-        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/undermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<!--Undermenu-->
+		<Rectangle VerticalAlignment="Stretch" Grid.Row="2">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/undermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".35*"/>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".35*"/>
+				<ColumnDefinition Width=".5*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
 
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
-            <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" Click="Homebtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click"  FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" Background="#1f7d1f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-            <TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
-        </Grid>
+			<AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" Click="Homebtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click"  FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" FontWeight="Bold" Background="#1f7d1f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+		</Grid>
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height=".2*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.2*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width="4.6*"/>
-                <ColumnDefinition Width=".1*"/>
-            </Grid.ColumnDefinitions>
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height=".2*"/>
+				<RowDefinition Height="5*"/>
+				<RowDefinition Height=".2*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.2*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width="4.6*"/>
+				<ColumnDefinition Width=".1*"/>
+			</Grid.ColumnDefinitions>
 
-            <Image Grid.Column="2" Grid.Row="1" Source="Assets/First_Floor_Colored.png" Stretch="Fill"></Image>
+			<Image Grid.Column="2" Grid.Row="1" Source="Assets/map_floor_1.png" Stretch="Fill"></Image>
 
-            <Grid Grid.Column="2" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-            </Grid>
+			<Grid Grid.Column="2" Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<!--Images for arrows-->
 
-            <Grid Grid.Row="1" Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-                <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="1" />
+				<!--R101-->
+				<Image x:Name="img_Base" Source="Assets/leftrow.png" Grid.Column="18" Grid.Row="25" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r101_1" Source="Assets/leftrow.png" Grid.Column="16" Grid.Row="26" Stretch="Uniform" Visibility="Visible" Grid.RowSpan="2"/>
+				<Image x:Name="img_r101_2" Source="Assets/leftrow.png" Grid.Column="14" Grid.Row="26" Stretch="Uniform" Visibility="Visible" Grid.RowSpan="2"/>
+				<Image x:Name="img_r101_3" Source="Assets/uprow.png" Grid.Column="12" Grid.Row="26" Stretch="Uniform" Visibility="Visible" Grid.RowSpan="2"/>
+				<Image x:Name="img_r101_4" Source="Assets/uprow.png" Grid.Column="12" Grid.Row="25" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_rOptional_1_2" Source="Assets/downrow.png" Grid.Column="16" Grid.Row="25" Stretch="Uniform" Visibility="Visible"/>
+				<!--R102-->
+				<Image x:Name="img_r102_1" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="25" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_2" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="23" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_3" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="21" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_4" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="19" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_5" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="17" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_6" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="15" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_7" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="13" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_8" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="11" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r102_9" Source="Assets/leftrow.png" Grid.Column="12" Grid.Row="9" Stretch="Uniform" Grid.RowSpan="2" Visibility="Visible"/>
 
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
+				<!--R103 & R104 & R105-->
+				<Image x:Name="img_r103_104_105_1" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="9" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_rOptional_3_4_5_6" Source="Assets/uprow.png" Grid.Column="14" Grid.Row="7" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_rOptional_3_4_5" Source="Assets/leftrow.png" Grid.Column="14" Grid.Row="5" Stretch="Uniform" Visibility="Visible" />
 
-                    <Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Click="sndFlr_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock Name="sFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+				<!--R106-->
+				<Image x:Name="img_r106_1" Source="Assets/rightrow.png" Grid.Column="16" Grid.Row="7" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r106_2" Source="Assets/rightrow.png" Grid.Column="18" Grid.Row="7" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r106_3" Source="Assets/uprow.png" Grid.Column="20" Grid.Row="7" Stretch="Uniform" Visibility="Visible"/>
 
-                    <Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Click="trdFlr_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-                                    <TextBlock x:Name="tFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template></Button>
-                </Grid>
+				<!--R109 & R108-->
+				<Image x:Name="img_rOptional_8_9" Source="Assets/rightrow.png" Grid.Column="29" Grid.Row="3" Stretch="Uniform" Visibility="Visible"/>
 
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition Height="3*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="GROUND FLOOR"/>
-                    <!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
-                </Grid>
+				<!--R107 & R110-->
+				<Image x:Name="img_r107_110_1" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="10" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r107_110_2" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="8" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_rOptional_7_8_9_10" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="5" Stretch="Uniform" Grid.RowSpan="2" Visibility="Visible"/>
 
-                <Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="2" />
-                <!--<Grid Grid.Column="1" Grid.Row="2">
+				<!--R111-->
+				<Image x:Name="img_r111_1" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="24" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_2" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="22" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_3" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="20" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_4" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="18" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_5" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="16" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_6" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="14" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_7" Source="Assets/uprow.png" Grid.Column="29" Grid.Row="12" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+				<Image x:Name="img_r111_8" Source="Assets/rightrow.png" Grid.Column="31" Grid.Row="11" Stretch="Uniform" Visibility="Visible" Grid.ColumnSpan="2"/>
+
+				<!--R112-->
+				<Image x:Name="img_r112_1" Source="Assets/rightrow.png" Grid.Column="20" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_2" Source="Assets/rightrow.png" Grid.Column="22" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_3" Source="Assets/rightrow.png" Grid.Column="24" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_4" Source="Assets/rightrow.png" Grid.Column="26" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_5" Source="Assets/rightrow.png" Grid.Column="28" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_7" Source="Assets/rightrow.png" Grid.Column="32" Grid.Row="27" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_8" Source="Assets/uprow.png" Grid.Column="35" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+				<Image x:Name="img_r112_6" Source="Assets/rightrow.png" Grid.Column="30" Grid.Row="26" Stretch="Uniform" Visibility="Visible"/>
+
+				<!--Buttons-->
+				<!--R101-->
+				<Button x:Name="btn_r101" Grid.Column="1" Grid.Row="20" Grid.ColumnSpan="13" Grid.RowSpan="5" Click="Room_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R101" Background="Transparent"/>
+				<!--R102-->
+				<Button x:Name="btn_r102"  Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="4" Grid.RowSpan="10" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R102" Background="Transparent"/>
+				<!--R103-->
+				<Button x:Name="btn_r103"  Grid.Column="8" Grid.ColumnSpan="6" Grid.RowSpan="6" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R103" Background="Transparent"/>
+				<!--R104-->
+				<Button x:Name="btn_r104"  Grid.Column="14" Grid.ColumnSpan="5" Grid.RowSpan="3" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R104" Background="Transparent"/>
+				<!--R105-->
+				<Button x:Name="btn_r105" Grid.Column="16" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="4" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R105" Background="Transparent"/>
+				<!--R106-->
+				<Button x:Name="btn_r106" Grid.Column="19" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="4" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R106" Background="Transparent"/>
+				<!--R107-->
+				<Button x:Name="btn_r107" Grid.Column="25" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R107" Background="Transparent"/>
+				<!--R108-->
+				<Button x:Name="btn_r108" Grid.Column="25" Grid.Row="2" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R108" Background="Transparent"/>
+				<!--R109-->
+				<Button x:Name="btn_r109" Grid.Column="30" Grid.ColumnSpan="5" Grid.RowSpan="4" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R109" Background="Transparent"/>
+				<!--R110-->
+				<Button x:Name="btn_r110" Grid.Column="30" Grid.Row="4" Grid.ColumnSpan="7" Grid.RowSpan="2" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R110" Background="Transparent"/>
+				<Button x:Name="btn_r110_1" Grid.Column="33" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="2" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"/>
+				<Button x:Name="btn_r110_2" Grid.Column="35" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"/>
+				<!--R111-->
+				<Button x:Name="btn_r111" Grid.Column="32" Grid.Row="8" Grid.ColumnSpan="5" Grid.RowSpan="9" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R111" Background="Transparent"/>
+				<!--R112-->
+				<Button x:Name="btn_r112" Grid.Column="32" Grid.Row="20" Grid.ColumnSpan="13" Grid.RowSpan="5" Click="Room_Click"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="R112" Background="Transparent"/>
+			</Grid>
+
+
+			<Grid Grid.Row="1" Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width=".5*"/>
+					<ColumnDefinition Width="5*"/>
+				</Grid.ColumnDefinitions>
+				<Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="1" />
+
+				<Grid Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+
+					<Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Click="sndFlr_Click">
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Grid>
+									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+									<TextBlock Name="sFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
+								</Grid>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+
+					<Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Click="trdFlr_Click">
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Grid>
+									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+									<TextBlock x:Name="tFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
+								</Grid>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+				</Grid>
+
+				<Grid Grid.Row="1" Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="3*"/>
+						<RowDefinition Height="3*"/>
+					</Grid.RowDefinitions>
+					<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="GROUND FLOOR"/>
+					<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
+				</Grid>
+
+				<Image Source="Assets/trans2.png" Stretch="Fill" Grid.Column="1" Grid.Row="2" />
+				<!--<Grid Grid.Column="1" Grid.Row="2">
                     <Image Source="Assets/tap.gif" Stretch="Fill" Margin="10,10,9,10"  />
                 </Grid>-->
-            </Grid>
-        </Grid>
-    </Grid>
+			</Grid>
+		</Grid>
+	</Grid>
 </Page>
