@@ -1,4 +1,5 @@
-﻿using BinanKiosk.Models;
+using BinanKiosk.Enums;
+using BinanKiosk.Models;
 using BinanKiosk.Repository;
 using System;
 using System.Collections.Generic;
@@ -25,71 +26,179 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class v_Job_Category : Page
     {
-        JobRepository jobRepository = new JobRepository();
-        DispatcherTimer Timer = new DispatcherTimer();
-        public v_Job_Category()
-        {
-            this.InitializeComponent();
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-            Timer.Tick += Timer_Tick;
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Start();
-            ObservableCollection<M_Job_Category> items = new ObservableCollection<M_Job_Category>();
-            foreach (var Category in jobRepository.GetAll_JobCategories())
-            {
-                items.Add(new M_Job_Category()
-                {
-                    Job_ID = Category.Job_ID,
-                    Job_Name = Category.Job_Name
-                });
-            }
-            AdaptiveGridViewControl.ItemsSource = items;
-        }
-        private void Timer_Tick(object sender, object e)
-        {
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-        }
-        private void AdaptiveGridViewControl_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var _Category = e.ClickedItem as M_Job_Category;
-            Frame.Navigate(typeof(v_Job_List), _Category);
-        }
+		private IList<M_Job_Category> postsList; //Given List
+		private IList<M_Job_Category> displayPostsList; //List to be displayed in ListView
+		int pageIndex = 0;
+		int pageSize = 6; //Set the size of the page
+		int totalPage = 0;
+		int counter = 0;
+		JobRepository jobRepository;
+		DispatcherTimer Timer;
+		ObservableCollection<BindedItems> items;
+		public class BindedItems
+		{
+			public M_Job_Category job_Category { get; set; }
+			public string Job_List { get; set; }
+			public string Locate { get; set; }
+		}
+		public v_Job_Category()
+		{
+			this.InitializeComponent();
+		} //end of Services constructor
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			base.OnNavigatedTo(e);
+			Global.Entrance_Transition(this, E_Transitions.Drilln);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 
-        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(v_Job_Category));
-        }
+			postsList = new List<M_Job_Category>(); //Given List
+			displayPostsList = new List<M_Job_Category>(); //List to be displayed in ListView
+			pageIndex = 0;
+			pageSize = 6; //Set the size of the page
+			totalPage = 0;
+			counter = 0;
+			jobRepository = new JobRepository();
+			Timer = new DispatcherTimer();
+			//Instantiation of List of services
+			items = new ObservableCollection<BindedItems>();
+			
+			//For the time
+			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+			Timer.Tick += Timer_Tick;
+			Timer.Interval = new TimeSpan(0, 0, 1);
+			Timer.Start();
 
-        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Services));
-        }
+			// Populating the list from the database
+			postsList = jobRepository.GetAll_JobCategories();
+			totalPage = postsList.Count / 6;
+			AdaptiveGridViewControl.ItemsSource = Job_Category_Populator();
+		}
 
-        private void Mapbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Map_1f));
-        }
+		private void Timer_Tick(object sender, object e)
+		{
+			counter += 1;
+			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+			if (counter >= 7)
+			{
+				Timer.Stop();
+				Frame.Navigate(typeof(Idle_Page));
+			}
+		}
 
-        private void Searchbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Search));
-        }
+		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Search));
+		}
 
-        private void Homebtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Home));
-        }
+		private void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Map_1f));
+		}
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (Global.language == "Filipino")
-            {
-                Searchbtn.Label = "Hanapin";
-                Mapbtn.Label = "Mapa";
-                Servicesbtn.Label = "Mga Serbisyo";
-                Jobsbtn.Label = "Mga Trabaho";
-                MainTitle.Text = "MGA TRABAHO";
-            }
-        }
-    }
+		private void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Services));
+		}
+
+		private void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(v_Job_Category));
+		}
+
+		private void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Event));
+		}
+
+		private ObservableCollection<BindedItems> Job_Category_Populator()
+		{
+			items.Clear();
+			displayPostsList = postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
+			//For populating the Adaptive Grid View
+			foreach (var job_category in displayPostsList)
+			{
+				items.Add(new BindedItems()
+				{
+					job_Category = new M_Job_Category
+					{
+						Job_ID = job_category.Job_ID,
+						Job_Name = job_category.Job_Name
+					},
+					Job_List = "SHOW ALL JOB LIST",
+					Locate = "LOCATE"
+				});
+			}
+			return items;
+		}
+
+		private void Page_Loaded(object sender, RoutedEventArgs e)
+		{
+			if (Global.language == "Filipino")
+			{
+				Searchbtn.Label = "Hanapin";
+				Mapbtn.Label = "Mapa";
+				Servicesbtn.Label = "Mga Serbisyo";
+				Jobsbtn.Label = "Mga Trabaho";
+
+				MainTitle.Text = "MGA SERBISYO";
+			}
+			tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+		}
+
+		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+
+		private async void Left_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if ((pageIndex + totalPage) > totalPage)
+			{
+				pageIndex--;
+				AdaptiveGridViewControl.ItemsSource = Job_Category_Populator();
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			}
+		}
+
+		private async void Right_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if ((pageIndex + 1) <= totalPage)
+			{
+				pageIndex++;
+				AdaptiveGridViewControl.ItemsSource = Job_Category_Populator();
+
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			}
+		}
+
+		private async void AdaptiveGridViewControl_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+
+		private async void bt_Job_Category_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			var bindedItems = (sender as Button).DataContext as BindedItems;
+			Frame.Navigate(typeof(v_Job_List), new Items { itemCategory = Categories.Job_Category, itemObject = bindedItems.job_Category, Objectname = bindedItems.job_Category.Job_Name });
+		}
+		private async void Goto_OtherForm(TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+		}
+	}
 }

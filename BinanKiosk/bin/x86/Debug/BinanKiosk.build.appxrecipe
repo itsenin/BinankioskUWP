@@ -28,6 +28,15 @@
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\runtimes\win10-x86\native\Lumia.Imaging.dll">
+      <PackagePath>Lumia.Imaging.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\runtimes\win10-x86\native\Lumia.InteropServices.WindowsRuntime.dll">
+      <PackagePath>Lumia.InteropServices.WindowsRuntime.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.Imaging.Managed.dll">
+      <PackagePath>Lumia.Imaging.Managed.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -421,8 +430,14 @@
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\win2d.uwp\1.21.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\MySql.Data.RT.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll">
       <PackagePath>MySql.Data.RT.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.Imaging.winmd">
+      <PackagePath>Lumia.Imaging.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.InteropServices.WindowsRuntime.winmd">
+      <PackagePath>Lumia.InteropServices.WindowsRuntime.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
       <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
@@ -477,6 +492,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\leftrow.png">
       <PackagePath>Assets\leftrow.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Find_btn.png">
+      <PackagePath>Assets\Find_btn.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\logobinan.png">
       <PackagePath>Assets\logobinan.png</PackagePath>
@@ -541,6 +559,21 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Ripple.gif">
+      <PackagePath>Assets\Ripple.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tap.gif">
+      <PackagePath>Assets\tap.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tapping.gif">
+      <PackagePath>Assets\tapping.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomIN.gif">
+      <PackagePath>Assets\zoomIN.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomout.gif">
+      <PackagePath>Assets\zoomout.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Biñan_City_Hall.jpg">
       <PackagePath>Assets\Biñan_City_Hall.jpg</PackagePath>
     </AppxPackagedFile>
@@ -555,18 +588,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Slides\13.jpg">
       <PackagePath>Assets\Slides\13.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tap.gif">
-      <PackagePath>Assets\tap.gif</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tapping.gif">
-      <PackagePath>Assets\tapping.gif</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomIN.gif">
-      <PackagePath>Assets\zoomIN.gif</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomout.gif">
-      <PackagePath>Assets\zoomout.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

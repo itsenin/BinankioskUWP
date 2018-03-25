@@ -1,4 +1,5 @@
-﻿using BinanKiosk.Models;
+using BinanKiosk.Enums;
+using BinanKiosk.Models;
 using BinanKiosk.Repository;
 using System;
 using System.Collections.Generic;
@@ -26,27 +27,64 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class v_Job_List : Page
     {
-        JobRepository jobRepository = new JobRepository();
-        DispatcherTimer Timer = new DispatcherTimer();
+		JobRepository jobRepository;
+        DispatcherTimer Timer;
+		private Items item_List;
         private M_Job_Category _Category;
+		int counter = 0;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
+			base.OnNavigatedTo(e);
+			Global.Entrance_Transition(this, E_Transitions.Drilln);
+			jobRepository = new JobRepository();
+			Timer = new DispatcherTimer();
+			counter = 0;
+            
+			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+			Timer.Tick += Timer_Tick;
+			Timer.Interval = new TimeSpan(0, 0, 1);
+			Timer.Start();
 
-            _Category = (M_Job_Category)e.Parameter;
-            ObservableCollection<M_Job_Type> items = new ObservableCollection<M_Job_Type>();
-            foreach (var JobType in jobRepository.GetAll_JobTypes(_Category))
-            {
-                items.Add(new M_Job_Type()
-                {
-                    JobType_ID = JobType.JobType_ID,
-                    Category = new M_Job_Category { Job_ID = JobType.Category.Job_ID, Job_Name = JobType.Category.Job_Name },
-                    Job_Company = JobType.Job_Company,
-                    Job_Description = JobType.Job_Description,
-                    Job_Location = JobType.Job_Location,
-                    Job_Types = JobType.Job_Types
-                });
-            }
+			item_List = (Items)e.Parameter;
+			ObservableCollection<M_Job_Type> items = new ObservableCollection<M_Job_Type>();
+			if (item_List.itemCategory.Equals(Categories.Job_Category))
+			{
+				_Category = (M_Job_Category)item_List.itemObject;
+				foreach (var JobType in jobRepository.GetAll_JobTypes(_Category))
+				{
+					items.Add(new M_Job_Type()
+					{
+						JobType_ID = JobType.JobType_ID,
+						Category = new M_Job_Category { Job_ID = JobType.Category.Job_ID, Job_Name = JobType.Category.Job_Name },
+						Job_Company = JobType.Job_Company,
+						Job_Description = JobType.Job_Description,
+						Job_Location = JobType.Job_Location,
+						Job_Types = JobType.Job_Types,
+						job_Image_Path = JobType.job_Image_Path
+					});
+				}
+			}
+			else
+			{
+				var Job_List = (List<M_Job_Type>)item_List.itemObject;
+				var Filtered_Job_List = Job_List.Where(stringToCheck => (stringToCheck.Job_Types).ToLower().Equals(item_List.Objectname.ToLower()));
+
+				foreach (var JobType in Filtered_Job_List)
+				{
+					items.Add(new M_Job_Type()
+					{
+						JobType_ID = JobType.JobType_ID,
+						Category = new M_Job_Category { Job_ID = JobType.Category.Job_ID, Job_Name = JobType.Category.Job_Name },
+						Job_Company = JobType.Job_Company,
+						Job_Description = JobType.Job_Description,
+						Job_Location = JobType.Job_Location,
+						Job_Types = JobType.Job_Types,
+						job_Image_Path = JobType.job_Image_Path,
+						logo_Image_Path = JobType.logo_Image_Path
+					});
+				}
+			}
+           
             if (items.Count <= 0)
             {
                 tb_Result.Text = "No Result";
@@ -62,49 +100,49 @@ namespace BinanKiosk
         public v_Job_List()
         {
             this.InitializeComponent();
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-            Timer.Tick += Timer_Tick;
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Start();
         }
         private void Timer_Tick(object sender, object e)
         {
+			counter += 1;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-        }
+			if (counter >= 7)
+			{
+				Timer.Stop();
+				Frame.Navigate(typeof(Idle_Page));
+			}
+		}
+		
+		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Search));
+		}
 
-        private async void listViewControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var output = e.AddedItems[0] as M_Job_Type;
-            MessageDialog md = new MessageDialog(output.Job_Company);
-            await md.ShowAsync();
-            Frame.Navigate(typeof(Job_View));
-        }
-        private void Homebtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Home));
-        }
+		private void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Map_1f));
+		}
 
-        private void Searchbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Search));
-        }
+		private void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Services));
+		}
 
-        private void Mapbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Map_1f));
-        }
+		private void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(v_Job_Category));
+		}
 
-        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Services));
-        }
+		private void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Event));
+		}
 
-        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(v_Job_Category));
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+		private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (Global.language == "Filipino")
             {
@@ -115,5 +153,41 @@ namespace BinanKiosk
                 MainTitle.Text = "RESULTA";
             }
         }
-    }
+
+		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+
+		private async void listViewControl_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			M_Job_Type job_Type = new M_Job_Type();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			var grid = e.OriginalSource as Grid;
+			var textblock = e.OriginalSource as TextBlock;
+			var image = e.OriginalSource as Image;
+			if (grid != null)
+				job_Type = grid.DataContext as M_Job_Type;
+			else if (textblock != null)
+				job_Type = textblock.DataContext as M_Job_Type;
+			else
+				job_Type = image.DataContext as M_Job_Type;
+
+			Frame.Navigate(typeof(Job_View), job_Type);
+		}
+
+		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			Global.GoBack(this);
+		}
+		private async void Goto_OtherForm(TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+		}
+	}
 }

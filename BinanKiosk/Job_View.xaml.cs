@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using BinanKiosk.Models;  
+using BinanKiosk.Models;
+using BinanKiosk.Enums;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,52 +24,77 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Job_View : Page
     {
-        DispatcherTimer Timer = new DispatcherTimer();
+		M_Job_Type job_Type;
+		Picture picture;
+		DispatcherTimer Timer;
+		int counter;
         public Job_View()
         {
             this.InitializeComponent();
-            DataContext = this;
-            Timer.Tick += Timer_Tick;
-            Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Start();
         }
-
-        private void Timer_Tick(object sender, object e)
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			base.OnNavigatedTo(e);
+			Global.Entrance_Transition(this, E_Transitions.Drilln);
+			Timer = new DispatcherTimer();
+			counter = 0;
+			DataContext = this;
+			Timer.Tick += Timer_Tick;
+			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
+			Timer.Interval = new TimeSpan(0, 0, 1);
+			Timer.Start();
+			job_Type = (M_Job_Type)e.Parameter;
+			picture = Global.GetPic(job_Type.job_Image_Path);
+			theImage.Source = Global.AsBitmapImage(picture.image);
+			MyScrollViewer.RegisterPropertyChangedCallback(ScrollViewer.ZoomFactorProperty, (s, a) => { counter = 0; });
+		}
+		private void Timer_Tick(object sender, object e)
         {
+			counter += 1;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-        }
+			if (counter >= 7)
+			{
+				Timer.Stop();
+				Frame.Navigate(typeof(Idle_Page));
+			}
+		}
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs args)
         {
-            theImage.Height = MyScrollViewer.ViewportHeight;
+			counter = 0;
+            //theImage.Height = MyScrollViewer.ViewportHeight;
         }
-        private void Homebtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Home));
-        }
+		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Search));
+		}
 
-        private void Searchbtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Search));
-        }
+		private void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Map_1f));
+		}
 
-        private void Mapbtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Map_1f));
-        }
+		private void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Services));
+		}
 
-        private void Servicesbtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Services));
-        }
+		private void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(v_Job_Category));
+		}
 
-        private void Jobsbtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(v_Job_Category));
-        }
+		private void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Event));
+		}
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+		private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (Global.language == "Filipino")
             {
@@ -80,5 +106,22 @@ namespace BinanKiosk
                 MainTitle.Text = "RESULTA";
             }
         }
-    }
+
+		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+
+		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Global.GoBack(this);
+		}
+		private async void Goto_OtherForm(TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+		}
+	}
 }

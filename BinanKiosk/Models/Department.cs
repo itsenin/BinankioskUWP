@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace BinanKiosk.Models
     {
         public int Department_ID { get; set; }
         public string Department_Name { get; set; }
-        public Floor Room { get; set; }
         public string Department_Description { get; set; }
+		public string Department_Image_Path { get; set; }
     }
 }

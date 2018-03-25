@@ -132,7 +132,7 @@
 				<ColumnDefinition Width=".3*"/>
 			</Grid.ColumnDefinitions>
 			<SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
-			<TextBlock x:ConnectionId='79' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
+			<TextBlock x:ConnectionId='80' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
 			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
 			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
 		</Grid>
@@ -165,18 +165,18 @@
 			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
 			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
-			<AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='73' x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                      />
 			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='74' x:Name="Searchbtn"  Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                        />
+			<AppBarButton x:ConnectionId='74' x:Name="Searchbtn" Icon="Zoom" Label="Search"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='75' x:Name="Mapbtn"  Icon="Map" Label="Maps" FontWeight="Bold" Background="#1f7d1f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                     />
+			<AppBarButton x:ConnectionId='75' x:Name="Mapbtn" Icon="Map" Label="Maps"                      Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='76' x:Name="Servicesbtn"  Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                          />
+			<AppBarButton x:ConnectionId='76' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='77'  x:Name="Jobsbtn"  Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"                      />
+			<AppBarButton x:ConnectionId='77' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Job Categories"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-			<TextBlock x:ConnectionId='78' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+			<AppBarButton x:ConnectionId='78' x:Name="Eventbtn" Icon="Calendar" Label="Upcoming Events"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<TextBlock x:ConnectionId='79' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
 		</Grid>
 
 		<Grid Grid.Row="1">
@@ -274,121 +274,168 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-
+				<!--STAIRS TO 3F-->
+				<Image x:ConnectionId='5' x:Name="img_Stairs_3f_1" Grid.Column="19" Grid.Row="20" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='6' x:Name="img_Stairs_3f_2" Grid.Column="20" Grid.Row="19" Source="Assets/uprow.png" Stretch="Uniform"/>
 				<!--LEFT SIDE-->
-				<Image x:ConnectionId='5' x:Name="img_LeftBase_1" Grid.Column="17" Grid.Row="21" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='6' x:Name="img_LeftBase_2" Grid.Column="16" Grid.Row="20" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='7' x:Name="img_LeftBase_1" Grid.Column="17" Grid.Row="21" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='8' x:Name="img_LeftBase_2" Grid.Column="16" Grid.Row="20" Source="Assets/leftrow.png" Stretch="Uniform"/>
 
 				<!--R201, R202 & R203-->
-				<Image x:ConnectionId='7' x:Name="img_r201_202_203_1" Grid.Column="15" Grid.Row="22" Source="Assets/downrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='8' x:Name="img_r201_202_203_2" Grid.Column="15" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='9' x:Name="img_r201_202_203_3" Grid.Column="13" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='10' x:Name="img_r201_202_203_4" Grid.Column="13" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='11' x:Name="img_rOptional_1_3" Grid.Column="11" Grid.Row="24" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='12' x:Name="img_rOptional_1_2" Grid.Column="9" Grid.Row="24" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='9' x:Name="img_r201_202_203_1" Grid.Column="15" Grid.Row="22" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='10' x:Name="img_r201_202_203_2" Grid.Column="15" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='11' x:Name="img_r201_202_203_3" Grid.Column="13" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='12' x:Name="img_rOptional_1_3" Grid.Column="11" Grid.Row="24" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='13' x:Name="img_rOptional_1_2" Grid.Column="9" Grid.Row="24" Source="Assets/downrow.png" Stretch="Uniform"/>
 
-				<Image x:ConnectionId='13' x:Name="img_R202_1" Grid.Column="7" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='14' x:Name="img_R202_2" Grid.Column="5" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='15' x:Name="img_R202_3" Grid.Column="3" Grid.Row="24" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='14' x:Name="img_R202_1" Grid.Column="7" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='15' x:Name="img_R202_2" Grid.Column="5" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='16' x:Name="img_R202_3" Grid.Column="3" Grid.Row="24" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R204-->
-				<Image x:ConnectionId='16' x:Name="img_R204_1" Grid.Column="14" Grid.Row="18" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='17' x:Name="img_R204_2" Grid.Column="14" Grid.Row="16" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='18' x:Name="img_rOptional_4_5" Grid.Column="14" Grid.Row="14" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='17' x:Name="img_R204_1" Grid.Column="14" Grid.Row="18" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='18' x:Name="img_R204_2" Grid.Column="14" Grid.Row="16" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='19' x:Name="img_rOptional_4_5" Grid.Column="14" Grid.Row="14" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R205-->
-				<Image x:ConnectionId='19' x:Name="img_R205_1" Grid.Column="14" Grid.Row="12" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
-				<Image x:ConnectionId='20' x:Name="img_R205_2" Grid.Column="13" Grid.Row="11" Source="Assets/leftrow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='20' x:Name="img_R205_1" Grid.Column="14" Grid.Row="12" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='21' x:Name="img_R205_2" Grid.Column="13" Grid.Row="11" Source="Assets/leftrow.png" Stretch="Uniform" />
 
 				<!--R206-->
-				<Image x:ConnectionId='21' x:Name="img_R206_1" Grid.Column="14" Grid.Row="10" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
-				<Image x:ConnectionId='22' x:Name="img_R206_2" Grid.Column="13" Grid.Row="9" Source="Assets/leftrow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='22' x:Name="img_R206_1" Grid.Column="14" Grid.Row="10" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='23' x:Name="img_R206_2" Grid.Column="13" Grid.Row="9" Source="Assets/leftrow.png" Stretch="Uniform" />
 
 				<!--R207 & R208-->
-				<Image x:ConnectionId='23' x:Name="img_R207_208_1" Grid.Column="14" Grid.Row="8" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
-				<Image x:ConnectionId='24' x:Name="img_rOptional_7_8" Grid.Column="13" Grid.Row="7" Source="Assets/leftrow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='24' x:Name="img_R207_208_1" Grid.Column="14" Grid.Row="8" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform" />
+				<Image x:ConnectionId='25' x:Name="img_rOptional_7_8" Grid.Column="13" Grid.Row="7" Source="Assets/leftrow.png" Stretch="Uniform" />
 
 				<!--R209-->
-				<Image x:ConnectionId='25' x:Name="img_R209_1" Grid.Column="16" Grid.Row="7"  Source="Assets/uprow.png" Stretch="Uniform"  />
+				<Image x:ConnectionId='26' x:Name="img_R209_1" Grid.Column="16" Grid.Row="7"  Source="Assets/uprow.png" Stretch="Uniform"  />
 
 				<!--RIGHT SIDE-->
-				<Image x:ConnectionId='26' x:Name="img_RightBase_1" Grid.Column="26" Grid.Row="21" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='27' x:Name="img_RightBase_2" Grid.Column="28" Grid.Row="20" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='27' x:Name="img_RightBase_1" Grid.Column="26" Grid.Row="21" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='28' x:Name="img_RightBase_2" Grid.Column="28" Grid.Row="20" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R220-->
-				<Image x:ConnectionId='28' x:Name="img_rOptional_19_20" Grid.Column="29" Grid.Row="18" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='29' x:Name="img_rOptional_19_20" Grid.Column="29" Grid.Row="18" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R219-->
-				<Image x:ConnectionId='29' x:Name="img_rOptional_18_19" Grid.Column="29" Grid.Row="16" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='30' x:Name="img_rOptional_18_19" Grid.Column="29" Grid.Row="16" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R218-->
-				<Image x:ConnectionId='30' x:Name="img_rOptional_17_18" Grid.Column="29" Grid.Row="14" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='31' x:Name="img_rOptional_17_18" Grid.Column="29" Grid.Row="14" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R217-->
-				<Image x:ConnectionId='31' x:Name="img_rOptional_16_17" Grid.Column="29" Grid.Row="12" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='32' x:Name="img_rOptional_16_17" Grid.Column="29" Grid.Row="12" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R216-->
-				<Image x:ConnectionId='32' x:Name="img_rOptional_15_16" Grid.Column="29" Grid.Row="10" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='33' x:Name="img_rOptional_15_16" Grid.Column="29" Grid.Row="10" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R215-->
-				<Image x:ConnectionId='33' x:Name="img_R215_1" Grid.Column="30" Grid.Row="9" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='34' x:Name="img_R215_1" Grid.Column="30" Grid.Row="9" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R214-->
-				<Image x:ConnectionId='34' x:Name="img_R214_1" Grid.Column="29" Grid.Row="8" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='35' x:Name="img_R214_2" Grid.Column="29" Grid.Row="6" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='36' x:Name="img_R214_3" Grid.Column="30" Grid.Row="5" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='35' x:Name="img_R214_1" Grid.Column="29" Grid.Row="8" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='36' x:Name="img_R214_2" Grid.Column="29" Grid.Row="6" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='37' x:Name="img_R214_3" Grid.Column="30" Grid.Row="5" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R211-->
-				<Image x:ConnectionId='37' x:Name="img_rOptional_10_11" Grid.Column="29" Grid.Row="4" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='38' x:Name="img_rOptional_10_11" Grid.Column="29" Grid.Row="4" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R213-->
-				<Image x:ConnectionId='38' x:Name="img_R213_1" Grid.Column="30" Grid.Row="3" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='39' x:Name="img_R213_1" Grid.Column="30" Grid.Row="3" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R210-->
-				<Image x:ConnectionId='39' x:Name="img_rOptional_10_12" Grid.Column="29" Grid.Row="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='40' x:Name="img_rOptional_10_12" Grid.Column="29" Grid.Row="2" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--R212-->
-				<Image x:ConnectionId='40' x:Name="img_R212_1" Grid.Column="30" Grid.Row="1" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='41' x:Name="img_R212_1" Grid.Column="30" Grid.Row="1" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R221-->
-				<Image x:ConnectionId='41' x:Name="img_R221_1" Grid.Column="29" Grid.Row="22" Source="Assets/downrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='42' x:Name="img_R221_2" Grid.Column="31" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='43' x:Name="img_rOptional_21_23" Grid.Column="33" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='42' x:Name="img_R221_1" Grid.Column="29" Grid.Row="22" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='43' x:Name="img_R221_2" Grid.Column="31" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='44' x:Name="img_rOptional_21_23" Grid.Column="33" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
 
 				<!--R223-->
-				<Image x:ConnectionId='44' x:Name="img_R223_1" Grid.Column="34" Grid.Row="24" Grid.ColumnSpan="2" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='45' x:Name="img_R223_1" Grid.Column="34" Grid.Row="24" Grid.ColumnSpan="2" Source="Assets/downrow.png" Stretch="Uniform"/>
 
 				<!--R222-->
-				<Image x:ConnectionId='45' x:Name="img_R222_1" Grid.Column="35" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='46' x:Name="img_R222_2" Grid.Column="37" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='47' x:Name="img_R222_3" Grid.Column="39" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='48' x:Name="img_R222_4" Grid.Column="41" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='49' x:Name="img_R222_5" Grid.Column="43" Grid.Row="23" Grid.RowSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='46' x:Name="img_R222_1" Grid.Column="35" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='47' x:Name="img_R222_2" Grid.Column="37" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='48' x:Name="img_R222_3" Grid.Column="39" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='49' x:Name="img_R222_4" Grid.Column="41" Grid.Row="23" Grid.RowSpan="2" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:ConnectionId='50' x:Name="img_R222_5" Grid.Column="43" Grid.Row="23" Grid.RowSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--Buttons-->
-				<Button x:ConnectionId='50' x:Name="btn_R201" Content="R201" Grid.Column="5" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='51' x:Name="btn_R202" Content="R202" Grid.Column="0" Grid.Row="20" Grid.RowSpan="4" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='52' x:Name="btn_R203" Content="R203" Grid.Column="9" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='53' x:Name="btn_R204" Content="R204" Grid.Column="8" Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='54' x:Name="btn_R205" Content="R205" Grid.Column="8" Grid.Row="10" Grid.RowSpan="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='55' x:Name="btn_R206" Content="R206" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='56' x:Name="btn_R207" Content="R207" Grid.Column="8" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='57' x:Name="btn_R208" Content="R208" Grid.Column="8" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='58' x:Name="btn_R209" Content="R209" Grid.Column="15" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='59' x:Name="btn_R210" Content="R210" Grid.Column="25" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='60' x:Name="btn_R211" Content="R211" Grid.Column="25" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='61' x:Name="btn_R212" Content="R212" Grid.Column="31" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='62' x:Name="btn_R213" Content="R213" Grid.Column="31" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='63' x:Name="btn_R214" Content="R214" Grid.Column="31" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='64' x:Name="btn_R215" Content="R215" Grid.Column="31" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='65' x:Name="btn_R216" Content="R216" Grid.Column="31" Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='66' x:Name="btn_R217" Content="R217" Grid.Column="31" Grid.Row="11" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='67' x:Name="btn_R218" Content="R218" Grid.Column="31" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='68' x:Name="btn_R219" Content="R219" Grid.Column="31" Grid.Row="15" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='69' x:Name="btn_R220" Content="R220" Grid.Column="31" Grid.Row="17" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='70' x:Name="btn_R221" Content="R221" Grid.Column="31" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='71' x:Name="btn_R222" Content="R222" Grid.Column="39" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
-				<Button x:ConnectionId='72' x:Name="btn_R223" Content="R223" Grid.Column="31" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    />
+				<Button x:ConnectionId='51' x:Name="btn_R201" Grid.Column="5" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R101" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='52' x:Name="btn_R202" Grid.Column="0" Grid.Row="20" Grid.RowSpan="4" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R202" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='53' x:Name="btn_R203" Grid.Column="9" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                     >
+					<TextBlock Text="R203" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='54' x:Name="btn_R204" Grid.Column="8" Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R204" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='55' x:Name="btn_R205" Grid.Column="8" Grid.Row="10" Grid.RowSpan="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R205" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='56' x:Name="btn_R206" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R206" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='57' x:Name="btn_R207" Grid.Column="8" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R207" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='58' x:Name="btn_R208" Grid.Column="8" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R208" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='59' x:Name="btn_R209" Grid.Column="15" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R209" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='60' x:Name="btn_R210" Grid.Column="25" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R210" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='61' x:Name="btn_R211" Grid.Column="25" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R211" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='62' x:Name="btn_R212" Grid.Column="31" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R212" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='63' x:Name="btn_R213" Grid.Column="31" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R213" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='64' x:Name="btn_R214" Grid.Column="31" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R214" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='65' x:Name="btn_R215" Grid.Column="31" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R215" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='66' x:Name="btn_R216" Grid.Column="31" Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R216" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='67' x:Name="btn_R217" Grid.Column="31" Grid.Row="11" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R217" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='68' x:Name="btn_R218" Grid.Column="31" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R218" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='69' x:Name="btn_R219" Grid.Column="31" Grid.Row="15" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R219" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='70' x:Name="btn_R220" Grid.Column="31" Grid.Row="17" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R220" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='71' x:Name="btn_R221" Grid.Column="31" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R221" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='72' x:Name="btn_R222" Grid.Column="39" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R222" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:ConnectionId='73' x:Name="btn_R223" Grid.Column="31" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
+					<TextBlock Text="R223" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
 			</Grid>
 
 			<Grid Grid.Row="1" Grid.Column="0">

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +14,7 @@ namespace BinanKiosk.Models
         public string Job_Description { get; set; }
         public string Job_Location { get; set; }
         public string Job_Company { get; set; }
-    }
+		public string job_Image_Path { get; set; }
+		public string logo_Image_Path { get; set; }
+	}
 }

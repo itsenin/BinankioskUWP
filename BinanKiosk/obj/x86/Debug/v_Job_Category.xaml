@@ -6,131 +6,199 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    mc:Ignorable="d"                     >
+    mc:Ignorable="d"                      NavigationCacheMode="Enabled">
 
-    <Page.Resources>
-        <DataTemplate x:Key="DataTemplate">
-            <Grid
+	<Page.Resources>
+		<DataTemplate x:Key="DataTemplate">
+			<Grid
                 Background="Transparent"
                 BorderBrush="Transparent">
-                <Image
-                    Source="ms-appx:///Assets//button1.png"
-                    Stretch="Fill"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center" />
-                <TextBlock HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
-                           Text="{Binding Job_Name}"  Style="{StaticResource BaseTextBlockStyle}"
-                           FontFamily="Arial Narrow" FontWeight="Bold" FontSize="22" Foreground="White"
-                           VerticalAlignment="Center" Name="HAHAHA"/>
-            </Grid>
-        </DataTemplate>
-    </Page.Resources>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.1*"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="0.1*"/>
+				</Grid.ColumnDefinitions>
+				<Border x:Name="Row_Border" BorderBrush="Black" Background="Transparent" BorderThickness="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="10">
+					<Grid Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition Height="0.2*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions >
+							<ColumnDefinition Width="0.05*"/>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition Width="0.05*"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock HorizontalAlignment="Center" TextWrapping="WrapWholeWords"
+                           Text="{Binding job_Category.Job_Name}"  Style="{StaticResource BaseTextBlockStyle}"
+                           FontFamily="Arial Narrow" FontWeight="Bold" FontSize="20s" Foreground="Black"
+                           VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2"/>
+						<Border BorderBrush="Black" Background="Transparent" BorderThickness="0,2,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+						<Button x:ConnectionId='2' x:Name="bt_Job_Category" Background="Transparent" Content="{Binding Job_List}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"                                />
+						<Button x:Name="bt_Locate" Background="Transparent" Content="{Binding Locate}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Grid>
+				</Border>
+			</Grid>
+		</DataTemplate>
+	</Page.Resources>
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".3*"/>
-            <RowDefinition Height="4.1*"/>
-            <RowDefinition Height=".6*"/>
-        </Grid.RowDefinitions>
+	<Grid x:ConnectionId='3' x:Name="MyGrid" Background="White"                       >
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".3*"/>
+			<RowDefinition Height="4.1*"/>
+			<RowDefinition Height=".6*"/>
+		</Grid.RowDefinitions>
+		<Image x:ConnectionId='4' Canvas.ZIndex="1" x:Name="MyImage" Source="ms-appx:///Assets/ripple.gif" Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed" Grid.RowSpan="3"/>
+		<!--Background-->
+		<Image Source="Assets/bglb.jpg" Stretch="Fill" Grid.Row="1"></Image>
 
-        <!--Background-->
-        <Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+		<!--Uppermenu-->
+		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/uppermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <!--Uppermenu-->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/uppermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="4.1*"/>
+				<ColumnDefinition Width=".2*"/>
+				<ColumnDefinition Width=".3*"/>
+			</Grid.ColumnDefinitions>
+			<SymbolIcon Symbol="Page2" Foreground="White" Grid.Column="0"/>
+			<TextBlock x:ConnectionId='15' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SERVICES"/>
+			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
+			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
+		</Grid>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="4.1*"/>
-                <ColumnDefinition Width=".2*"/>
-                <ColumnDefinition Width=".3*"/>
-            </Grid.ColumnDefinitions>
-            <SymbolIcon Symbol="BrowsePhotos" Foreground="White" Grid.Column="0"/>
-            <TextBlock x:ConnectionId='9' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOBS"/>
-            <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
-            <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
-        </Grid>
+		<Rectangle VerticalAlignment="Stretch" Grid.Row="2">
+			<Rectangle.Fill>
+				<ImageBrush ImageSource="Assets/undermenu.png" />
+			</Rectangle.Fill>
+		</Rectangle>
 
-        <Rectangle VerticalAlignment="Stretch" Grid.Row="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Assets/undermenu.png" />
-            </Rectangle.Fill>
-        </Rectangle>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width=".35*"/>
+				<ColumnDefinition Width=".5*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width=".3*"/>
+				<ColumnDefinition Width=".1*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".35*"/>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width=".3*"/>
-                <ColumnDefinition Width=".1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
+			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
+			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='9' x:Name="Searchbtn" Icon="Zoom" Label="Search"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='10' x:Name="Mapbtn" Icon="Map" Label="Maps"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='11' x:Name="Servicesbtn" Icon="Page2" Label="Services"                             FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='12' x:Name="Jobsbtn" Icon="BrowsePhotos" Background="#1f7d1f" Label="Job Categories"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:ConnectionId='13' x:Name="Eventbtn" Icon="Calendar" Label="Upcoming Events"                          FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<TextBlock x:ConnectionId='14' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+		</Grid>
 
-            <AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='3' x:Name="Homebtn" Icon="Home" Label="Home"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
-            <AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='4' x:Name="Searchbtn" Icon="Zoom" Label="Search"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
-            <AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='5' x:Name="Mapbtn" Icon="Map" Label="Maps"                      FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='6' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
-            <AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-            <AppBarButton x:ConnectionId='7' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Jobs"                       Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
-            <AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-            <TextBlock x:ConnectionId='8' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
-        </Grid>
-        <Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.07*"/>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="0.07*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0.1*"/>
+				<RowDefinition Height="5.8*"/>
+				<RowDefinition Height="0.1*"/>
+			</Grid.RowDefinitions>
+			<Image Source="Assets/box.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1"/>
 
 
-        <Grid Grid.Row="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width=".5*"/>
-                </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="4.5*"/>
-                    <RowDefinition Height=".5*"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Job Category" FontSize="40" FontFamily="Arial Narrow" FontWeight="Bold"></TextBlock>
-                <!--Here are the properties of the Item that will be populated-->
+			<!--Leftbutton-->
+			<Button x:ConnectionId='5' x:Name="Left" VerticalAlignment="Stretch" Grid.Column="0" Grid.Row="1"                     >
+				<Image Source="Assets/rightarrow.png" Stretch="Uniform"/>
+			</Button>
 
-                <controls:AdaptiveGridView x:ConnectionId='2' Name="AdaptiveGridViewControl"
-                                       OneRowModeEnabled="False"
-                                       Grid.Row="1"
-                                       Grid.Column="1"
-                                       ItemHeight="85"
-                                       DesiredWidth="310"
-                                       SelectionMode="Single"
-                                       IsItemClickEnabled="True"
-                                                                                    
-                                       ItemTemplate="{StaticResource DataTemplate}"
-                                       >
-                </controls:AdaptiveGridView>
-            </Grid>
-        </Grid>
-    </Grid>
+			<!--Righttbutton-->
+			<Button x:ConnectionId='6' x:Name="Right" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1"                      >
+				<Image Source="Assets/leftarrow.png" Stretch="Uniform"/>
+			</Button>
+			<Grid Grid.Column="1" Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<controls:AdaptiveGridView x:ConnectionId='7' x:Name="AdaptiveGridViewControl"
+                                   OneRowModeEnabled="False"
+                                   ItemHeight="210"
+                                   DesiredWidth="400"
+                                   SelectionMode="Single"
+                                   IsItemClickEnabled="False"                                        
+                                   Grid.Column="1"
+                                   Grid.Row="3"
+                                   Grid.ColumnSpan="18"
+                                   Grid.RowSpan="13"    
+                                   ItemTemplate="{StaticResource DataTemplate}" StretchContentForSingleRow="False"
+                                   >
+				</controls:AdaptiveGridView>
+
+				<TextBlock x:ConnectionId='8' x:Name="tb_PageNum" FontFamily="Arial Narrow" FontWeight="Bold" FontSize="20" Foreground="Gray" Text="PAGE 1/3" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="16" Grid.Column="9" Grid.ColumnSpan="2"/>
+			</Grid>
+		</Grid>
+	</Grid>
 </Page>
- 
 

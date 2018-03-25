@@ -165,16 +165,16 @@
 			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Source="Assets/binanlogo.png" Grid.Column="0" Margin="0,10,3.5,4"/>
 			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
-			<AppBarSeparator Grid.Column="2" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:Name="Homebtn" Icon="Home" Label="Home" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="Homebtn_Click"/>
 			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:Name="Searchbtn"  Icon="Zoom" Label="Search" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="Searchbtn_Click"/>
+			<AppBarButton x:Name="Searchbtn" Icon="Zoom" Label="Search" Click="Searchbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:Name="Mapbtn"  Icon="Map" Label="Maps" FontWeight="Bold" Background="#1f7d1f" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="Mapbtn_Click"/>
+			<AppBarButton x:Name="Mapbtn" Icon="Map" Label="Maps" Click="Mapbtn_Click" Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:Name="Servicesbtn"  Icon="Page2" Label="Services" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="Servicesbtn_Click"/>
+			<AppBarButton x:Name="Servicesbtn" Icon="Page2" Label="Services" Click="Servicesbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton  x:Name="Jobsbtn"  Icon="BrowsePhotos" Label="Jobs" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" Click="Jobsbtn_Click"/>
+			<AppBarButton x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Job Categories" Click="Jobsbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
+			<AppBarButton x:Name="Eventbtn" Icon="Calendar" Label="Upcoming Events" Click="Eventbtn_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
 			<TextBlock x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
 		</Grid>
@@ -274,7 +274,9 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-
+				<!--STAIRS TO 3F-->
+				<Image x:Name="img_Stairs_3f_1" Grid.Column="19" Grid.Row="20" Source="Assets/rightrow.png" Stretch="Uniform"/>
+				<Image x:Name="img_Stairs_3f_2" Grid.Column="20" Grid.Row="19" Source="Assets/uprow.png" Stretch="Uniform"/>
 				<!--LEFT SIDE-->
 				<Image x:Name="img_LeftBase_1" Grid.Column="17" Grid.Row="21" Grid.ColumnSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
 				<Image x:Name="img_LeftBase_2" Grid.Column="16" Grid.Row="20" Source="Assets/leftrow.png" Stretch="Uniform"/>
@@ -283,7 +285,6 @@
 				<Image x:Name="img_r201_202_203_1" Grid.Column="15" Grid.Row="22" Source="Assets/downrow.png" Stretch="Uniform"/>
 				<Image x:Name="img_r201_202_203_2" Grid.Column="15" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
 				<Image x:Name="img_r201_202_203_3" Grid.Column="13" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:Name="img_r201_202_203_4" Grid.Column="13" Grid.Row="24" Source="Assets/leftrow.png" Stretch="Uniform"/>
 				<Image x:Name="img_rOptional_1_3" Grid.Column="11" Grid.Row="24" Source="Assets/uprow.png" Stretch="Uniform"/>
 				<Image x:Name="img_rOptional_1_2" Grid.Column="9" Grid.Row="24" Source="Assets/downrow.png" Stretch="Uniform"/>
 
@@ -366,29 +367,75 @@
 				<Image x:Name="img_R222_5" Grid.Column="43" Grid.Row="23" Grid.RowSpan="2" Source="Assets/uprow.png" Stretch="Uniform"/>
 
 				<!--Buttons-->
-				<Button x:Name="btn_R201" Content="R201" Grid.Column="5" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R202" Content="R202" Grid.Column="0" Grid.Row="20" Grid.RowSpan="4" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R203" Content="R203" Grid.Column="9" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R204" Content="R204" Grid.Column="8" Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R205" Content="R205" Grid.Column="8" Grid.Row="10" Grid.RowSpan="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R206" Content="R206" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R207" Content="R207" Grid.Column="8" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R208" Content="R208" Grid.Column="8" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R209" Content="R209" Grid.Column="15" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R210" Content="R210" Grid.Column="25" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R211" Content="R211" Grid.Column="25" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R212" Content="R212" Grid.Column="31" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R213" Content="R213" Grid.Column="31" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R214" Content="R214" Grid.Column="31" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R215" Content="R215" Grid.Column="31" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R216" Content="R216" Grid.Column="31" Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R217" Content="R217" Grid.Column="31" Grid.Row="11" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R218" Content="R218" Grid.Column="31" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R219" Content="R219" Grid.Column="31" Grid.Row="15" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R220" Content="R220" Grid.Column="31" Grid.Row="17" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R221" Content="R221" Grid.Column="31" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R222" Content="R222" Grid.Column="39" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
-				<Button x:Name="btn_R223" Content="R223" Grid.Column="31" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" />
+				<Button x:Name="btn_R201" Grid.Column="5" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R101" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R202" Grid.Column="0" Grid.Row="20" Grid.RowSpan="4" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R202" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R203" Grid.Column="9" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click"  >
+					<TextBlock Text="R203" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R204" Grid.Column="8" Grid.Row="14" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R204" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R205" Grid.Column="8" Grid.Row="10" Grid.RowSpan="4" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R205" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R206" Grid.Column="8" Grid.Row="8" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R206" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R207" Grid.Column="8" Grid.Row="6" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R207" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R208" Grid.Column="8" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R208" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R209" Grid.Column="15" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R209" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R210" Grid.Column="25" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R210" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R211" Grid.Column="25" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R211" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R212" Grid.Column="31" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R212" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R213" Grid.Column="31" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R213" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R214" Grid.Column="31" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R214" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R215" Grid.Column="31" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R215" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R216" Grid.Column="31" Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R216" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R217" Grid.Column="31" Grid.Row="11" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R217" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R218" Grid.Column="31" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R218" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R219" Grid.Column="31" Grid.Row="15" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R219" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R220" Grid.Column="31" Grid.Row="17" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R220" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R221" Grid.Column="31" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R221" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R222" Grid.Column="39" Grid.Row="20" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R222" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
+				<Button x:Name="btn_R223" Grid.Column="31" Grid.Row="25" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent" Click="Room_Click" >
+					<TextBlock Text="R223" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				</Button>
 			</Grid>
 
 			<Grid Grid.Row="1" Grid.Column="0">

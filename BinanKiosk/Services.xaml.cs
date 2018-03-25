@@ -1,5 +1,8 @@
+using BinanKiosk.Enums;
 using BinanKiosk.Models;
 using BinanKiosk.Repository;
+using BinanKiosk.Service_Folder;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,20 +28,40 @@ namespace BinanKiosk
 	/// </summary>
 	public sealed partial class Services : Page
 	{
-		private IList<Service> postsList = new List<Service>(); //Given List
-		private IList<Service> displayPostsList = new List<Service>(); //List to be displayed in ListView
-		int pageIndex = -1;
+		private IList<Service> postsList; //Given List
+		private IList<Service> displayPostsList; //List to be displayed in ListView
+		int pageIndex = 0;
 		int pageSize = 6; //Set the size of the page
 		int totalPage = 0;
-
-		ServiceRepository serviceRepository = new ServiceRepository();
-		DispatcherTimer Timer = new DispatcherTimer();
-		ObservableCollection<Service> items;
-
+		int counter = 0;
+		ServiceRepository serviceRepository;
+		DispatcherTimer Timer;
+		ObservableCollection<BindedItems> items;
+		public class BindedItems
+		{
+			public Service service { get; set; }
+			public string Citizen_Charter { get; set; }
+			public string Locate { get; set; }
+		}
 		public Services()
 		{
 			this.InitializeComponent();
+			
 
+		} //end of Services constructor
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			base.OnNavigatedTo(e);
+			Global.Entrance_Transition(this, E_Transitions.Drilln);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+			postsList = new List<Service>(); //Given List
+			displayPostsList = new List<Service>(); //List to be displayed in ListView
+			pageIndex = 0;
+			pageSize = 6; //Set the size of the page
+			totalPage = 0;
+			counter = 0;
+			serviceRepository = new ServiceRepository();
+			Timer = new DispatcherTimer();
 			//For the time
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
 			Timer.Tick += Timer_Tick;
@@ -46,90 +69,70 @@ namespace BinanKiosk
 			Timer.Start();
 
 			//Instantiation of List of services
-			items = new ObservableCollection<Service>();
+			items = new ObservableCollection<BindedItems>();
 
-			Right_Click(null, null);
 			// Populating the list from the database
 			postsList = serviceRepository.GetAll_Service();
 			totalPage = postsList.Count / 6;
 			AdaptiveGridViewControl.ItemsSource = Service_Populator();
-
-		} //end of Services constructor
-
-		private void Right_Click(object sender, RoutedEventArgs e)
-		{
-			if ((pageIndex + 1) <= totalPage)
-			{
-				pageIndex++;
-				AdaptiveGridViewControl.ItemsSource = Service_Populator();
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
-			}
-
-		}
-
-		private void Left_Click(object sender, RoutedEventArgs e)
-		{
-			if ((pageIndex + totalPage) > totalPage)
-			{
-				pageIndex--;
-				AdaptiveGridViewControl.ItemsSource = Service_Populator();
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
-			}
-
 		}
 		private void Timer_Tick(object sender, object e)
 		{
+			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-		}
-		private void AdaptiveGridViewControl_ItemClick(object sender, ItemClickEventArgs e)
-		{
-			//var _Category = e.ClickedItem as M_Job_Category;
-			//Frame.Navigate(typeof(Services_View), _Category);
-			Frame.Navigate(typeof(Services_View));
-		}
-
-		private void Homebtn_Click(object sender, RoutedEventArgs e)
-		{
-			this.Frame.Navigate(typeof(Home));
+			if (counter >= 7)
+			{
+				Timer.Stop();
+				Frame.Navigate(typeof(Idle_Page));
+			}
 		}
 
-		private void Searchbtn_Click(object sender, RoutedEventArgs e)
+		private async void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
+			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Search));
 		}
 
-		private void Mapbtn_Click(object sender, RoutedEventArgs e)
+		private void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
+			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Map_1f));
 		}
 
-		private void Jobsbtn_Click(object sender, RoutedEventArgs e)
+		private void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			this.Frame.Navigate(typeof(v_Job_Category));
-		}
-
-		private void Servicesbtn_Click(object sender, RoutedEventArgs e)
-		{
+			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Services));
 		}
 
-		private void OrderList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(v_Job_Category));
 		}
 
-
-		private ObservableCollection<Service> Service_Populator()
+		private void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Event));
+		}
+		
+		private ObservableCollection<BindedItems> Service_Populator()
 		{
 			items.Clear();
 			displayPostsList = postsList.Skip(pageIndex * pageSize).Take(pageSize).ToList();
 			//For populating the Adaptive Grid View
 			foreach (var service in displayPostsList)
 			{
-				items.Add(new Service()
+				items.Add(new BindedItems()
 				{
-					Service_ID = service.Service_ID,
-					Service_Name = service.Service_Name
+					service = new Service {
+						Service_ID = service.Service_ID,
+						Service_Name = service.Service_Name,
+						Image_Path = service.Image_Path},
+					Citizen_Charter = "Citizen Charter",
+					Locate = "Locate"
+					
 				});
 			}
 			return items;
@@ -147,6 +150,57 @@ namespace BinanKiosk
 				MainTitle.Text = "MGA SERBISYO";
 			}
 			tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+		}
+
+		private async void bt_CitizenCharter_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			var bindedItems = (sender as Button).DataContext as BindedItems;
+			this.Frame.Navigate(typeof(Services_View), bindedItems.service);
+		}
+
+		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+
+		private async void Left_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if ((pageIndex + totalPage) > totalPage)
+			{
+				pageIndex--;
+				AdaptiveGridViewControl.ItemsSource = Service_Populator();
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			}
+		}
+
+		private async void Right_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if ((pageIndex + 1) <= totalPage)
+			{
+				pageIndex++;
+				AdaptiveGridViewControl.ItemsSource = Service_Populator();
+
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			}
+		}
+
+		private async void AdaptiveGridViewControl_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			counter = 0;
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+		}
+		private async void Goto_OtherForm(TappedRoutedEventArgs e)
+		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}
 	}
 }

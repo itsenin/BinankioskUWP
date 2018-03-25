@@ -1,4 +1,4 @@
-﻿using BinanKiosk.Models;
+using BinanKiosk.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,44 +19,27 @@ namespace BinanKiosk.Repository
         public IList<Official> GetAll_Official()
         {
             IList<Official> officials = new List<Official>();
-            query = @"SELECT Officials_ID,First_Name,Last_Name,Middle_Initial,Suffex,positions.Position_ID,position_name,departments.Department_ID,Department_Name,Dep_Description,floors.Room_ID,Room_Label "+
-                "from officials,positions,departments,floors where officials.position_id = positions.position_ID and officials.department_ID = departments.department_ID and departments.room_ID = floors.room_ID";
+            query = @"SELECT Officials_ID,First_Name,Last_Name,Middle_Initial,Suffex,officials.Image_Path, "+
+				"positions.Position_ID,position_name, "+
+				"departments.Department_ID,Department_Name,Dep_Description, Department_Image_Path, "+
+				"offices.Office_ID, Office_Name, Room_Name "+
+                "from officials,positions,departments,offices "+
+				"where officials.position_id = positions.position_ID and officials.office_ID = offices.office_ID and departments.department_id = offices.department_id";
             Objects = Get(query, null);
-            for (int i = 0; i < (Objects.Count / 12); i++)
+            for (int i = 0; i < (Objects.Count / 15); i++)
             {
-                officials.Add(new Official { Officials_ID = Int32.Parse(Objects[i * 12].ToString()),
-                    First_Name = Objects[1 + (i * 12)].ToString(), Middle_Initial = Objects[3 + (i * 12)].ToString(), Last_Name = Objects[2 + (i * 12)].ToString(), Suffix = Objects[4 + (i * 12)].ToString() ,
-                    position = new Position { Position_ID = int.Parse(Objects[5 + (i * 12)].ToString()), Position_Name = Objects[6 + (i * 12)].ToString() },
-                    department = new Department { Department_ID = int.Parse(Objects[7 + (i * 12)].ToString()), Department_Name = Objects[8 + (i * 12)].ToString(), Department_Description = Objects[9 + (i * 12)].ToString(),
-                    Room = new Floor { Room_ID = Objects[10 + (i * 12)].ToString(), Room_Label = Objects[11 + (i * 12)].ToString() }},
+                officials.Add(new Official { Officials_ID = Int32.Parse(Objects[i * 15].ToString()),
+					First_Name = Objects[1 + (i * 15)].ToString(),
+					Last_Name = Objects[2 + (i * 15)].ToString(),
+					Middle_Initial = Objects[3 + (i * 15)].ToString(),
+					Suffix = Objects[4 + (i * 15)].ToString(),
+					Image_Path = Objects[5 + (i * 15)].ToString(),
+					office = new Office { Office_ID = int.Parse(Objects[12 + (i * 15)].ToString()), Office_Name = Objects[13 + (i * 15)].ToString(), Room_Name = Objects[14 + (i * 15)].ToString(),
+						department = new Department { Department_ID = int.Parse(Objects[8 + (i * 15)].ToString()), Department_Name = Objects[9 + (i * 15)].ToString(), Department_Description = Objects[10 + (i * 15)].ToString(), Department_Image_Path = Objects[11 + (i * 15)].ToString() }},
+					position = new Position { Position_ID = int.Parse(Objects[6 + (i * 15)].ToString()), Position_Name = Objects[7 + (i * 15)].ToString() }
                     });
             }
             return officials;
-        }
-
-        public Official Get_Official(string Department_Name)
-        {
-            query = @"SELECT Officials_ID,First_Name,Last_Name,Middle_Initial,Suffex,positions.Position_ID,position_name,departments.Department_ID,Department_Name,Dep_Description,floors.Room_ID,Room_Label " +
-                "from officials,positions,departments,floors where officials.position_id = positions.position_ID and officials.department_ID = departments.department_ID and departments.room_ID = floors.room_ID and Department_Name = ?Department_Name";
-            myDictionaryData = new Dictionary<string, Object>() { { "?Department_Name", Department_Name } };
-            Objects = Get(query, myDictionaryData);
-            return new Official
-            {
-                Officials_ID = Int32.Parse(Objects[0].ToString()),
-                First_Name = Objects[1].ToString(),
-                Middle_Initial = Objects[3].ToString(),
-                Last_Name = Objects[2].ToString(),
-                Suffix = Objects[4].ToString(),
-                position = new Position { Position_ID = int.Parse(Objects[5].ToString()), Position_Name = Objects[6].ToString() },
-                department = new Department
-                {
-                    Department_ID = int.Parse(Objects[7].ToString()),
-                    Department_Name = Objects[8].ToString(),
-                    Department_Description = Objects[9].ToString(),
-                    Room = new Floor { Room_ID = Objects[10].ToString(), Room_Label = Objects[11].ToString() }
-                },
-            };
-
         }
     }
 }

@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F0F386319322D4EB4A557457C573DF69CED721A09D77629821814409771FC7ED</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>D2F630BD0A794E372BCAE576AD8E20CF678E63036965C8BF5C485891D10A1EF4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>469bbf1a-be74-4dd1-8f4a-8edd701d3432_1.0.0.0_x86__fwf5xj32wshra</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>469bbf1a-be74-4dd1-8f4a-8edd701d3432_fwf5xj32wshra!App</RegisteredUserModeAppID>
     <RegisteredPackageID>469bbf1a-be74-4dd1-8f4a-8edd701d3432</RegisteredPackageID>
@@ -31,13 +31,25 @@
     <AppXManifest Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-13T16:33:51.171</Modified>
+      <Modified>2018-03-25T17:35:22.579</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
-      <Modified>2018-03-13T16:33:45.808</Modified>
+      <Modified>2018-03-25T17:35:20.433</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\runtimes\win10-x86\native\Lumia.Imaging.dll">
+      <PackagePath>Lumia.Imaging.dll</PackagePath>
+      <Modified>2015-09-18T06:24:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\runtimes\win10-x86\native\Lumia.InteropServices.WindowsRuntime.dll">
+      <PackagePath>Lumia.InteropServices.WindowsRuntime.dll</PackagePath>
+      <Modified>2015-09-18T06:24:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.Imaging.Managed.dll">
+      <PackagePath>Lumia.Imaging.Managed.dll</PackagePath>
+      <Modified>2015-09-18T06:24:06.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -563,9 +575,17 @@
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2017-06-25T19:01:44.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\MySql.Data.RT.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll">
       <PackagePath>MySql.Data.RT.dll</PackagePath>
-      <Modified>2018-03-12T14:17:01.997</Modified>
+      <Modified>2015-09-23T13:51:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.Imaging.winmd">
+      <PackagePath>Lumia.Imaging.winmd</PackagePath>
+      <Modified>2015-09-18T06:24:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\lib\uap10.0\Lumia.InteropServices.WindowsRuntime.winmd">
+      <PackagePath>Lumia.InteropServices.WindowsRuntime.winmd</PackagePath>
+      <Modified>2015-09-18T06:24:06.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\robmikh.compositionsurfacefactory\0.7.3\lib\uap10.0\Robmikh.CompositionSurfaceFactory.winmd">
       <PackagePath>Robmikh.CompositionSurfaceFactory.winmd</PackagePath>
@@ -638,6 +658,10 @@
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\leftrow.png">
       <PackagePath>Assets\leftrow.png</PackagePath>
       <Modified>2018-03-12T14:34:13.856</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Find_btn.png">
+      <PackagePath>Assets\Find_btn.png</PackagePath>
+      <Modified>2018-03-21T16:12:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\logobinan.png">
       <PackagePath>Assets\logobinan.png</PackagePath>
@@ -721,6 +745,26 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-03-12T14:34:09.737</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Ripple.gif">
+      <PackagePath>Assets\Ripple.gif</PackagePath>
+      <Modified>2018-03-24T13:17:47.741</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tap.gif">
+      <PackagePath>Assets\tap.gif</PackagePath>
+      <Modified>2018-03-12T14:34:14.798</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tapping.gif">
+      <PackagePath>Assets\tapping.gif</PackagePath>
+      <Modified>2018-03-12T14:34:14.913</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomIN.gif">
+      <PackagePath>Assets\zoomIN.gif</PackagePath>
+      <Modified>2018-03-12T14:34:10.848</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomout.gif">
+      <PackagePath>Assets\zoomout.gif</PackagePath>
+      <Modified>2018-03-12T14:34:11.179</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\Biñan_City_Hall.jpg">
       <PackagePath>Assets\Biñan_City_Hall.jpg</PackagePath>
       <Modified>2018-03-12T14:34:12.615</Modified>
@@ -741,29 +785,13 @@
       <PackagePath>Assets\Slides\13.jpg</PackagePath>
       <Modified>2018-03-12T14:16:59.708</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tap.gif">
-      <PackagePath>Assets\tap.gif</PackagePath>
-      <Modified>2018-03-12T14:34:14.798</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\tapping.gif">
-      <PackagePath>Assets\tapping.gif</PackagePath>
-      <Modified>2018-03-12T14:34:14.913</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomIN.gif">
-      <PackagePath>Assets\zoomIN.gif</PackagePath>
-      <Modified>2018-03-12T14:34:10.848</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\zoomout.gif">
-      <PackagePath>Assets\zoomout.gif</PackagePath>
-      <Modified>2018-03-12T14:34:11.179</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-03-12T14:16:59.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.xr.xml">
       <PackagePath>BinanKiosk.xr.xml</PackagePath>
-      <Modified>2018-03-13T16:01:53.358</Modified>
+      <Modified>2018-03-25T15:11:43.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -920,11 +948,11 @@
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-13T16:33:47.871</Modified>
+      <Modified>2018-03-25T17:26:57.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
       <PackagePath>BinanKiosk.exe</PackagePath>
-      <Modified>2018-03-13T16:33:51.164</Modified>
+      <Modified>2018-03-25T17:35:22.569</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.10586": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win10-arm/native/Lumia.Imaging.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-arm/native/Lumia.InteropServices.WindowsRuntime.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/native/Lumia.Imaging.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x64/native/Lumia.InteropServices.WindowsRuntime.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/Lumia.Imaging.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win10-x86/native/Lumia.InteropServices.WindowsRuntime.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2550,6 +2589,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-arm": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-arm/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-arm/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5109,6 +5165,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-arm-aot": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-arm/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-arm/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7704,6 +7777,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x64": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-x64/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-x64/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -10272,6 +10362,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x64-aot": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-x64/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-x64/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -12876,6 +12983,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x86": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-x86/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-x86/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -15444,6 +15568,23 @@
       }
     },
     "UAP,Version=v10.0.10586/win10-x86-aot": {
+      "LumiaImagingSDK.UWP/3.0.593": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Lumia.Imaging.Managed.dll": {},
+          "lib/uap10.0/Lumia.Imaging.winmd": {},
+          "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd": {}
+        },
+        "native": {
+          "runtimes/win10-x86/native/Lumia.Imaging.dll": {},
+          "runtimes/win10-x86/native/Lumia.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -18049,6 +18190,31 @@
     }
   },
   "libraries": {
+    "LumiaImagingSDK.UWP/3.0.593": {
+      "sha512": "UpEuihajg3V/hRKnkWW9LevQgPKO9BjRhF0tTrJCnmXkAWupN5zNiQyk4ySiyaGCsl+zf1dfYQuZqNu0jBasJw==",
+      "type": "package",
+      "path": "lumiaimagingsdk.uwp/3.0.593",
+      "files": [
+        "REDIST.TXT",
+        "build/native/LumiaImagingSDK.UWP.targets",
+        "lib/uap10.0/Lumia.Imaging.Managed.XML",
+        "lib/uap10.0/Lumia.Imaging.Managed.dll",
+        "lib/uap10.0/Lumia.Imaging.winmd",
+        "lib/uap10.0/Lumia.Imaging.xml",
+        "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.winmd",
+        "lib/uap10.0/Lumia.InteropServices.WindowsRuntime.xml",
+        "license.md",
+        "lumiaimagingsdk.uwp.3.0.593.nupkg.sha512",
+        "lumiaimagingsdk.uwp.nuspec",
+        "readme.txt",
+        "runtimes/win10-arm/native/Lumia.Imaging.dll",
+        "runtimes/win10-arm/native/Lumia.InteropServices.WindowsRuntime.dll",
+        "runtimes/win10-x64/native/Lumia.Imaging.dll",
+        "runtimes/win10-x64/native/Lumia.InteropServices.WindowsRuntime.dll",
+        "runtimes/win10-x86/native/Lumia.Imaging.dll",
+        "runtimes/win10-x86/native/Lumia.InteropServices.WindowsRuntime.dll"
+      ]
+    },
     "Microsoft.CSharp/4.3.0": {
       "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
       "type": "package",
@@ -24833,6 +24999,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "LumiaImagingSDK.UWP >= 3.0.593",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Microsoft.Toolkit.Uwp >= 2.1.1",
       "Microsoft.Toolkit.Uwp.UI >= 2.1.1",
@@ -24868,6 +25035,7 @@
       }
     },
     "dependencies": {
+      "LumiaImagingSDK.UWP": "[3.0.593, )",
       "Microsoft.NETCore.UniversalWindowsPlatform": "[5.2.2, )",
       "Microsoft.Toolkit.Uwp": "[2.1.1, )",
       "Microsoft.Toolkit.Uwp.UI": "[2.1.1, )",

@@ -96,12 +96,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Department_Result.xaml.cs">
-      <DependentUpon>Department_Result.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Enums\Categories.cs" />
+    <Compile Include="Enums\E_Transitions.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="Event.xaml.cs">
+      <DependentUpon>Event.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Idle_Page.xaml.cs">
+      <DependentUpon>Idle_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Job_View.xaml.cs">
       <DependentUpon>Job_View.xaml</DependentUpon>
@@ -122,7 +124,8 @@
       <DependentUpon>Map_3f.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\Floor.cs" />
+    <Compile Include="Models\Office.cs" />
+    <Compile Include="Models\Home_Slider.cs" />
     <Compile Include="Models\M_Job_Category.cs" />
     <Compile Include="Models\M_Job_Type.cs" />
     <Compile Include="Models\Official.cs" />
@@ -130,23 +133,38 @@
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Official_Result.xaml.cs">
-      <DependentUpon>Official_Result.xaml</DependentUpon>
+    <Compile Include="Office_Search_View.xaml.cs">
+      <DependentUpon>Office_Search_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Official_Search_View.xaml.cs">
+      <DependentUpon>Official_Search_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DepartmentRepository.cs" />
+    <Compile Include="Repository\EventRepository.cs" />
+    <Compile Include="Repository\Items.cs" />
     <Compile Include="Repository\JobRepository.cs" />
+    <Compile Include="Repository\OfficeRepository.cs" />
     <Compile Include="Repository\OfficialRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\ServiceRepository.cs" />
+    <Compile Include="Sample_Ripple2.xaml.cs">
+      <DependentUpon>Sample_Ripple2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services.xaml.cs">
       <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service_Folder\ServiceClientWrapper.cs" />
+    <Compile Include="Service_Folder\ServiceRequest.cs" />
+    <Compile Include="Service_Folder\ServiceResponse.cs" />
     <Compile Include="Services_View.xaml.cs">
       <DependentUpon>Services_View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service_Search_View.xaml.cs">
+      <DependentUpon>Service_Search_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="v_Job_Category.xaml.cs">
       <DependentUpon>v_Job_Category.xaml</DependentUpon>
@@ -163,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\2nd_Floor_HD.png" />
+    <Content Include="Assets\Ripple.gif" />
     <Content Include="Assets\3rd Floor.PNG" />
     <Content Include="Assets\3rd_Floor_HD.png" />
     <Content Include="Assets\bgblue.png" />
@@ -180,6 +199,7 @@
     <Content Include="Assets\groundfloornew.png" />
     <Content Include="Assets\leftarrow.png" />
     <Content Include="Assets\leftrow.png" />
+    <Content Include="Assets\Find_btn.png" />
     <Content Include="Assets\logobinan.png" />
     <Content Include="Assets\map_floor_1.png" />
     <Content Include="Assets\rightarrow.png" />
@@ -213,11 +233,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Department_Result.xaml">
+    <Page Include="Event.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Home.xaml">
+    <Page Include="Idle_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,7 +265,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Official_Result.xaml">
+    <Page Include="Office_Search_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Official_Search_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sample_Ripple2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,6 +289,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Service_Search_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="v_Job_Category.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -272,7 +304,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data.RT">
-      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.7.9\Assemblies\RT\MySql.Data.RT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

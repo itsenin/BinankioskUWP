@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,7 @@ namespace BinanKiosk.Models
         public string Last_Name { get; set; }
         public string Suffix { get; set; }
         public Position position { get; set; }
-        public Department department { get; set; }
+		public Office office { get; set; }
+		public string Image_Path { get; set; }
     }
 }
