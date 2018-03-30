@@ -24,8 +24,8 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Language : Page
     {
-		int counter = 0;
 		DispatcherTimer Timer;
+		int counter = 0;
 		public Language()
         {
             this.InitializeComponent();
@@ -44,19 +44,13 @@ namespace BinanKiosk
 		private void Timer_Tick(object sender, object e)
 		{
 			counter += 1;
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
 			}
 
 		}
-        private void FilipinoButton_Click(object sender, RoutedEventArgs e)
-        {
-			Timer.Stop();
-			Global.language = "Filipino";
-            Frame.Navigate(typeof(Search));
-        }
 
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
 		{
@@ -64,19 +58,24 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void btEnglish_Tapped(object sender, TappedRoutedEventArgs e)
+		private void btEnglish_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Stop_Timer(e);
+			Global.language = "English";
 			Frame.Navigate(typeof(Search));
 		}
 
-		private async void btFilipino_Tapped(object sender, TappedRoutedEventArgs e)
+		private void btFilipino_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Global.language = "Filipino";
+			Stop_Timer(e);
 			Frame.Navigate(typeof(Search));
 		}
-		
+		private async void Stop_Timer(TappedRoutedEventArgs e)
+		{
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Timer.Stop();
+			counter = 0;
+		}
 	}
 }

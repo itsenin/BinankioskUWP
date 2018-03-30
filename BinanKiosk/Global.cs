@@ -1,16 +1,10 @@
 using BinanKiosk.Enums;
 using BinanKiosk.Repository;
-using BinanKiosk.Service_Folder;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
-using Windows.Graphics.Imaging;
+using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Xaml;
@@ -18,15 +12,19 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Shapes;
 
 namespace BinanKiosk.Models
 {
 	public class Global
 	{
+		public const int Timeout = 60;
 		public const string BASE_ADDRESS = "http://localhost:8080/api/";
 		public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
 		//public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
 		//Global variable which can be used in any forms;
+		public static DispatcherTimer GlobalTimer = new DispatcherTimer();
+		public static int counter = 0;
 		public static Boolean IsClicked = false;
 		public static string language = "";
 		public enum Room
@@ -39,6 +37,16 @@ namespace BinanKiosk.Models
 		
 		public enum Img_Property { Visible, Collapsed };
 		public enum Button_Property { Enable, Disable };
+		public enum Subfolders
+		{
+			Home,
+			Jobs,
+			Job_Company_Logos,
+			Services,
+			Offices,
+			Officials,
+			Departments
+		}
 
 		public static void Enable_Disable_Button(Button_Property _Property, List<Button> ButtonList)
 		{
@@ -57,7 +65,7 @@ namespace BinanKiosk.Models
 			}
 		}
 
-		public static void Show_Hide_Image(List<Image> StepList, Img_Property _Property)
+		public static void Show_Hide_Image(List<Rectangle> StepList, Img_Property _Property)
 		{
 			foreach (var step in StepList)
 			{
@@ -74,42 +82,19 @@ namespace BinanKiosk.Models
 			}
 		}
 
-		public static BitmapImage AsBitmapImage(byte[] byteArray)
+		private class Config
 		{
-			if (byteArray != null)
-			{
-				using (var stream = new InMemoryRandomAccessStream())
-				{
-					stream.WriteAsync(byteArray.AsBuffer()).GetResults();
-					// I made this one synchronous on the UI thread;
-					// this is not a best practice.
-					var image = new BitmapImage();
-					stream.Seek(0);
-					image.SetSource(stream);
-					return image;
-				}
-			}
-
-			return null;
+			public const string HOST_IP = @"\\192.168.0.3";
+			public const string FOLDER = "SharedFolder";
+			public const string imageRootPath = "Images";
 		}
 
-		public static Picture GetPic(string path)
+		public static string GetImage(Subfolders sub)//get image from source using image name
 		{
-			ServiceClientWrapper client = new ServiceClientWrapper();
-#if DEBUG
-			var Address = Global.BASE_ADDRESS_DEBUG + "Image/GetPicture";
-#else
-            var Address = Global.BASE_ADDRESS + "Image/GetPicture";
-#endif
-			var Params = new Dictionary<string, string>
-			{
-				{ "path", path }
-			};
-
-			var result = client.Send(new ServiceRequest { BaseAddress = Address, HttpProtocol = Protocols.HTTP_GET, RequestParameters = Params });
-			var picture = JsonConvert.DeserializeObject<Picture>(result.Response);
-
-			return picture;
+			return System.IO.Path.Combine(Config.HOST_IP, Config.FOLDER, Config.imageRootPath,sub.ToString()); //Remote Image path
+			//var image_Fullpath = System.IO.Path.Combine(basePath, sub.ToString(), img_name);
+			//var img = new BitmapImage(new Uri(@image_Fullpath,UriKind.Absolute));
+			//return basePath;
 		}
 
 		public static Room Enum_Converter(string p_Room)
@@ -141,8 +126,6 @@ namespace BinanKiosk.Models
 							temp_Content = office.Office_Name;
 							break;
 						}
-							
-						
 					}
 				}
 			}
@@ -213,7 +196,6 @@ namespace BinanKiosk.Models
 				page.Frame.GoBack();
 			}
 		}
-
 		public static void GoForward(Page page)
 		{
 			if (page.Frame != null && page.Frame.CanGoForward) page.Frame.GoForward();

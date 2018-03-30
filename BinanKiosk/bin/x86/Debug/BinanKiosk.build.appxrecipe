@@ -445,8 +445,14 @@
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\win2d.uwp\1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\2F_EDIT.png">
+      <PackagePath>Assets\2F_EDIT.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\2nd_Floor_HD.png">
       <PackagePath>Assets\2nd_Floor_HD.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\EDIT_3F.png">
+      <PackagePath>Assets\EDIT_3F.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\3rd Floor.PNG">
       <PackagePath>Assets\3rd Floor.PNG</PackagePath>

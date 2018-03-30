@@ -85,6 +85,7 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Fill" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />
@@ -128,7 +129,6 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Background" />
       <RootEvent Name="Tapped" />
-      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="HorizontalAlignment" />
@@ -143,6 +143,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Text" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="TextDecorations" />
       <RootProperty Name="Style" />
       <RootProperty Name="Height" />
@@ -187,7 +188,6 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Template" />
       <RootEvent Name="Tapped" />
-      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="BinanKiosk.Event" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">

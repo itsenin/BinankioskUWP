@@ -11,6 +11,5 @@ namespace BinanKiosk.Models
 	{
 		public int ID { get; set; }
 		public string Image_Name { get; set; }
-		public string Image_Source { get; set; }
 	}
 }

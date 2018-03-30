@@ -24,7 +24,6 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Sample_Ripple2 : Page
     {
-		int counter = 0;
 		DispatcherTimer Timer = new DispatcherTimer();
 		public Sample_Ripple2()
         {
@@ -54,7 +53,6 @@ namespace BinanKiosk
 
 		private async void Grid_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			counter = 0;
 			Point touchPosition = e.GetPosition(MyGrid);
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			//MyTextBlock.Text = counter.ToString();
@@ -68,7 +66,6 @@ namespace BinanKiosk
 
 		private void MyGrid_PointerPressed(object sender, PointerRoutedEventArgs e)
 		{
-			counter = 0;
 			//MyTextBlock.Text = counter.ToString();
 		}
 	}

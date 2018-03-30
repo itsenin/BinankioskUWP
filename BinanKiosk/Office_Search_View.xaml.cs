@@ -7,12 +7,15 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -25,18 +28,17 @@ namespace BinanKiosk
 	public sealed partial class Office_Search_View : Page
 	{
 		Office office;
-		Picture office_Picture, department_Logo;
 		DispatcherTimer Timer;
 		int counter = 0;
 		public Office_Search_View()
 		{
 			this.InitializeComponent();
 		}
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		async protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
+			counter = 0;
 			base.OnNavigatedTo(e);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
-			counter = 0;
 			Timer = new DispatcherTimer();
 			Global.Entrance_Transition(this, E_Transitions.Drilln);
 			DataContext = this;
@@ -44,20 +46,34 @@ namespace BinanKiosk
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-
 			office = (Office)e.Parameter;
-			office_Picture = Global.GetPic(office.image_path);
-			department_Logo = Global.GetPic(office.department.Department_Image_Path);
 			Office_Name.Text = office.Office_Name.ToUpper();
-			office_Image.Source = Global.AsBitmapImage(office_Picture.image);
-			Department_Logo.Source = Global.AsBitmapImage(department_Logo.image);
+			//for the image of offices
+			BitmapImage bitmapImage2 = new BitmapImage();
+			StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Offices));
+			StorageFile storageFile = await storageFolder.GetFileAsync(office.image_path);
+			using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+			{
+				await bitmapImage2.SetSourceAsync(stream);
+			}
+			office_Image.Source = bitmapImage2;
+			// for the image of department
+			bitmapImage2 = new BitmapImage();
+			StorageFolder storageFolder2 = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Departments));
+			StorageFile storageFile2 = await storageFolder2.GetFileAsync(office.department.Department_Image_Path);
+			using (IRandomAccessStream stream = await storageFile2.OpenAsync(FileAccessMode.Read))
+			{
+				await bitmapImage2.SetSourceAsync(stream);
+			}
+			Department_Logo.Source = bitmapImage2;
+			//Department_Logo.Source = Global.GetImage(office.department.Department_Image_Path, Global.Subfolders.Departments);
 			MyScrollViewer.RegisterPropertyChangedCallback(ScrollViewer.ZoomFactorProperty, (s, a) => { counter = 0; });
 		}
 		private void Timer_Tick(object sender, object e)
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -105,15 +121,16 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void btn_Find_Tapped(object sender, TappedRoutedEventArgs e)
+		private void btn_Find_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Map_1f), Global.Enum_Converter(office.Room_Name));
 		}
 
-		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
+		private async void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
 		{
+			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			Global.GoBack(this);
 		}
 
@@ -132,6 +149,7 @@ namespace BinanKiosk
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

@@ -129,7 +129,6 @@
     <Compile Include="Models\M_Job_Category.cs" />
     <Compile Include="Models\M_Job_Type.cs" />
     <Compile Include="Models\Official.cs" />
-    <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\User.cs" />
@@ -180,7 +179,9 @@
     <None Include="BinanKiosk_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\2F_EDIT.png" />
     <Content Include="Assets\2nd_Floor_HD.png" />
+    <Content Include="Assets\EDIT_3F.png" />
     <Content Include="Assets\Ripple.gif" />
     <Content Include="Assets\3rd Floor.PNG" />
     <Content Include="Assets\3rd_Floor_HD.png" />

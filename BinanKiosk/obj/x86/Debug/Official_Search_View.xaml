@@ -111,7 +111,7 @@
 						<ColumnDefinition Width="0.7*"/>
 						<ColumnDefinition Width="0.3*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:ConnectionId='6' x:Name="Official_Name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="RAMON ALMAZAN" FontSize="40" FontFamily="Arial Narrow" FontWeight="Bold" TextDecorations="Underline"/>
+					<TextBlock x:ConnectionId='6' x:Name="Official_Name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="RAMON ALMAZAN" FontSize="30" FontFamily="Arial Narrow" FontWeight="Bold" TextDecorations="Underline" TextWrapping="WrapWholeWords"/>
 					<Border x:ConnectionId='7' x:Name="ScrollView_Border" BorderBrush="#FF000000" BorderThickness="2" CornerRadius="0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="4">
 						<Grid>
 							<Grid.RowDefinitions>

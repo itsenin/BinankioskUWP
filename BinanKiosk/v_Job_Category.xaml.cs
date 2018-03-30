@@ -56,7 +56,6 @@ namespace BinanKiosk
 			pageIndex = 0;
 			pageSize = 6; //Set the size of the page
 			totalPage = 0;
-			counter = 0;
 			jobRepository = new JobRepository();
 			Timer = new DispatcherTimer();
 			//Instantiation of List of services
@@ -67,7 +66,7 @@ namespace BinanKiosk
 			Timer.Tick += Timer_Tick;
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-
+			counter = 0;
 			// Populating the list from the database
 			postsList = jobRepository.GetAll_JobCategories();
 			totalPage = postsList.Count / 6;
@@ -78,7 +77,7 @@ namespace BinanKiosk
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -187,16 +186,16 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void bt_Job_Category_Tapped(object sender, TappedRoutedEventArgs e)
+		private void bt_Job_Category_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Goto_OtherForm(e);
 			var bindedItems = (sender as Button).DataContext as BindedItems;
 			Frame.Navigate(typeof(v_Job_List), new Items { itemCategory = Categories.Job_Category, itemObject = bindedItems.job_Category, Objectname = bindedItems.job_Category.Job_Name });
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

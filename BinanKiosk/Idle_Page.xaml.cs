@@ -9,6 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,11 +40,12 @@ namespace BinanKiosk
 		{
 			this.InitializeComponent();
 		}
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected async override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			base.OnNavigatedTo(e);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 			EventRepository = new EventRepository();
+
 			items = new ObservableCollection<temp_Class_Image>();
 			Global.Entrance_Transition(this, E_Transitions.Continuum);
 			DataContext = this;
@@ -50,7 +53,14 @@ namespace BinanKiosk
 			var Slider_Images = EventRepository.GetAll_Slider_Images();
 			foreach (var image in Slider_Images)
 			{
-				items.Add(new temp_Class_Image() { Image_Source = Global.AsBitmapImage(Global.GetPic(image.Image_Source).image) });
+				BitmapImage bitmapImage2 = new BitmapImage();
+				StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Home));
+				StorageFile storageFile = await storageFolder.GetFileAsync(image.Image_Name);
+				using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+				{
+					await bitmapImage2.SetSourceAsync(stream);
+				}
+				items.Add(new temp_Class_Image() { Image_Source = bitmapImage2 });
 			}
 			ROTtest.ItemsSource = items;
 

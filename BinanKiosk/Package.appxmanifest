@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
   <Identity Name="469bbf1a-be74-4dd1-8f4a-8edd701d3432" Publisher="CN=doratheexplorer" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="469bbf1a-be74-4dd1-8f4a-8edd701d3432" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -20,11 +20,27 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="imagetypes">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.jpg</uap:FileType>
+              <uap:FileType>.png</uap:FileType>
+              <uap:FileType>.gif</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
     <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="enterpriseAuthentication" />
+    <uap3:Capability Name="remoteSystem" />
+    <uap:Capability Name="sharedUserCertificates" />
     <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

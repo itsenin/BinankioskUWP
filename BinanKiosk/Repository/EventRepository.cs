@@ -20,13 +20,12 @@ namespace BinanKiosk.Repository
 			IList<Event_Slider> slider_Images = new List<Event_Slider>();
 			query = @"SELECT * from slider_images";
 			Objects = Get(query, null);
-			for (int i = 0; i < (Objects.Count / 3); i++)
+			for (int i = 0; i < (Objects.Count / 2); i++)
 			{
 				slider_Images.Add(new Event_Slider
 				{
-					ID = Int32.Parse(Objects[i * 3].ToString()),
-					Image_Name = Objects[1 + (i * 3)].ToString(),
-					Image_Source = Objects[2 + (i * 3)].ToString()
+					ID = Int32.Parse(Objects[i * 2].ToString()),
+					Image_Name = Objects[1 + (i * 2)].ToString()
 				});
 			}
 			return slider_Images;

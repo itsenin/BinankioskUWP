@@ -7,6 +7,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,7 +28,6 @@ namespace BinanKiosk
 	public sealed partial class Official_Search_View : Page
 	{
 		Official official;
-		Picture official_Picture;
 		DispatcherTimer Timer;
 		int counter = 0;
 		public class BindedItems
@@ -37,15 +38,12 @@ namespace BinanKiosk
 		public Official_Search_View()
 		{
 			this.InitializeComponent();
-			
-
 		}
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected async override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			base.OnNavigatedTo(e);
 			Global.Entrance_Transition(this, E_Transitions.Drilln);
 			DataContext = this;
-			counter = 0;
 			Timer = new DispatcherTimer();
 			Timer.Tick += Timer_Tick;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
@@ -53,9 +51,15 @@ namespace BinanKiosk
 			Timer.Start();
 
 			official = (Official)e.Parameter;
-			official_Picture = Global.GetPic(official.Image_Path);
 			Official_Name.Text = (official.First_Name + " " + official.Middle_Initial + " " + official.Last_Name + " " + official.Suffix).ToUpper();
-			Official_Image.Source = Global.AsBitmapImage(official_Picture.image);
+			BitmapImage bitmapImage2 = new BitmapImage();
+			StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Officials));
+			StorageFile storageFile = await storageFolder.GetFileAsync(official.Image_Path);
+			using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+			{
+				await bitmapImage2.SetSourceAsync(stream);
+			}
+			Official_Image.Source = bitmapImage2;
 			lb_Position.Text = official.position.Position_Name;
 			lb_Office.Text = official.office.Office_Name;
 			lb_Department.Text = official.office.department.Department_Name;
@@ -66,7 +70,7 @@ namespace BinanKiosk
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -127,21 +131,22 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void btn_Find_Tapped(object sender, TappedRoutedEventArgs e)
+		private void btn_Find_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Map_1f), Global.Enum_Converter(official.office.Room_Name));
 		}
 
-		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
+		private async void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			Global.GoBack(this);
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

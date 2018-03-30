@@ -19,6 +19,8 @@ using Windows.UI.Xaml.Media.Imaging;
 using System.ComponentModel;
 using Windows.Graphics.Imaging;
 using BinanKiosk.Enums;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,28 +31,32 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Services_View : Page
     {
-		Picture picture;
 		Service service;
 		ServiceClientWrapper client;
 		DispatcherTimer Timer;
 		int counter = 0;
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected async override void OnNavigatedTo(NavigationEventArgs e)
 		{
 			base.OnNavigatedTo(e);
 			Global.Entrance_Transition(this, E_Transitions.Drilln);
 			DataContext = this;
 			Timer = new DispatcherTimer();
 			client = new ServiceClientWrapper();
-			counter = 0;
 			
 			Timer.Tick += Timer_Tick;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-
+			counter = 0;
 			service = (Service)e.Parameter;
-			picture = Global.GetPic(service.Image_Path);
-			theImage.Source = Global.AsBitmapImage(picture.image);
+			BitmapImage bitmapImage2 = new BitmapImage();
+			StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Services));
+			StorageFile storageFile = await storageFolder.GetFileAsync(service.Image_Path);
+			using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+			{
+				await bitmapImage2.SetSourceAsync(stream);
+			}
+			theImage.Source = bitmapImage2;
 			MyScrollViewer.RegisterPropertyChangedCallback(ScrollViewer.ZoomFactorProperty, (s, a) => { counter = 0; });
 		}
 		public Services_View()
@@ -62,7 +68,7 @@ namespace BinanKiosk
         {
 			counter += 1;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -72,7 +78,7 @@ namespace BinanKiosk
         private void OnSizeChanged(object sender, SizeChangedEventArgs args)
         {
 			counter = 0;
-        }
+		}
 		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
 			Goto_OtherForm(e);
@@ -123,12 +129,13 @@ namespace BinanKiosk
 
 		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
+			Goto_OtherForm(e);
 			Global.GoBack(this);
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

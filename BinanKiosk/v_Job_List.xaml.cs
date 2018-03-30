@@ -32,19 +32,18 @@ namespace BinanKiosk
 		private Items item_List;
         private M_Job_Category _Category;
 		int counter = 0;
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+		protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+			counter = 0;
 			base.OnNavigatedTo(e);
 			Global.Entrance_Transition(this, E_Transitions.Drilln);
 			jobRepository = new JobRepository();
 			Timer = new DispatcherTimer();
-			counter = 0;
             
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
 			Timer.Tick += Timer_Tick;
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-
 			item_List = (Items)e.Parameter;
 			ObservableCollection<M_Job_Type> items = new ObservableCollection<M_Job_Type>();
 			if (item_List.itemCategory.Equals(Categories.Job_Category))
@@ -96,7 +95,7 @@ namespace BinanKiosk
                 img_trans.Visibility = Visibility.Collapsed;
             }
             listViewControl.ItemsSource = items;
-        }
+		}
         public v_Job_List()
         {
             this.InitializeComponent();
@@ -105,7 +104,7 @@ namespace BinanKiosk
         {
 			counter += 1;
             Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -160,32 +159,34 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void listViewControl_Tapped(object sender, TappedRoutedEventArgs e)
+		private void listViewControl_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
+			Goto_OtherForm(e);
 			M_Job_Type job_Type = new M_Job_Type();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
-			var grid = e.OriginalSource as Grid;
-			var textblock = e.OriginalSource as TextBlock;
-			var image = e.OriginalSource as Image;
-			if (grid != null)
-				job_Type = grid.DataContext as M_Job_Type;
-			else if (textblock != null)
-				job_Type = textblock.DataContext as M_Job_Type;
+			if ((e.OriginalSource as TextBlock) != null)
+				job_Type = (e.OriginalSource as TextBlock).DataContext as M_Job_Type;
+			else if ((e.OriginalSource as Grid) != null)
+				job_Type = (e.OriginalSource as Grid).DataContext as M_Job_Type;
+			else if ((e.OriginalSource as Image) != null)
+				job_Type = (e.OriginalSource as Image).DataContext as M_Job_Type;
 			else
-				job_Type = image.DataContext as M_Job_Type;
-
-			Frame.Navigate(typeof(Job_View), job_Type);
+				job_Type = null;
+			if (job_Type != null)
+			{
+				Frame.Navigate(typeof(Job_View), job_Type);
+			}
 		}
 
 		private void btn_Back_Tapped(object sender, TappedRoutedEventArgs e)
 		{
+			counter = 0;
 			Timer.Stop();
 			Global.GoBack(this);
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

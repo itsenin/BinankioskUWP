@@ -59,7 +59,6 @@ namespace BinanKiosk
 			pageIndex = 0;
 			pageSize = 6; //Set the size of the page
 			totalPage = 0;
-			counter = 0;
 			serviceRepository = new ServiceRepository();
 			Timer = new DispatcherTimer();
 			//For the time
@@ -67,7 +66,6 @@ namespace BinanKiosk
 			Timer.Tick += Timer_Tick;
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-
 			//Instantiation of List of services
 			items = new ObservableCollection<BindedItems>();
 
@@ -80,14 +78,14 @@ namespace BinanKiosk
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
 			}
 		}
 
-		private async void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
 			Goto_OtherForm(e);
 			this.Frame.Navigate(typeof(Search));
@@ -152,10 +150,9 @@ namespace BinanKiosk
 			tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 		}
 
-		private async void bt_CitizenCharter_Tapped(object sender, TappedRoutedEventArgs e)
+		private void bt_CitizenCharter_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Goto_OtherForm(e);
 			var bindedItems = (sender as Button).DataContext as BindedItems;
 			this.Frame.Navigate(typeof(Services_View), bindedItems.service);
 		}
@@ -199,6 +196,7 @@ namespace BinanKiosk
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

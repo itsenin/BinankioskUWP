@@ -59,7 +59,7 @@ namespace BinanKiosk
 		#endregion
 
 		#region Enums
-		
+
 		private enum SearchType { All, Filtered }
 		#endregion
 		
@@ -73,6 +73,7 @@ namespace BinanKiosk
 			base.OnNavigatedTo(e);
 			Global.Entrance_Transition(this, E_Transitions.Drilln);
 			Timer = new DispatcherTimer();
+			counter = 0;
 			//Initialization
 			#region
 			//Global.language = "Filipino";
@@ -80,6 +81,7 @@ namespace BinanKiosk
 			Timer.Tick += Timer_Tick;
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
+			
 			jobRepository = new JobRepository();
 			officialRepository = new OfficialRepository();
 			serviceRepository = new ServiceRepository();
@@ -99,7 +101,6 @@ namespace BinanKiosk
 			pageIndex = -1;
 			pageSize = 15; //Set the size of the page
 			Service_totalPage = 0; Job_totalPage = 0; Official_totalPage = 0; Office_totalPage = 0;
-			counter = 0;
 
 			//populates the list
 			Job_postsList = jobRepository.GetAll_JobTypes();
@@ -126,12 +127,11 @@ namespace BinanKiosk
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if(counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
 			}
-				
 		}
 
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -511,31 +511,39 @@ namespace BinanKiosk
 
 		private async void AdaptiveGridViewControl_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
 			Items Item = new Items();
+			Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			if ((e.OriginalSource as TextBlock) != null)
 				Item = (e.OriginalSource as TextBlock).DataContext as Items;
-			else
+			else if ((e.OriginalSource as Grid) != null)
+				Item = (e.OriginalSource as Grid).DataContext as Items;
+			else if ((e.OriginalSource as Image) != null)
 				Item = (e.OriginalSource as Image).DataContext as Items;
-			switch (Item.itemCategory)
+			else
+				Item = null;
+			if (Item != null)
 			{
-				case Categories.Officer:
-					Frame.Navigate(typeof(Official_Search_View), Item.itemObject);
-					break;
+				switch (Item.itemCategory)
+				{
+					case Categories.Officer:
+						Frame.Navigate(typeof(Official_Search_View), Item.itemObject);
+						break;
 
-				case Categories.Office:
-					Frame.Navigate(typeof(Office_Search_View), Item.itemObject);
-					break;
+					case Categories.Office:
+						Frame.Navigate(typeof(Office_Search_View), Item.itemObject);
+						break;
 
-				case Categories.Service:
-					Frame.Navigate(typeof(Service_Search_View), Item.itemObject);
-					break;
+					case Categories.Service:
+						Frame.Navigate(typeof(Service_Search_View), Item.itemObject);
+						break;
 
-				case Categories.Job:
-					Frame.Navigate(typeof(v_Job_List), new Items { itemCategory = Categories.Job, itemObject = Job_postsList, Objectname = Item.Objectname });
-					break;
+					case Categories.Job:
+						Frame.Navigate(typeof(v_Job_List), new Items { itemCategory = Categories.Job, itemObject = Job_postsList, Objectname = Item.Objectname });
+						break;
+				}
 			}
+			
 		}
 
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
@@ -562,7 +570,6 @@ namespace BinanKiosk
 				tbServices.Text = "Mga Serbisyo";
 				tbJobs.Text = "Mga Trabaho";
 				tbAll.Text = "Lahat";
-
 			}
 		}
 
@@ -605,6 +612,8 @@ namespace BinanKiosk
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			counter = 0;
+			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 		}

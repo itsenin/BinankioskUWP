@@ -111,7 +111,7 @@
 						<ColumnDefinition Width="0.7*"/>
 						<ColumnDefinition Width="0.3*"/>
 					</Grid.ColumnDefinitions>
-					<TextBlock x:ConnectionId='6' x:Name="Office_Name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="TREASURY OFFICE" FontSize="40" FontFamily="Arial Narrow" FontWeight="Bold" TextDecorations="Underline"/>
+					<TextBlock x:ConnectionId='6' x:Name="Office_Name" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="TREASURY OFFICE" FontSize="30" FontFamily="Arial Narrow" FontWeight="Bold" TextDecorations="Underline" TextWrapping="WrapWholeWords"/>
 					<Border x:ConnectionId='7' x:Name="ScrollView_Border" BorderBrush="#FF000000" BorderThickness="2" CornerRadius="0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="4">
 						<ScrollViewer x:ConnectionId='10' x:Name="MyScrollViewer" MinZoomFactor="0.5530364" MaxZoomFactor="3"
                               Background="Transparent"

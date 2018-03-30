@@ -8,7 +8,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    mc:Ignorable="d"                     >
+    mc:Ignorable="d"                      NavigationCacheMode="Enabled">
 	<Page.Resources>
 		<Style TargetType="Button">
 			<Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
@@ -107,16 +107,16 @@
 			</Setter>
 		</Style>
 	</Page.Resources>
-
-	<Grid Background="White">
+	<Grid x:ConnectionId='2' Background="White" Name="MyGrid"                       >
 		<Grid.RowDefinitions>
 			<RowDefinition Height=".3*"/>
 			<RowDefinition Height="4.1*"/>
 			<RowDefinition Height=".6*"/>
 		</Grid.RowDefinitions>
-
 		<!--Background-->
-		<Image Source="Assets/bgopacity3.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
+		<Image x:ConnectionId='3' Canvas.ZIndex="1" x:Name="MyImage" Source="ms-appx:///Assets/ripple.gif" Height="100" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed" Grid.RowSpan="3"/>
+		<!--Background-->
+		<Image Source="Assets/trans2.png" Stretch="Fill" Grid.RowSpan="6" Grid.ColumnSpan="6"></Image>
 
 		<!--Uppermenu-->
 		<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
@@ -133,8 +133,8 @@
 				<ColumnDefinition Width=".2*"/>
 				<ColumnDefinition Width=".3*"/>
 			</Grid.ColumnDefinitions>
-			<SymbolIcon Symbol="Map" Foreground="White" Grid.Column="0"/>
-			<TextBlock x:ConnectionId='52' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
+			<SymbolIcon x:ConnectionId='339' x:Name="btn_Back"  Symbol="Back" Foreground="White" Grid.Column="0"                         />
+			<TextBlock x:ConnectionId='340' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="MAPS"/>
 			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
 			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
 		</Grid>
@@ -168,17 +168,17 @@
 			<Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
 			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='46' x:Name="Searchbtn" Icon="Zoom" Label="Search"                         FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarButton x:ConnectionId='333' x:Name="Searchbtn" Icon="Zoom" Label="Search"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='47' x:Name="Mapbtn" Icon="Map" Label="Maps"                      Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarButton x:ConnectionId='334' x:Name="Mapbtn" Icon="Map" Label="Maps"                         Background="#1f7d1f" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='48' x:Name="Servicesbtn" Icon="Page2" Label="Services"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
+			<AppBarButton x:ConnectionId='335' x:Name="Servicesbtn" Icon="Page2" Label="Services"                              FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="7" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="10" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='49' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Job Categories"                       FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarButton x:ConnectionId='336' x:Name="Jobsbtn" Icon="BrowsePhotos" Label="Job Categories"                          FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="9" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='50' x:Name="Eventbtn" Icon="Calendar" Label="Upcoming Events"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarButton x:ConnectionId='337' x:Name="Eventbtn" Icon="Calendar" Label="Upcoming Events"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="11" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="12" Margin="0.5,13,-1.5,0"/>
-			<TextBlock x:ConnectionId='51' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
+			<TextBlock x:ConnectionId='338' x:Name="Time" HorizontalAlignment="Right" VerticalAlignment="Stretch" TextWrapping="Wrap" Width="511" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Right" Grid.Column="13" Margin="0,16,10,4"/>
 		</Grid>
 
 		<Grid Grid.Row="1">
@@ -194,7 +194,7 @@
 				<ColumnDefinition Width=".1*"/>
 			</Grid.ColumnDefinitions>
 
-			<Image Grid.Column="2" Grid.Row="1" Source="Assets/3rd_Floor_HD.png" Stretch="Fill"></Image>
+			<Image Grid.Column="2" Grid.Row="1" Source="Assets/EDIT_3F.png" Stretch="Fill"></Image>
 			<Grid Grid.Column="2" Grid.Row="1">
 				<Grid.RowDefinitions>
 					<RowDefinition/>
@@ -226,6 +226,28 @@
 					<RowDefinition/>
 					<RowDefinition/>
 					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
 				</Grid.RowDefinitions>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
@@ -250,6 +272,18 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
+
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
@@ -275,98 +309,423 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
 				<!--Name Format for optional Room : img_rOptional_[room numbers such as r301 as 1 r302 as 2]-->
 				<!--Name Format for combined Room : img_[first room number (R301)]_[another room number (302)]-->
 				<!--Start Entrance Arrows-->
-				<Image x:ConnectionId='4' x:Name="img_Base" Grid.Column="24" Grid.Row="19"  Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible" />
+				<Image x:ConnectionId='6' x:Name="img_Base" Grid.Column="24" Grid.Row="19"  Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible" />
 
-				<!--R301 && R304-->
-				<Image x:ConnectionId='5' x:Name="img_rOptional_1_8" Grid.Column="22" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="visible"/>
-				<Image x:ConnectionId='6' x:Name="img_R301_304_1" Grid.Column="20" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
-				<Image x:ConnectionId='7' x:Name="img_R301_304_2" Grid.Column="18" Grid.Row="19" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
-				<Image x:ConnectionId='8' x:Name="img_rOptional_1_5" Grid.Column="16" Grid.Row="19" Source="Assets/downrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='9' x:Name="img_R301_304_3" Grid.Column="16" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform" Visibility="Visible"/>
-				<Image x:ConnectionId='10' x:Name="img_R301_304_4" Grid.Column="14" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='11' x:Name="img_rOptional_1_2_4" Grid.Column="12" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform"/>
+				<!--R301-->
+				<Rectangle x:ConnectionId='7' x:Name="rect_r301_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='8' x:Name="rect_r301_2" Grid.Column="40" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='9' x:Name="rect_r301_3" Grid.Column="39" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='10' x:Name="rect_r301_4" Grid.Column="38" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='11' x:Name="rect_r301_5" Grid.Column="37" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='12' x:Name="rect_r301_6" Grid.Column="36" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='13' x:Name="rect_r301_7" Grid.Column="35" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='14' x:Name="rect_r301_8" Grid.Column="34" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='15' x:Name="rect_r301_9" Grid.Column="33" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='16' x:Name="rect_r301_10" Grid.Column="32" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='17' x:Name="rect_r301_11" Grid.Column="31" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='18' x:Name="rect_r301_12" Grid.Column="31" Grid.Row="17" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='19' x:Name="rect_r301_13" Grid.Column="31" Grid.Row="18" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='20' x:Name="rect_r301_14" Grid.Column="31" Grid.Row="19" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='21' x:Name="rect_r301_15" Grid.Column="31" Grid.Row="20" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='22' x:Name="rect_r301_16" Grid.Column="31" Grid.Row="21" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='23' x:Name="rect_r301_17" Grid.Column="31" Grid.Row="22" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='24' x:Name="rect_r301_18" Grid.Column="31" Grid.Row="23" Fill="Red" Visibility="Collapsed"/>
+
+				<!--R302-->
+				<Rectangle x:ConnectionId='25' x:Name="rect_r302_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='26' x:Name="rect_r302_2" Grid.Column="40" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='27' x:Name="rect_r302_3" Grid.Column="39" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='28' x:Name="rect_r302_4" Grid.Column="38" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='29' x:Name="rect_r302_5" Grid.Column="37" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='30' x:Name="rect_r302_6" Grid.Column="36" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='31' x:Name="rect_r302_7" Grid.Column="35" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='32' x:Name="rect_r302_8" Grid.Column="34" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='33' x:Name="rect_r302_9" Grid.Column="33" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='34' x:Name="rect_r302_10" Grid.Column="32" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='35' x:Name="rect_r302_11" Grid.Column="31" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='36' x:Name="rect_r302_12" Grid.Column="30" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
 				
-				<!--R302 && R303-->
-				<Image x:ConnectionId='12' x:Name="img_R302_R303_1" Grid.Column="10" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='13' x:Name="img_R302_R303_2" Grid.Column="8" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='14' x:Name="img_rOptional_2_3" Grid.Column="6" Grid.Row="21" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<!--R303-->
+				<Rectangle x:ConnectionId='37' x:Name="rect_r303_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='38' x:Name="rect_r303_2" Grid.Column="40" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='39' x:Name="rect_r303_3" Grid.Column="39" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='40' x:Name="rect_r303_4" Grid.Column="38" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='41' x:Name="rect_r303_5" Grid.Column="37" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='42' x:Name="rect_r303_6" Grid.Column="36" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='43' x:Name="rect_r303_7" Grid.Column="35" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='44' x:Name="rect_r303_8" Grid.Column="34" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='45' x:Name="rect_r303_9" Grid.Column="33" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='46' x:Name="rect_r303_10" Grid.Column="32" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='47' x:Name="rect_r303_11" Grid.Column="31" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='48' x:Name="rect_r303_12" Grid.Column="31" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='49' x:Name="rect_r303_13" Grid.Column="31" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='50' x:Name="rect_r303_14" Grid.Column="31" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='51' x:Name="rect_r303_15" Grid.Column="31" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='52' x:Name="rect_r303_16" Grid.Column="30" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='53' x:Name="rect_r303_17" Grid.Column="29" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='54' x:Name="rect_r303_18" Grid.Column="28" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='55' x:Name="rect_r303_19" Grid.Column="27" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='56' x:Name="rect_r303_20" Grid.Column="26" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='57' x:Name="rect_r303_21" Grid.Column="25" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='58' x:Name="rect_r303_22" Grid.Column="24" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='59' x:Name="rect_r303_23" Grid.Column="23" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='60' x:Name="rect_r303_24" Grid.Column="22" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='61' x:Name="rect_r303_25" Grid.Column="21" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='62' x:Name="rect_r303_26" Grid.Column="20" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='63' x:Name="rect_r303_27" Grid.Column="19" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='64' x:Name="rect_r303_28" Grid.Column="18" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='65' x:Name="rect_r303_29" Grid.Column="17" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='66' x:Name="rect_r303_30" Grid.Column="16" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='67' x:Name="rect_r303_31" Grid.Column="16" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
 
+				<!--r304-->
+				<Rectangle x:ConnectionId='68' x:Name="rect_r304_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='69' x:Name="rect_r304_2" Grid.Column="40" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='70' x:Name="rect_r304_3" Grid.Column="39" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='71' x:Name="rect_r304_4" Grid.Column="38" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='72' x:Name="rect_r304_5" Grid.Column="37" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='73' x:Name="rect_r304_6" Grid.Column="36" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='74' x:Name="rect_r304_7" Grid.Column="35" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='75' x:Name="rect_r304_8" Grid.Column="34" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='76' x:Name="rect_r304_9" Grid.Column="33" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='77' x:Name="rect_r304_10" Grid.Column="32" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='78' x:Name="rect_r304_11" Grid.Column="31" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='79' x:Name="rect_r304_12" Grid.Column="31" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='80' x:Name="rect_r304_13" Grid.Column="31" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='81' x:Name="rect_r304_14" Grid.Column="31" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='82' x:Name="rect_r304_15" Grid.Column="31" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='83' x:Name="rect_r304_16" Grid.Column="30" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='84' x:Name="rect_r304_17" Grid.Column="29" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='85' x:Name="rect_r304_18" Grid.Column="28" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='86' x:Name="rect_r304_19" Grid.Column="27" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='87' x:Name="rect_r304_20" Grid.Column="26" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='88' x:Name="rect_r304_21" Grid.Column="25" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='89' x:Name="rect_r304_22" Grid.Column="24" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='90' x:Name="rect_r304_23" Grid.Column="23" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='91' x:Name="rect_r304_24" Grid.Column="22" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='92' x:Name="rect_r304_25" Grid.Column="21" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='93' x:Name="rect_r304_26" Grid.Column="20" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='94' x:Name="rect_r304_27" Grid.Column="19" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='95' x:Name="rect_r304_28" Grid.Column="18" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='96' x:Name="rect_r304_29" Grid.Column="18" Grid.Row="11" Fill="Red" Visibility="Collapsed"/>
+				
 				<!--R305-->
-				<Image x:ConnectionId='15' x:Name="img_R305_1" Grid.Column="16" Grid.Row="17" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='16' x:Name="img_R305_2" Grid.Column="15" Grid.Row="16" Source="Assets/leftrow.png" Stretch="Uniform"/>
-				
-				
-				<!--R306-->
-				<Image x:ConnectionId='17' x:Name="img_R306_1" Grid.Column="16" Grid.Row="15" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='18' x:Name="img_R306_2" Grid.Column="15" Grid.Row="14" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Rectangle x:ConnectionId='97' x:Name="rect_r305_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='98' x:Name="rect_r305_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='99' x:Name="rect_r305_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='100' x:Name="rect_r305_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='101' x:Name="rect_r305_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='102' x:Name="rect_r305_6" Grid.Column="45" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='103' x:Name="rect_r305_7" Grid.Column="45" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
 
+				<!--R306-->
+				<Rectangle x:ConnectionId='104' x:Name="rect_r306_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='105' x:Name="rect_r306_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='106' x:Name="rect_r306_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='107' x:Name="rect_r306_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='108' x:Name="rect_r306_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='109' x:Name="rect_r306_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='110' x:Name="rect_r306_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='111' x:Name="rect_r306_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='112' x:Name="rect_r306_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='113' x:Name="rect_r306_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='114' x:Name="rect_r306_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='115' x:Name="rect_r306_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='116' x:Name="rect_r306_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='117' x:Name="rect_r306_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='118' x:Name="rect_r306_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='119' x:Name="rect_r306_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='120' x:Name="rect_r306_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='121' x:Name="rect_r306_18" Grid.Column="57" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='122' x:Name="rect_r306_19" Grid.Column="57" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='123' x:Name="rect_r306_20" Grid.Column="57" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='124' x:Name="rect_r306_21" Grid.Column="57" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='125' x:Name="rect_r306_22" Grid.Column="58" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='126' x:Name="rect_r306_23" Grid.Column="59" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='127' x:Name="rect_r306_24" Grid.Column="60" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='128' x:Name="rect_r306_25" Grid.Column="61" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='129' x:Name="rect_r306_26" Grid.Column="62" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='130' x:Name="rect_r306_27" Grid.Column="63" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='131' x:Name="rect_r306_28" Grid.Column="63" Grid.Row="11" Fill="Red" Visibility="Collapsed"/>
+				
 				<!--R307-->
-				<Image x:ConnectionId='19' x:Name="img_R307_1" Grid.Column="16" Grid.Row="13" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='20' x:Name="img_R307_2" Grid.Column="16" Grid.Row="11" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='21' x:Name="img_R307_3" Grid.Column="16" Grid.Row="9" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='22' x:Name="img_R307_4" Grid.Column="15" Grid.Row="8" Source="Assets/leftrow.png" Stretch="Uniform"/>
+				<Rectangle x:ConnectionId='132' x:Name="rect_r307_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='133' x:Name="rect_r307_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='134' x:Name="rect_r307_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='135' x:Name="rect_r307_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='136' x:Name="rect_r307_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='137' x:Name="rect_r307_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='138' x:Name="rect_r307_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='139' x:Name="rect_r307_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='140' x:Name="rect_r307_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='141' x:Name="rect_r307_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='142' x:Name="rect_r307_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='143' x:Name="rect_r307_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='144' x:Name="rect_r307_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='145' x:Name="rect_r307_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='146' x:Name="rect_r307_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='147' x:Name="rect_r307_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='148' x:Name="rect_r307_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='149' x:Name="rect_r307_18" Grid.Column="57" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='150' x:Name="rect_r307_19" Grid.Column="57" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='151' x:Name="rect_r307_20" Grid.Column="57" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='152' x:Name="rect_r307_21" Grid.Column="57" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='153' x:Name="rect_r307_22" Grid.Column="58" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='154' x:Name="rect_r307_23" Grid.Column="59" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='155' x:Name="rect_r307_24" Grid.Column="60" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='156' x:Name="rect_r307_25" Grid.Column="61" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='157' x:Name="rect_r307_26" Grid.Column="62" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='158' x:Name="rect_r307_27" Grid.Column="63" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='159' x:Name="rect_r307_28" Grid.Column="64" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='160' x:Name="rect_r307_29" Grid.Column="65" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='161' x:Name="rect_r307_30" Grid.Column="66" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='162' x:Name="rect_r307_31" Grid.Column="67" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='163' x:Name="rect_r307_32" Grid.Column="68" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='164' x:Name="rect_r307_33" Grid.Column="69" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='165' x:Name="rect_r307_34" Grid.Column="70" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='166' x:Name="rect_r307_35" Grid.Column="71" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='167' x:Name="rect_r307_36" Grid.Column="72" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='168' x:Name="rect_r307_37" Grid.Column="73" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='169' x:Name="rect_r307_38" Grid.Column="73" Grid.Row="11" Fill="Red" Visibility="Collapsed"/>
 				
 				<!--R308-->
-				<Image x:ConnectionId='23' x:Name="img_R308_1" Grid.Column="22" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform" Visibility="visible"/>
+				<Rectangle x:ConnectionId='170' x:Name="rect_r308_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='171' x:Name="rect_r308_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='172' x:Name="rect_r308_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='173' x:Name="rect_r308_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='174' x:Name="rect_r308_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='175' x:Name="rect_r308_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='176' x:Name="rect_r308_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='177' x:Name="rect_r308_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='178' x:Name="rect_r308_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='179' x:Name="rect_r308_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='180' x:Name="rect_r308_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='181' x:Name="rect_r308_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='182' x:Name="rect_r308_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='183' x:Name="rect_r308_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='184' x:Name="rect_r308_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='185' x:Name="rect_r308_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='186' x:Name="rect_r308_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='187' x:Name="rect_r308_18" Grid.Column="57" Grid.Row="15" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='188' x:Name="rect_r308_19" Grid.Column="57" Grid.Row="14" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='189' x:Name="rect_r308_20" Grid.Column="57" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='190' x:Name="rect_r308_21" Grid.Column="57" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='191' x:Name="rect_r308_22" Grid.Column="58" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='192' x:Name="rect_r308_23" Grid.Column="59" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='193' x:Name="rect_r308_24" Grid.Column="60" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='194' x:Name="rect_r308_25" Grid.Column="61" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='195' x:Name="rect_r308_26" Grid.Column="62" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='196' x:Name="rect_r308_27" Grid.Column="63" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='197' x:Name="rect_r308_28" Grid.Column="64" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='198' x:Name="rect_r308_29" Grid.Column="65" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='199' x:Name="rect_r308_30" Grid.Column="66" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='200' x:Name="rect_r308_31" Grid.Column="67" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='201' x:Name="rect_r308_32" Grid.Column="68" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='202' x:Name="rect_r308_33" Grid.Column="69" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='203' x:Name="rect_r308_34" Grid.Column="70" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='204' x:Name="rect_r308_35" Grid.Column="71" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='205' x:Name="rect_r308_36" Grid.Column="72" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='206' x:Name="rect_r308_37" Grid.Column="73" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='207' x:Name="rect_r308_38" Grid.Column="74" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='208' x:Name="rect_r308_39" Grid.Column="75" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='209' x:Name="rect_r308_40" Grid.Column="76" Grid.Row="12" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='210' x:Name="rect_r308_41" Grid.Column="76" Grid.Row="13" Fill="Red" Visibility="Collapsed"/>
+				
+				<!--R309-->
+				<Rectangle x:ConnectionId='211' x:Name="rect_r309_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='212' x:Name="rect_r309_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='213' x:Name="rect_r309_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='214' x:Name="rect_r309_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='215' x:Name="rect_r309_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='216' x:Name="rect_r309_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='217' x:Name="rect_r309_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='218' x:Name="rect_r309_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='219' x:Name="rect_r309_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='220' x:Name="rect_r309_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='221' x:Name="rect_r309_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='222' x:Name="rect_r309_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='223' x:Name="rect_r309_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='224' x:Name="rect_r309_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='225' x:Name="rect_r309_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='226' x:Name="rect_r309_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='227' x:Name="rect_r309_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='228' x:Name="rect_r309_18" Grid.Column="58" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='229' x:Name="rect_r309_19" Grid.Column="59" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='230' x:Name="rect_r309_20" Grid.Column="60" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
 				
 				<!--R310-->
-				<Image x:ConnectionId='24' x:Name="img_R310_1" Grid.Column="26" Grid.Row="19"  Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='25' x:Name="img_R310_2" Grid.Column="28" Grid.Row="19"  Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='26' x:Name="img_R310_3" Grid.Column="30" Grid.Row="19" Source="Assets/rightrow.png" Stretch="Uniform"/>
-
-				<!--R309-->
-				<Image x:ConnectionId='27' x:Name="img_R309_1" Grid.Column="29" Grid.Row="18" Source="Assets/uprow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='28' x:Name="img_R309_2" Grid.Column="29" Grid.Row="16"  Source="Assets/uprow.png" Stretch="Uniform"/>
+				<Rectangle x:ConnectionId='231' x:Name="rect_r310_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='232' x:Name="rect_r310_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='233' x:Name="rect_r310_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='234' x:Name="rect_r310_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='235' x:Name="rect_r310_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='236' x:Name="rect_r310_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='237' x:Name="rect_r310_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='238' x:Name="rect_r310_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='239' x:Name="rect_r310_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='240' x:Name="rect_r310_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='241' x:Name="rect_r310_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='242' x:Name="rect_r310_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='243' x:Name="rect_r310_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='244' x:Name="rect_r310_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='245' x:Name="rect_r310_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='246' x:Name="rect_r310_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='247' x:Name="rect_r310_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='248' x:Name="rect_r310_18" Grid.Column="57" Grid.Row="17" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='249' x:Name="rect_r310_19" Grid.Column="57" Grid.Row="18" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='250' x:Name="rect_r310_20" Grid.Column="57" Grid.Row="19" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='251' x:Name="rect_r310_21" Grid.Column="58" Grid.Row="19" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='252' x:Name="rect_r310_22" Grid.Column="59" Grid.Row="19" Fill="Red" Visibility="Collapsed"/>
+				
+				<!--R311-->
+				<Rectangle x:ConnectionId='253' x:Name="rect_r311_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='254' x:Name="rect_r311_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='255' x:Name="rect_r311_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='256' x:Name="rect_r311_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='257' x:Name="rect_r311_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='258' x:Name="rect_r311_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='259' x:Name="rect_r311_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='260' x:Name="rect_r311_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='261' x:Name="rect_r311_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='262' x:Name="rect_r311_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='263' x:Name="rect_r311_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='264' x:Name="rect_r311_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='265' x:Name="rect_r311_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='266' x:Name="rect_r311_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='267' x:Name="rect_r311_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='268' x:Name="rect_r311_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='269' x:Name="rect_r311_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='270' x:Name="rect_r311_18" Grid.Column="57" Grid.Row="17" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='271' x:Name="rect_r311_19" Grid.Column="57" Grid.Row="18" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='272' x:Name="rect_r311_20" Grid.Column="57" Grid.Row="19" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='273' x:Name="rect_r311_21" Grid.Column="57" Grid.Row="20" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='274' x:Name="rect_r311_22" Grid.Column="57" Grid.Row="21" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='275' x:Name="rect_r311_23" Grid.Column="57" Grid.Row="22" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='276' x:Name="rect_r311_24" Grid.Column="57" Grid.Row="23" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='277' x:Name="rect_r311_25" Grid.Column="57" Grid.Row="24" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='278' x:Name="rect_r311_26" Grid.Column="57" Grid.Row="25" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='279' x:Name="rect_r311_27" Grid.Column="58" Grid.Row="25" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='280' x:Name="rect_r311_28" Grid.Column="59" Grid.Row="25" Fill="Red" Visibility="Collapsed"/>
 
 				<!--R312-->
-				<Image x:ConnectionId='29' x:Name="img_R312_1" Grid.Column="29" Grid.Row="20" Source="Assets/downrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='30' x:Name="img_R312_2" Grid.Column="30" Grid.Row="21" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='31' x:Name="img_rOptional_11_12" Grid.Column="32" Grid.Row="21" Source="Assets/downrow.png" Stretch="Uniform"/>
-
-				<!--R311-->
-				<Image x:ConnectionId='32' x:Name="img_R311_1" Grid.Column="34" Grid.Row="21" Source="Assets/rightrow.png" Stretch="Uniform"/>
-				<Image x:ConnectionId='33' x:Name="img_R311_2" Grid.Column="36" Grid.Row="21" Source="Assets/uprow.png" Stretch="Uniform"/>
-				
+				<Rectangle x:ConnectionId='281' x:Name="rect_r312_1" Grid.Column="41" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='282' x:Name="rect_r312_2" Grid.Column="42" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='283' x:Name="rect_r312_3" Grid.Column="43" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='284' x:Name="rect_r312_4" Grid.Column="44" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='285' x:Name="rect_r312_5" Grid.Column="45" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='286' x:Name="rect_r312_6" Grid.Column="46" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='287' x:Name="rect_r312_7" Grid.Column="47" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='288' x:Name="rect_r312_8" Grid.Column="48" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='289' x:Name="rect_r312_9" Grid.Column="49" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='290' x:Name="rect_r312_10" Grid.Column="50" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='291' x:Name="rect_r312_11" Grid.Column="51" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='292' x:Name="rect_r312_12" Grid.Column="52" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='293' x:Name="rect_r312_13" Grid.Column="53" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='294' x:Name="rect_r312_14" Grid.Column="54" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='295' x:Name="rect_r312_15" Grid.Column="55" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='296' x:Name="rect_r312_16" Grid.Column="56" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='297' x:Name="rect_r312_17" Grid.Column="57" Grid.Row="16" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='298' x:Name="rect_r312_18" Grid.Column="57" Grid.Row="17" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='299' x:Name="rect_r312_19" Grid.Column="57" Grid.Row="18" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='300' x:Name="rect_r312_20" Grid.Column="57" Grid.Row="19" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='301' x:Name="rect_r312_21" Grid.Column="57" Grid.Row="20" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='302' x:Name="rect_r312_22" Grid.Column="57" Grid.Row="21" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='303' x:Name="rect_r312_23" Grid.Column="57" Grid.Row="22" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='304' x:Name="rect_r312_24" Grid.Column="57" Grid.Row="23" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='305' x:Name="rect_r312_25" Grid.Column="57" Grid.Row="24" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='306' x:Name="rect_r312_26" Grid.Column="57" Grid.Row="25" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='307' x:Name="rect_r312_27" Grid.Column="57" Grid.Row="26" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='308' x:Name="rect_r312_28" Grid.Column="57" Grid.Row="27" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='309' x:Name="rect_r312_29" Grid.Column="57" Grid.Row="28" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='310' x:Name="rect_r312_30" Grid.Column="57" Grid.Row="29" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='311' x:Name="rect_r312_31" Grid.Column="57" Grid.Row="30" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='312' x:Name="rect_r312_32" Grid.Column="57" Grid.Row="31" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='313' x:Name="rect_r312_33" Grid.Column="57" Grid.Row="32" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='314' x:Name="rect_r312_34" Grid.Column="57" Grid.Row="33" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='315' x:Name="rect_r312_35" Grid.Column="57" Grid.Row="34" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='316' x:Name="rect_r312_36" Grid.Column="57" Grid.Row="35" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='317' x:Name="rect_r312_37" Grid.Column="58" Grid.Row="35" Fill="Red" Visibility="collapsed"/>
+				<Rectangle x:ConnectionId='318' x:Name="rect_r312_38" Grid.Column="59" Grid.Row="35" Fill="Red" Visibility="collapsed"/>
 				<!--Buttons-->
-				<Button x:ConnectionId='34' x:Name="btn_R301" Grid.Column="11" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                     >
-					<TextBlock Text="R301" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='319' x:Name="btn_R301" Grid.Column="21" Grid.Row="24" Grid.RowSpan="13" Grid.ColumnSpan="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                       >
+					<TextBlock Text="R301" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='35' x:Name="btn_R302" Grid.Column="4" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R302" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='320' x:Name="btn_R302" Grid.Column="22" Grid.Row="14" Grid.RowSpan="4" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R302" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='36' x:Name="btn_R303" Grid.Column="3" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R303" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='321' x:Name="btn_R303" Grid.Column="6" Grid.Row="14" Grid.RowSpan="4" Grid.ColumnSpan="16" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R303" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='37' x:Name="btn_R304" Grid.Column="9" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R304" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='322' x:Name="btn_R304" Grid.Column="8" Grid.Row="7" Grid.RowSpan="5" Grid.ColumnSpan="22" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R304" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='38' x:Name="btn_R305" Grid.Column="10" Grid.Row="15" Grid.RowSpan="4" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R305" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='323' x:Name="btn_R305" Grid.Column="30" Grid.Row="7" Grid.RowSpan="5" Grid.ColumnSpan="29" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R305" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='39' x:Name="btn_R306" Grid.Column="10" Grid.Row="13" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R306" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='324' x:Name="btn_R305_1" Grid.Column="33" Grid.Row="12" Grid.RowSpan="2" Grid.ColumnSpan="22" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R305" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
 				</Button>
-				<Button x:ConnectionId='40' x:Name="btn_R307" Grid.Column="10" Grid.Row="8" Grid.RowSpan="5" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R307" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='325' x:Name="btn_R305_2" Grid.Column="33" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="23" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R305" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
 				</Button>
-				<Button x:ConnectionId='41' x:Name="btn_R308" Grid.Column="15" Grid.Row="21" Grid.RowSpan="7" Grid.ColumnSpan="15" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R308" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='326' x:Name="btn_R306" Grid.Column="59" Grid.Row="7" Grid.RowSpan="5" Grid.ColumnSpan="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R306" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='42' x:Name="btn_R309" Grid.Column="29" Grid.Row="8" Grid.RowSpan="7" Grid.ColumnSpan="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R309" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='327' x:Name="btn_R307" Grid.Column="68" Grid.Row="7" Grid.RowSpan="5" Grid.ColumnSpan="11" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R307" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='43' x:Name="btn_R310" Grid.Column="30" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R310" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='328' x:Name="btn_R308" Grid.Column="70" Grid.Row="14" Grid.RowSpan="4" Grid.ColumnSpan="11" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R308" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='44' x:Name="btn_R311" Grid.Column="34" Grid.Row="18" Grid.RowSpan="3" Grid.ColumnSpan="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R311" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='329' x:Name="btn_R309" Grid.Column="59" Grid.Row="14" Grid.RowSpan="4" Grid.ColumnSpan="11" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R309" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
-				<Button x:ConnectionId='45' x:Name="btn_R312" Grid.Column="30" Grid.Row="22" Grid.RowSpan="3" Grid.ColumnSpan="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                    >
-					<TextBlock Text="R312" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button x:ConnectionId='330' x:Name="btn_R310" Grid.Column="59" Grid.Row="18" Grid.RowSpan="6" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R310" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
+				</Button>
+				<Button x:ConnectionId='331' x:Name="btn_R311" Grid.Column="59" Grid.Row="24" Grid.RowSpan="4" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R311" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
+				</Button>
+				<Button x:ConnectionId='332' x:Name="btn_R312" Grid.Column="59" Grid.Row="28" Grid.RowSpan="9" Grid.ColumnSpan="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Transparent"                      >
+					<TextBlock Text="R312" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="10"/>
 				</Button>
 			</Grid>
 
@@ -390,7 +749,7 @@
 						<RowDefinition Height="1*"/>
 					</Grid.RowDefinitions>
 
-					<Button x:ConnectionId='2' x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1"                     >
+					<Button x:ConnectionId='4' x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1"                       >
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Grid>
@@ -401,7 +760,7 @@
 						</Button.Template>
 					</Button>
 
-					<Button x:ConnectionId='3' x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2"                     >
+					<Button x:ConnectionId='5' x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2"                       >
 						<Button.Template>
 							<ControlTemplate TargetType="Button">
 								<Grid>

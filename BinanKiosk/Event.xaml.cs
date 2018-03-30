@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media.Animation;
 using BinanKiosk.Models;
 using BinanKiosk.Repository;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -42,10 +44,10 @@ namespace BinanKiosk
 		public Event()
 		{
 			this.InitializeComponent();
-			
 		}
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		async protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
+			counter = 0;
 			base.OnNavigatedTo(e);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
 			Timer = new DispatcherTimer();
@@ -56,7 +58,14 @@ namespace BinanKiosk
 			var Slider_Images = EventRepository.GetAll_Slider_Images();
 			foreach (var image in Slider_Images)
 			{
-				items.Add(new Temporary_Image() { Image_Source = Global.AsBitmapImage(Global.GetPic(image.Image_Source).image) });
+				BitmapImage bitmapImage2 = new BitmapImage();
+				StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Home));
+				StorageFile storageFile = await storageFolder.GetFileAsync(image.Image_Name);
+				using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+				{
+					await bitmapImage2.SetSourceAsync(stream);
+				}
+				items.Add(new Temporary_Image() { Image_Source = bitmapImage2 });
 			}
 			Carousel_Control.ItemsSource = items;
 			Carousel_Control2.ItemsSource = items;
@@ -77,7 +86,7 @@ namespace BinanKiosk
 		{
 			counter += 1;
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
-			if (counter >= 7)
+			if (counter >= Global.Timeout)
 			{
 				Timer.Stop();
 				Frame.Navigate(typeof(Idle_Page));
@@ -131,39 +140,40 @@ namespace BinanKiosk
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 		}
 
-		private async void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Searchbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Timer_Stop(e);
 			this.Frame.Navigate(typeof(Search));
 		}
 
-		private async void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Mapbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Timer_Stop(e);
 			this.Frame.Navigate(typeof(Map_1f));
 		}
 
-		private async void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Servicesbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Timer_Stop(e);
 			this.Frame.Navigate(typeof(Services));
 		}
 
-		private async void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Jobsbtn_Tapped(object sender, TappedRoutedEventArgs e)
 		{
-			Timer.Stop();
-			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			Timer_Stop(e);
 			this.Frame.Navigate(typeof(v_Job_Category));
 		}
 
-		private async void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		private void Eventbtn_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Timer_Stop(e);
+			this.Frame.Navigate(typeof(Event));
+		}
+		private async void Timer_Stop(TappedRoutedEventArgs e)
 		{
 			Timer.Stop();
+			Carousel_Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
-			this.Frame.Navigate(typeof(Event));
 		}
 	}
 }

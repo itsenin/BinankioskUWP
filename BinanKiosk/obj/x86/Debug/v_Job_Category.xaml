@@ -35,8 +35,7 @@
                            FontFamily="Arial Narrow" FontWeight="Bold" FontSize="20s" Foreground="Black"
                            VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2"/>
 						<Border BorderBrush="Black" Background="Transparent" BorderThickness="0,2,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
-						<Button x:ConnectionId='2' x:Name="bt_Job_Category" Background="Transparent" Content="{Binding Job_List}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"                                />
-						<Button x:Name="bt_Locate" Background="Transparent" Content="{Binding Locate}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						<Button x:ConnectionId='2' x:Name="bt_Job_Category" Background="Transparent" Content="{Binding Job_List}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                                 Grid.ColumnSpan="2"/>
 					</Grid>
 				</Border>
 			</Grid>
