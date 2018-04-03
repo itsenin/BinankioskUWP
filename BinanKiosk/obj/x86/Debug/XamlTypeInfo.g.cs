@@ -156,7 +156,7 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[38];
+            _typeNameTable = new string[37];
             _typeNameTable[0] = "Microsoft.Toolkit.Uwp.UI.Controls.RotatorTile";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
             _typeNameTable[2] = "Microsoft.Toolkit.Uwp.UI.Controls.RotatorTile.RotateDirection";
@@ -184,19 +184,18 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
             _typeNameTable[24] = "BinanKiosk.Map_3f";
             _typeNameTable[25] = "BinanKiosk.Office_Search_View";
             _typeNameTable[26] = "BinanKiosk.Official_Search_View";
-            _typeNameTable[27] = "BinanKiosk.Sample_Ripple2";
-            _typeNameTable[28] = "Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView";
-            _typeNameTable[29] = "Windows.UI.Xaml.Controls.GridView";
-            _typeNameTable[30] = "System.Windows.Input.ICommand";
-            _typeNameTable[31] = "Windows.UI.Xaml.Controls.ItemsPanelTemplate";
-            _typeNameTable[32] = "BinanKiosk.Search";
-            _typeNameTable[33] = "BinanKiosk.Services";
-            _typeNameTable[34] = "BinanKiosk.Services_View";
-            _typeNameTable[35] = "BinanKiosk.Service_Search_View";
-            _typeNameTable[36] = "BinanKiosk.v_Job_Category";
-            _typeNameTable[37] = "BinanKiosk.v_Job_List";
+            _typeNameTable[27] = "Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView";
+            _typeNameTable[28] = "Windows.UI.Xaml.Controls.GridView";
+            _typeNameTable[29] = "System.Windows.Input.ICommand";
+            _typeNameTable[30] = "Windows.UI.Xaml.Controls.ItemsPanelTemplate";
+            _typeNameTable[31] = "BinanKiosk.Search";
+            _typeNameTable[32] = "BinanKiosk.Services";
+            _typeNameTable[33] = "BinanKiosk.Services_View";
+            _typeNameTable[34] = "BinanKiosk.Service_Search_View";
+            _typeNameTable[35] = "BinanKiosk.v_Job_Category";
+            _typeNameTable[36] = "BinanKiosk.v_Job_List";
 
-            _typeTable = new global::System.Type[38];
+            _typeTable = new global::System.Type[37];
             _typeTable[0] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.RotatorTile);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
             _typeTable[2] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.RotatorTile.RotateDirection);
@@ -224,17 +223,16 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
             _typeTable[24] = typeof(global::BinanKiosk.Map_3f);
             _typeTable[25] = typeof(global::BinanKiosk.Office_Search_View);
             _typeTable[26] = typeof(global::BinanKiosk.Official_Search_View);
-            _typeTable[27] = typeof(global::BinanKiosk.Sample_Ripple2);
-            _typeTable[28] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView);
-            _typeTable[29] = typeof(global::Windows.UI.Xaml.Controls.GridView);
-            _typeTable[30] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[31] = typeof(global::Windows.UI.Xaml.Controls.ItemsPanelTemplate);
-            _typeTable[32] = typeof(global::BinanKiosk.Search);
-            _typeTable[33] = typeof(global::BinanKiosk.Services);
-            _typeTable[34] = typeof(global::BinanKiosk.Services_View);
-            _typeTable[35] = typeof(global::BinanKiosk.Service_Search_View);
-            _typeTable[36] = typeof(global::BinanKiosk.v_Job_Category);
-            _typeTable[37] = typeof(global::BinanKiosk.v_Job_List);
+            _typeTable[27] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.Controls.GridView);
+            _typeTable[29] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[30] = typeof(global::Windows.UI.Xaml.Controls.ItemsPanelTemplate);
+            _typeTable[31] = typeof(global::BinanKiosk.Search);
+            _typeTable[32] = typeof(global::BinanKiosk.Services);
+            _typeTable[33] = typeof(global::BinanKiosk.Services_View);
+            _typeTable[34] = typeof(global::BinanKiosk.Service_Search_View);
+            _typeTable[35] = typeof(global::BinanKiosk.v_Job_Category);
+            _typeTable[36] = typeof(global::BinanKiosk.v_Job_List);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -281,14 +279,13 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
         private object Activate_24_Map_3f() { return new global::BinanKiosk.Map_3f(); }
         private object Activate_25_Office_Search_View() { return new global::BinanKiosk.Office_Search_View(); }
         private object Activate_26_Official_Search_View() { return new global::BinanKiosk.Official_Search_View(); }
-        private object Activate_27_Sample_Ripple2() { return new global::BinanKiosk.Sample_Ripple2(); }
-        private object Activate_28_AdaptiveGridView() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView(); }
-        private object Activate_32_Search() { return new global::BinanKiosk.Search(); }
-        private object Activate_33_Services() { return new global::BinanKiosk.Services(); }
-        private object Activate_34_Services_View() { return new global::BinanKiosk.Services_View(); }
-        private object Activate_35_Service_Search_View() { return new global::BinanKiosk.Service_Search_View(); }
-        private object Activate_36_v_Job_Category() { return new global::BinanKiosk.v_Job_Category(); }
-        private object Activate_37_v_Job_List() { return new global::BinanKiosk.v_Job_List(); }
+        private object Activate_27_AdaptiveGridView() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView(); }
+        private object Activate_31_Search() { return new global::BinanKiosk.Search(); }
+        private object Activate_32_Services() { return new global::BinanKiosk.Services(); }
+        private object Activate_33_Services_View() { return new global::BinanKiosk.Services_View(); }
+        private object Activate_34_Service_Search_View() { return new global::BinanKiosk.Service_Search_View(); }
+        private object Activate_35_v_Job_Category() { return new global::BinanKiosk.v_Job_Category(); }
+        private object Activate_36_v_Job_List() { return new global::BinanKiosk.v_Job_List(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -468,16 +465,9 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 27:   //  BinanKiosk.Sample_Ripple2
-                userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_27_Sample_Ripple2;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 28:   //  Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView
+            case 27:   //  Microsoft.Toolkit.Uwp.UI.Controls.AdaptiveGridView
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.GridView"));
-                userType.Activator = Activate_28_AdaptiveGridView;
+                userType.Activator = Activate_27_AdaptiveGridView;
                 userType.AddMemberName("OneRowModeEnabled");
                 userType.AddMemberName("ItemHeight");
                 userType.AddMemberName("DesiredWidth");
@@ -487,58 +477,58 @@ namespace BinanKiosk.BinanKiosk_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 29:   //  Windows.UI.Xaml.Controls.GridView
+            case 28:   //  Windows.UI.Xaml.Controls.GridView
                 xamlType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 30:   //  System.Windows.Input.ICommand
+            case 29:   //  System.Windows.Input.ICommand
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 31:   //  Windows.UI.Xaml.Controls.ItemsPanelTemplate
+            case 30:   //  Windows.UI.Xaml.Controls.ItemsPanelTemplate
                 xamlType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 32:   //  BinanKiosk.Search
+            case 31:   //  BinanKiosk.Search
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_32_Search;
+                userType.Activator = Activate_31_Search;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 33:   //  BinanKiosk.Services
+            case 32:   //  BinanKiosk.Services
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_33_Services;
+                userType.Activator = Activate_32_Services;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 34:   //  BinanKiosk.Services_View
+            case 33:   //  BinanKiosk.Services_View
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_34_Services_View;
+                userType.Activator = Activate_33_Services_View;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 35:   //  BinanKiosk.Service_Search_View
+            case 34:   //  BinanKiosk.Service_Search_View
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_35_Service_Search_View;
+                userType.Activator = Activate_34_Service_Search_View;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 36:   //  BinanKiosk.v_Job_Category
+            case 35:   //  BinanKiosk.v_Job_Category
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_36_v_Job_Category;
+                userType.Activator = Activate_35_v_Job_Category;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  BinanKiosk.v_Job_List
+            case 36:   //  BinanKiosk.v_Job_List
                 userType = new global::BinanKiosk.BinanKiosk_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_37_v_Job_List;
+                userType.Activator = Activate_36_v_Job_List;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

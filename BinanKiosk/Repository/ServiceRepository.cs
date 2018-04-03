@@ -18,15 +18,16 @@ namespace BinanKiosk.Repository
         public IList<Service> GetAll_Service()
         {
             IList<Service> services = new List<Service>();
-            query = @"SELECT * from services";
+            query = @"SELECT service_id,service_name,image_name,offices.office_id, office_name,room_name,offices_image_path from services,offices where services.office_id = offices.office_id";
             Objects = Get(query, null);
-            for (int i = 0; i < (Objects.Count / 3); i++)
+            for (int i = 0; i < (Objects.Count / 7); i++)
             {
                 services.Add(new Service
                 {
-                    Service_ID = Int32.Parse(Objects[i * 3].ToString()),
-                    Service_Name = Objects[1 + (i * 3)].ToString(),
-					Image_Path = Objects[2 + (i * 3)].ToString(),
+                    Service_ID = Int32.Parse(Objects[i * 7].ToString()),
+                    Service_Name = Objects[1 + (i * 7)].ToString(),
+					Image_Path = Objects[2 + (i * 7)].ToString(),
+					office = new Office { Office_ID = int.Parse(Objects[3 + (i * 7)].ToString()), Office_Name = Objects[4 + (i * 7)].ToString(), Room_Name= Objects[5 + (i * 7)].ToString(), image_path = Objects[6 + (i * 7)].ToString() }
 				});
             }
             return services;

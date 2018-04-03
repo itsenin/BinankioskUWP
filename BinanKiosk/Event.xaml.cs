@@ -113,10 +113,13 @@ namespace BinanKiosk
 		{
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "DARATING NA KAGANAPAN";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
 			}
 		}
 

@@ -94,12 +94,18 @@ namespace BinanKiosk
 			
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "MGA MAPA";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "MAPA";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+				var firstFloor_btn = (fstFlr.Content as Grid).Children[1] as TextBlock;
+				firstFloor_btn.Text = "Unang Palapag";
+				var secondFloor_btn = (sndFlr.Content as Grid).Children[1] as TextBlock;
+				secondFloor_btn.Text = "Ikalawang Palapag";
+				lb_currentFloor.Text = "Ikatlong Palapag";
 			}
 
 		}
@@ -149,13 +155,7 @@ namespace BinanKiosk
 				Timer.Stop();
 				this.Frame.Navigate(typeof(Map_1f), Global.Enum_Converter(button_Name.Split('_')[1]));
 				//await Room_Populator(Global.Enum_Converter(button_Name.Split('_')[1]));
-				//ContentDialog InstructionDialog = new ContentDialog()
-				//{
-				//	Title = "Instruction",
-				//	Content = "You have reached the destination!",
-				//	CloseButtonText = "Ok"
-				//};
-				//await InstructionDialog.ShowAsync();
+				
 			}
 		}
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
@@ -205,6 +205,7 @@ namespace BinanKiosk
 		{
 			Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if (Global.IsClicked) { Global.Show_Hide_Image(Temp_ListSteps, Global.Img_Property.Collapsed); }
 			this.Frame.Navigate(typeof(Map_1f));
 		}
 
@@ -212,6 +213,7 @@ namespace BinanKiosk
 		{
 			Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if (Global.IsClicked) { Global.Show_Hide_Image(Temp_ListSteps, Global.Img_Property.Collapsed); }
 			this.Frame.Navigate(typeof(Map_2f));
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)

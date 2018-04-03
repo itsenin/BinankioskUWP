@@ -18,7 +18,7 @@ namespace BinanKiosk.Models
 {
 	public class Global
 	{
-		public const int Timeout = 60;
+		public const int Timeout = 80;
 		public const string BASE_ADDRESS = "http://localhost:8080/api/";
 		public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";
 		//public const string BASE_ADDRESS_DEBUG = "http://localhost:8080/api/";

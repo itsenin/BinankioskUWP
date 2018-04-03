@@ -121,6 +121,11 @@ namespace BinanKiosk
 			//For populating the Adaptive Grid View
 			foreach (var job_category in displayPostsList)
 			{
+				string description = "";
+				if (Global.language != "Filipino")
+					description = "SHOW ALL JOB LIST";
+				else
+					description = "IPAKITA ANG LISTAHAN NG TRABAHO";
 				items.Add(new BindedItems()
 				{
 					job_Category = new M_Job_Category
@@ -128,7 +133,8 @@ namespace BinanKiosk
 						Job_ID = job_category.Job_ID,
 						Job_Name = job_category.Job_Name
 					},
-					Job_List = "SHOW ALL JOB LIST",
+
+					Job_List = description,
 					Locate = "LOCATE"
 				});
 			}
@@ -139,14 +145,17 @@ namespace BinanKiosk
 		{
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "MGA KATEGORYA NG TRABAHO";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "MGA SERBISYO";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+				tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
-			tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			else
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 		}
 
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
@@ -163,7 +172,10 @@ namespace BinanKiosk
 			{
 				pageIndex--;
 				AdaptiveGridViewControl.ItemsSource = Job_Category_Populator();
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				if (Global.language != "Filipino")
+					tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				else
+					tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
 		}
 
@@ -175,8 +187,10 @@ namespace BinanKiosk
 			{
 				pageIndex++;
 				AdaptiveGridViewControl.ItemsSource = Job_Category_Populator();
-
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				if (Global.language != "Filipino")
+					tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				else
+					tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
 		}
 

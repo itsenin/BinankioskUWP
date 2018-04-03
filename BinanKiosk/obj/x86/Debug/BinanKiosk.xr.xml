@@ -20,6 +20,7 @@
     <RootPropertyPathName Name="Job_Company" />
     <RootPropertyPathName Name="Job_Location" />
     <RootPropertyPathName Name="Job_Types" />
+    <RootPropertyPathName Name="logo_Image_Path" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -45,7 +46,6 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="MinHeight" />
       <RootEvent Name="Tapped" />
-      <RootEvent Name="PointerPressed" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetRow" />
@@ -76,8 +76,6 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
-      <RootProperty Name="Children" />
-      <RootEvent Name="Tapped" />
       <RootMethod Name="GetZIndex" />
       <RootMethod Name="SetZIndex" />
     </RootType>
@@ -142,7 +140,6 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Text" />
-      <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="TextDecorations" />
       <RootProperty Name="Style" />
@@ -186,7 +183,6 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="Template" />
       <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="BinanKiosk.Event" />
@@ -297,7 +293,6 @@
     <RootType FullName="BinanKiosk.Map_3f" />
     <RootType FullName="BinanKiosk.Office_Search_View" />
     <RootType FullName="BinanKiosk.Official_Search_View" />
-    <RootType FullName="BinanKiosk.Sample_Ripple2" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
       <RootProperty Name="PlaceholderText" />

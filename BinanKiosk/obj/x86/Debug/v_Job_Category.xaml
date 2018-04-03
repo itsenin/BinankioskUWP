@@ -62,13 +62,13 @@
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width=".3*"/>
-				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1.5*"/>
 				<ColumnDefinition Width="4.1*"/>
 				<ColumnDefinition Width=".2*"/>
 				<ColumnDefinition Width=".3*"/>
 			</Grid.ColumnDefinitions>
 			<SymbolIcon Symbol="Page2" Foreground="White" Grid.Column="0"/>
-			<TextBlock x:ConnectionId='15' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SERVICES"/>
+			<TextBlock x:ConnectionId='15' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOB CATEGORIES"/>
 			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
 			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
 		</Grid>

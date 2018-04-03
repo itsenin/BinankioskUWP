@@ -138,12 +138,13 @@ namespace BinanKiosk
 		{
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "OPISINA";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "RESULTA";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
 			}
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)

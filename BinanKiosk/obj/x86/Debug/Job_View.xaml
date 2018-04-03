@@ -33,7 +33,7 @@
                 <ColumnDefinition Width=".3*"/>
             </Grid.ColumnDefinitions>
             <SymbolIcon x:ConnectionId='13' x:Name="btn_Back" Symbol="Back" Foreground="White" Grid.Column="0"                         />
-            <TextBlock x:ConnectionId='14' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOB RESULT"/>
+            <TextBlock x:ConnectionId='14' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="JOB QUALIFICATION"/>
             <SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
             <Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
         </Grid>
@@ -67,7 +67,7 @@
             <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Assets/Binan city.png" Grid.Column="1" Margin="1,0,0,0"/>
 
 			<AppBarSeparator Grid.Column="4" Margin="0.5,13,-1.5,0"/>
-			<AppBarButton x:ConnectionId='7' x:Name="Searchbtn" Icon="Zoom" Background="#1f7d1f" Label="Search"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
+			<AppBarButton x:ConnectionId='7' x:Name="Searchbtn" Icon="Zoom" Label="Search"                           FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="3" Width="Auto" Height="Auto" Margin="0,11,-0.5,0" />
 			<AppBarSeparator Grid.Column="6" Margin="0.5,13,-1.5,0"/>
 			<AppBarButton x:ConnectionId='8' x:Name="Mapbtn" Icon="Map" Label="Maps"                        FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" Grid.Column="5" Width="Auto" Height="Auto" Margin="0,11,-0.5,0"/>
 			<AppBarSeparator Grid.Column="8" Margin="0.5,13,-1.5,0"/>

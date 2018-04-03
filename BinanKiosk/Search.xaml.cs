@@ -169,7 +169,10 @@ namespace BinanKiosk
 						break;
 					case "All":
 						SelectedItem = Categories.All;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
 						break;
 				}
 				AdaptiveGridViewControl.ItemsSource = PopulateGrid(SelectedItem, SearchType.All);
@@ -406,7 +409,10 @@ namespace BinanKiosk
 					{
 						pageIndex--;
 						GoBack = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Office:
@@ -414,7 +420,10 @@ namespace BinanKiosk
 					{
 						pageIndex--;
 						GoBack = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Service:
@@ -422,7 +431,10 @@ namespace BinanKiosk
 					{
 						pageIndex--;
 						GoBack = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Job:
@@ -430,7 +442,10 @@ namespace BinanKiosk
 					{
 						pageIndex--;
 						GoBack = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.All:
@@ -438,7 +453,10 @@ namespace BinanKiosk
 					{
 						pageIndex--;
 						GoBack = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
 					}
 					break;
 			}
@@ -463,7 +481,10 @@ namespace BinanKiosk
 					{
 						pageIndex++;
 						Next = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Office:
@@ -471,7 +492,10 @@ namespace BinanKiosk
 					{
 						pageIndex++;
 						Next = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Service:
@@ -479,7 +503,10 @@ namespace BinanKiosk
 					{
 						pageIndex++;
 						Next = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.Job:
@@ -487,7 +514,10 @@ namespace BinanKiosk
 					{
 						pageIndex++;
 						Next = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
 					}
 					break;
 				case Categories.All:
@@ -495,7 +525,10 @@ namespace BinanKiosk
 					{
 						pageIndex++;
 						Next = true;
-						tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						if (Global.language != "Filipino")
+							tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+						else
+							tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (All_totalPage + 1).ToString();
 					}
 					break;
 			}
@@ -558,18 +591,20 @@ namespace BinanKiosk
 
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "HANAPIN";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "HANAPIN";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
 
 				tbOfficers.Text = "Mga Opisyal";
-				tbOffices.Text = "Kagawaran";
+				tbOffices.Text = "Mga Opisina";
 				tbServices.Text = "Mga Serbisyo";
 				tbJobs.Text = "Mga Trabaho";
 				tbAll.Text = "Lahat";
+				tb_Search.PlaceholderText = "HANAPIN...";
 			}
 		}
 
@@ -589,23 +624,38 @@ namespace BinanKiosk
 			{
 				case Categories.Officer:
 					Official_totalPage = Count_Page(object_List);
-					tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+					if(Global.language != "Filipino")
+						tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
+					else
+						tb_PageNum.Text = "Pahina " + (temp_index + 1).ToString() + " / " + (Official_totalPage + 1).ToString();
 					break;
 				case Categories.Office:
 					Office_totalPage = Count_Page(object_List);
-					tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+					if (Global.language != "Filipino")
+						tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
+					else
+						tb_PageNum.Text = "Pahina " + (temp_index + 1).ToString() + " / " + (Office_totalPage + 1).ToString();
 					break;
 				case Categories.Service:
 					Service_totalPage = Count_Page(object_List);
-					tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+					if (Global.language != "Filipino")
+						tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
+					else
+						tb_PageNum.Text = "Pahina " + (temp_index + 1).ToString() + " / " + (Service_totalPage + 1).ToString();
 					break;
 				case Categories.Job:
 					Job_totalPage = Count_Page(object_List);
-					tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+					if (Global.language != "Filipino")
+						tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
+					else
+						tb_PageNum.Text = "Pahina " + (temp_index + 1).ToString() + " / " + (Job_totalPage + 1).ToString();
 					break;
 				case Categories.All:
 					All_totalPage = Count_Page(object_List);
-					tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+					if (Global.language != "Filipino")
+						tb_PageNum.Text = "Page " + (temp_index + 1).ToString() + " / " + (All_totalPage + 1).ToString();
+					else
+						tb_PageNum.Text = "Pahina " + (temp_index + 1).ToString() + " / " + (All_totalPage + 1).ToString();
 					break;
 			}
 		}

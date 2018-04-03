@@ -17,6 +17,7 @@ using BinanKiosk.Enums;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using static BinanKiosk.v_Job_List;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,7 +28,7 @@ namespace BinanKiosk
     /// </summary>
     public sealed partial class Job_View : Page
     {
-		M_Job_Type job_Type;
+		Temp_Job_Type job_Type;
 		DispatcherTimer Timer;
 		int counter = 0;
         public Job_View()
@@ -45,7 +46,7 @@ namespace BinanKiosk
 			Time.Text = DateTime.Now.DayOfWeek + ", " + DateTime.Now.ToString("MMMM dd, yyyy") + System.Environment.NewLine + DateTime.Now.ToString("h:mm:ss tt");
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
-			job_Type = (M_Job_Type)e.Parameter;
+			job_Type = (Temp_Job_Type)e.Parameter;
 			BitmapImage bitmapImage2 = new BitmapImage();
 			StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Jobs));
 			StorageFile storageFile = await storageFolder.GetFileAsync(job_Type.job_Image_Path);
@@ -107,13 +108,13 @@ namespace BinanKiosk
         {
             if (Global.language == "Filipino")
             {
-                Searchbtn.Label = "Hanapin";
-                Mapbtn.Label = "Mapa";
-                Servicesbtn.Label = "Mga Serbisyo";
-                Jobsbtn.Label = "Mga Trabaho";
-
-                MainTitle.Text = "RESULTA";
-            }
+				MainTitle.Text = "KWALIPIKASYON SA TRABAHO";
+				Searchbtn.Label = "Hanapin";
+				Mapbtn.Label = "Mapa";
+				Servicesbtn.Label = "Mga Serbisyo";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+			}
         }
 
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)

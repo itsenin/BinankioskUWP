@@ -130,7 +130,7 @@
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width=".3*"/>
-				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1.5*"/>
 				<ColumnDefinition Width="4.1*"/>
 				<ColumnDefinition Width=".2*"/>
 				<ColumnDefinition Width=".3*"/>
@@ -458,7 +458,7 @@
 				<Rectangle x:Name="rect_r102_45" Grid.Column="27" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
 				<Rectangle x:Name="rect_r102_46" Grid.Column="26" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
 				<Rectangle x:Name="rect_r102_47" Grid.Column="25" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
-				<Rectangle x:Name="rect_r102_48" Grid.Column="24" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
+				<Rectangle x:Name="rect_r102_48" Grid.Column="24" Grid.Row="16" Visibility = "Collapsed"/>
 
 				<!--R103-->
 				<Rectangle x:Name="rect_r103_1" Grid.Column="37" Grid.Row="44" Fill="Red" Visibility="Collapsed" />
@@ -514,8 +514,7 @@
 				<Rectangle x:Name="rect_r103_51" Grid.Column="28" Grid.Row="9" Fill="Red" Visibility="Collapsed"/>
 				<Rectangle x:Name="rect_r103_52" Grid.Column="28" Grid.Row="8" Fill="Red" Visibility="Collapsed"/>
 				<Rectangle x:Name="rect_r103_53" Grid.Column="27" Grid.Row="8" Fill="Red" Visibility="Collapsed"/>
-				<Rectangle x:Name="rect_r103_54" Grid.Column="26" Grid.Row="8" Fill="Red" Visibility="Collapsed"/>
-
+				<Rectangle x:Name="rect_r103_54" Grid.Column="26" Grid.Row="8" Fill="Red" Visibility = "Collapsed"/>
 				<!--R104-->
 				<Rectangle x:Name="rect_r104_1" Grid.Column="37" Grid.Row="44" Fill="Red" Visibility="Collapsed" />
 				<Rectangle x:Name="rect_r104_2" Grid.Column="37" Grid.Row="45" Fill="Red" Visibility="Collapsed" />
@@ -1139,26 +1138,18 @@
 						<RowDefinition Height="1*"/>
 					</Grid.RowDefinitions>
 
-					<Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Tapped="sndFlr_Tapped">
-						<Button.Template>
-							<ControlTemplate TargetType="Button">
-								<Grid>
-									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-									<TextBlock Name="sFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor"/>
-								</Grid>
-							</ControlTemplate>
-						</Button.Template>
+					<Button x:Name="sndFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Tapped="sndFlr_Tapped" Background="Transparent">
+						<Grid>
+							<Image Source="Assets/button1.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+							<TextBlock x:Name="sFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Second Floor" />
+						</Grid>
 					</Button>
 
-					<Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Tapped="trdFlr_Tapped">
-						<Button.Template>
-							<ControlTemplate TargetType="Button">
-								<Grid>
-									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-									<TextBlock x:Name="tFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
-								</Grid>
-							</ControlTemplate>
-						</Button.Template>
+					<Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Tapped="trdFlr_Tapped" Background="Transparent">
+						<Grid>
+							<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+							<TextBlock x:Name="tFlr" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
+						</Grid>
 					</Button>
 				</Grid>
 
@@ -1167,7 +1158,7 @@
 						<RowDefinition Height="3*"/>
 						<RowDefinition Height="3*"/>
 					</Grid.RowDefinitions>
-					<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="GROUND FLOOR"/>
+					<TextBlock x:Name="lb_currentFloor" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="GROUND FLOOR"/>
 					<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
 				</Grid>
 

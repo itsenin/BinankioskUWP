@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-30T14:26:18.725</Modified>
+      <Modified>2018-04-03T00:46:42.596</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.exe">
       <PackagePath>entrypoint\BinanKiosk.exe</PackagePath>
-      <Modified>2018-03-30T14:26:06.813</Modified>
+      <Modified>2018-04-03T00:46:39.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\.nuget\packages\lumiaimagingsdk.uwp\3.0.593\runtimes\win10-x86\native\Lumia.Imaging.dll">
       <PackagePath>Lumia.Imaging.dll</PackagePath>
@@ -607,6 +607,14 @@
       <PackagePath>Assets\EDIT_3F.png</PackagePath>
       <Modified>2018-03-26T17:55:58.426</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\LARROW.png">
+      <PackagePath>Assets\LARROW.png</PackagePath>
+      <Modified>2018-04-02T17:36:31.839</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\left.png">
+      <PackagePath>Assets\left.png</PackagePath>
+      <Modified>2018-04-02T16:50:35.107</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\3rd Floor.PNG">
       <PackagePath>Assets\3rd Floor.PNG</PackagePath>
       <Modified>2018-03-12T14:16:59.582</Modified>
@@ -799,7 +807,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\BinanKiosk.xr.xml">
       <PackagePath>BinanKiosk.xr.xml</PackagePath>
-      <Modified>2018-03-30T09:02:55.539</Modified>
+      <Modified>2018-04-03T00:12:56.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -956,11 +964,11 @@
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-30T10:23:47.286</Modified>
+      <Modified>2018-04-03T00:46:40.676</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\bin\x86\Debug\Core\BinanKiosk.exe">
       <PackagePath>BinanKiosk.exe</PackagePath>
-      <Modified>2018-03-30T14:26:18.677</Modified>
+      <Modified>2018-04-03T00:46:42.586</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

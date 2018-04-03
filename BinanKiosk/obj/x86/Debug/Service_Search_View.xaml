@@ -27,13 +27,13 @@
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width=".3*"/>
-				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1.5*"/>
 				<ColumnDefinition Width="4.1*"/>
 				<ColumnDefinition Width=".2*"/>
 				<ColumnDefinition Width=".3*"/>
 			</Grid.ColumnDefinitions>
 			<SymbolIcon x:ConnectionId='18' x:Name="btn_Back" Symbol="Back" Foreground="White" Grid.Column="0"                         />
-			<TextBlock x:ConnectionId='19' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="OFFICE RESULT"/>
+			<TextBlock x:ConnectionId='19' x:Name="MainTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Narrow" FontSize="20" FontWeight="Bold" TextAlignment="Left" Grid.Column="1" Text="SERVICE RESULT"/>
 			<SymbolIcon Symbol="Help" Foreground="White" Grid.Column="3"/>
 			<Button Content="FAQs" Foreground="White" Grid.Column="4" Height="60" Width="76"/>
 		</Grid>
@@ -124,8 +124,8 @@
 					</Border>
 					<Image x:ConnectionId='8' x:Name="Department_Logo" Source="file://192.168.0.3/SharedFolder/Images/Departments/binanlogo.png" Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 					<!--<Border x:Name="button_Border" BorderBrush="Transparent" BorderThickness="2" CornerRadius="0" Grid.Row="3" Grid.Column="4">-->
-					<Button x:ConnectionId='9' x:Name="btn_Find" Background="Transparent" Grid.Row="4" Grid.Column="4">
-						<Image Source="ms-appx:///Assets/Find_btn.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+					<Button x:ConnectionId='9' x:Name="btn_Find" Background="Transparent" Grid.Row="4" Grid.Column="4"                         >
+						<Image Source="ms-appx:///Assets/Find_btn.png" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 					</Button>
 
 					<!--</Border>-->

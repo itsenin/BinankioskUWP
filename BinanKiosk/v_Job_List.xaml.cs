@@ -9,6 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -16,6 +18,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -32,7 +35,18 @@ namespace BinanKiosk
 		private Items item_List;
         private M_Job_Category _Category;
 		int counter = 0;
-		protected override void OnNavigatedTo(NavigationEventArgs e)
+		public class Temp_Job_Type
+		{
+			public int JobType_ID { get; set; }
+			public string Job_Types { get; set; }
+			public M_Job_Category Category { get; set; }
+			public string Job_Description { get; set; }
+			public string Job_Location { get; set; }
+			public string Job_Company { get; set; }
+			public string job_Image_Path { get; set; }
+			public BitmapImage logo_Image_Path { get; set; }
+		}
+		protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
 			counter = 0;
 			base.OnNavigatedTo(e);
@@ -45,13 +59,20 @@ namespace BinanKiosk
 			Timer.Interval = new TimeSpan(0, 0, 1);
 			Timer.Start();
 			item_List = (Items)e.Parameter;
-			ObservableCollection<M_Job_Type> items = new ObservableCollection<M_Job_Type>();
+			ObservableCollection<Temp_Job_Type> items = new ObservableCollection<Temp_Job_Type>();
 			if (item_List.itemCategory.Equals(Categories.Job_Category))
 			{
 				_Category = (M_Job_Category)item_List.itemObject;
 				foreach (var JobType in jobRepository.GetAll_JobTypes(_Category))
 				{
-					items.Add(new M_Job_Type()
+					BitmapImage bitmapImage2 = new BitmapImage();
+					StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Job_Company_Logos));
+					StorageFile storageFile = await storageFolder.GetFileAsync(JobType.logo_Image_Path);
+					using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+					{
+						await bitmapImage2.SetSourceAsync(stream);
+					}
+					items.Add(new Temp_Job_Type()
 					{
 						JobType_ID = JobType.JobType_ID,
 						Category = new M_Job_Category { Job_ID = JobType.Category.Job_ID, Job_Name = JobType.Category.Job_Name },
@@ -59,7 +80,8 @@ namespace BinanKiosk
 						Job_Description = JobType.Job_Description,
 						Job_Location = JobType.Job_Location,
 						Job_Types = JobType.Job_Types,
-						job_Image_Path = JobType.job_Image_Path
+						job_Image_Path = JobType.job_Image_Path,
+						logo_Image_Path = bitmapImage2
 					});
 				}
 			}
@@ -70,7 +92,14 @@ namespace BinanKiosk
 
 				foreach (var JobType in Filtered_Job_List)
 				{
-					items.Add(new M_Job_Type()
+					BitmapImage bitmapImage2 = new BitmapImage();
+					StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(Global.GetImage(Global.Subfolders.Job_Company_Logos));
+					StorageFile storageFile = await storageFolder.GetFileAsync(JobType.logo_Image_Path);
+					using (IRandomAccessStream stream = await storageFile.OpenAsync(FileAccessMode.Read))
+					{
+						await bitmapImage2.SetSourceAsync(stream);
+					}
+					items.Add(new Temp_Job_Type()
 					{
 						JobType_ID = JobType.JobType_ID,
 						Category = new M_Job_Category { Job_ID = JobType.Category.Job_ID, Job_Name = JobType.Category.Job_Name },
@@ -79,15 +108,18 @@ namespace BinanKiosk
 						Job_Location = JobType.Job_Location,
 						Job_Types = JobType.Job_Types,
 						job_Image_Path = JobType.job_Image_Path,
-						logo_Image_Path = JobType.logo_Image_Path
+						logo_Image_Path = bitmapImage2
 					});
 				}
 			}
            
             if (items.Count <= 0)
             {
-                tb_Result.Text = "No Result";
-                img_trans.Visibility = Visibility.Visible;
+				if (Global.language != "Filipino")
+					tb_Result.Text = "No Result";
+				else
+					tb_Result.Text = "Walang Resulta";
+				img_trans.Visibility = Visibility.Visible;
             }
             else
             {
@@ -141,17 +173,26 @@ namespace BinanKiosk
 			this.Frame.Navigate(typeof(Event));
 		}
 
-		private void Page_Loaded(object sender, RoutedEventArgs e)
+		private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (Global.language == "Filipino")
             {
-                Searchbtn.Label = "Hanapin";
-                Mapbtn.Label = "Mapa";
-                Servicesbtn.Label = "Mga Serbisyo";
-                Jobsbtn.Label = "Mga Trabaho";
-                MainTitle.Text = "RESULTA";
-            }
-        }
+				MainTitle.Text = "LISTAHAN NG TRABAHO";
+
+				Searchbtn.Label = "Hanapin";
+				Mapbtn.Label = "Mapa";
+				Servicesbtn.Label = "Mga Serbisyo";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+			}
+			ContentDialog InstructionDialog = new ContentDialog()
+			{
+				Title = "Instruction",
+				Content = "Tap a job to view the requirements!",
+				CloseButtonText = "Ok"
+			};
+			await InstructionDialog.ShowAsync();
+		}
 
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)
 		{
@@ -162,13 +203,13 @@ namespace BinanKiosk
 		private void listViewControl_Tapped(object sender, TappedRoutedEventArgs e)
 		{
 			Goto_OtherForm(e);
-			M_Job_Type job_Type = new M_Job_Type();
+			Temp_Job_Type job_Type = new Temp_Job_Type();
 			if ((e.OriginalSource as TextBlock) != null)
-				job_Type = (e.OriginalSource as TextBlock).DataContext as M_Job_Type;
+				job_Type = (e.OriginalSource as TextBlock).DataContext as Temp_Job_Type;
 			else if ((e.OriginalSource as Grid) != null)
-				job_Type = (e.OriginalSource as Grid).DataContext as M_Job_Type;
+				job_Type = (e.OriginalSource as Grid).DataContext as Temp_Job_Type;
 			else if ((e.OriginalSource as Image) != null)
-				job_Type = (e.OriginalSource as Image).DataContext as M_Job_Type;
+				job_Type = (e.OriginalSource as Image).DataContext as Temp_Job_Type;
 			else
 				job_Type = null;
 			if (job_Type != null)

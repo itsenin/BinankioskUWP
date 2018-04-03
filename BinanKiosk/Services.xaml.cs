@@ -122,14 +122,26 @@ namespace BinanKiosk
 			//For populating the Adaptive Grid View
 			foreach (var service in displayPostsList)
 			{
+				string description = "",Location="";
+				if (Global.language != "Filipino")
+				{
+					description = "Citizen Charter";
+					Location = "LOCATE";
+				}
+				else
+				{
+					description = "GABAY NG MAMAMAYAN";
+					Location = "HANAPIN";
+				}
+					
 				items.Add(new BindedItems()
 				{
 					service = new Service {
 						Service_ID = service.Service_ID,
 						Service_Name = service.Service_Name,
 						Image_Path = service.Image_Path},
-					Citizen_Charter = "Citizen Charter",
-					Locate = "Locate"
+					Citizen_Charter = description,
+					Locate = Location
 					
 				});
 			}
@@ -140,14 +152,17 @@ namespace BinanKiosk
 		{
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "MGA SERBISYO";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "MGA SERBISYO";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+				tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
-			tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+			else
+				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 		}
 
 		private void bt_CitizenCharter_Tapped(object sender, TappedRoutedEventArgs e)
@@ -171,7 +186,10 @@ namespace BinanKiosk
 			{
 				pageIndex--;
 				AdaptiveGridViewControl.ItemsSource = Service_Populator();
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				if(Global.language != "Filipino")
+					tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				else
+					tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
 		}
 
@@ -183,8 +201,10 @@ namespace BinanKiosk
 			{
 				pageIndex++;
 				AdaptiveGridViewControl.ItemsSource = Service_Populator();
-
-				tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				if (Global.language != "Filipino")
+					tb_PageNum.Text = "Page " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
+				else
+					tb_PageNum.Text = "Pahina " + (pageIndex + 1).ToString() + " / " + (totalPage + 1).ToString();
 			}
 		}
 

@@ -11,5 +11,6 @@ namespace BinanKiosk.Models
         public int Service_ID { get; set; }
         public string Service_Name { get; set; }
 		public string Image_Path { get; set; }
+		public Office office { get; set; }
     }
 }

@@ -147,9 +147,6 @@
     <Compile Include="Repository\OfficialRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\ServiceRepository.cs" />
-    <Compile Include="Sample_Ripple2.xaml.cs">
-      <DependentUpon>Sample_Ripple2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
@@ -182,6 +179,8 @@
     <Content Include="Assets\2F_EDIT.png" />
     <Content Include="Assets\2nd_Floor_HD.png" />
     <Content Include="Assets\EDIT_3F.png" />
+    <Content Include="Assets\LARROW.png" />
+    <Content Include="Assets\left.png" />
     <Content Include="Assets\Ripple.gif" />
     <Content Include="Assets\3rd Floor.PNG" />
     <Content Include="Assets\3rd_Floor_HD.png" />
@@ -271,10 +270,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Official_Search_View.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sample_Ripple2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

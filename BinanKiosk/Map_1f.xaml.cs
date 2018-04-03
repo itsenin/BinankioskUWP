@@ -110,14 +110,17 @@ namespace BinanKiosk
 			Global.Button_Renaming(ButtonList);
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "MGA MAPA";
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				//sFlr.Label = "Pangalawang Palapag";
-
-				MainTitle.Text = "MAPA";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
+				var secondFloor_btn = (sndFlr.Content as Grid).Children[1] as TextBlock;
+				secondFloor_btn.Text = "Ikalawang Palapag";
+				var thirdFloor_btn = (trdFlr.Content as Grid).Children[1] as TextBlock;
+				thirdFloor_btn.Text = "Ikatlong Palapag";
+				lb_currentFloor.Text = "Unang Palapag";
 			}
 			//ContentDialog InstructionDialog = new ContentDialog()
 			//{
@@ -237,6 +240,7 @@ namespace BinanKiosk
 		{
 			Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if (Global.IsClicked) { Global.Show_Hide_Image(Temp_ListSteps, Global.Img_Property.Collapsed); }
 			this.Frame.Navigate(typeof(Map_2f));
 		}
 
@@ -244,6 +248,7 @@ namespace BinanKiosk
 		{
 			Timer.Stop();
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
+			if (Global.IsClicked) { Global.Show_Hide_Image(Temp_ListSteps, Global.Img_Property.Collapsed); }
 			this.Frame.Navigate(typeof(Map_3f));
 		}
 	}

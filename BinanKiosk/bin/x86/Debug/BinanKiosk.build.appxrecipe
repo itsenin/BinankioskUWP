@@ -454,6 +454,12 @@
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\EDIT_3F.png">
       <PackagePath>Assets\EDIT_3F.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\LARROW.png">
+      <PackagePath>Assets\LARROW.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\left.png">
+      <PackagePath>Assets\left.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jun\Documents\GitHub\BinankioskUWP\BinanKiosk\Assets\3rd Floor.PNG">
       <PackagePath>Assets\3rd Floor.PNG</PackagePath>
     </AppxPackagedFile>

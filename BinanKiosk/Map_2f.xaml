@@ -127,7 +127,7 @@
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width=".3*"/>
-				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="1.5*"/>
 				<ColumnDefinition Width="4.1*"/>
 				<ColumnDefinition Width=".2*"/>
 				<ColumnDefinition Width=".3*"/>
@@ -1204,26 +1204,18 @@
 						<RowDefinition Height="1*"/>
 					</Grid.RowDefinitions>
 
-					<Button x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Tapped="fstFlr_Tapped">
-						<Button.Template>
-							<ControlTemplate TargetType="Button">
-								<Grid>
-									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="First Floor"/>
-								</Grid>
-							</ControlTemplate>
-						</Button.Template>
+					<Button x:Name="fstFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="1" Tapped="fstFlr_Tapped" Background="Transparent">
+						<Grid>
+							<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="First Floor"/>
+						</Grid>
 					</Button>
 
-					<Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Tapped="trdFlr_Tapped">
-						<Button.Template>
-							<ControlTemplate TargetType="Button">
-								<Grid>
-									<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
-									<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
-								</Grid>
-							</ControlTemplate>
-						</Button.Template>
+					<Button x:Name="trdFlr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White" FontFamily="Arial Narrow" FontSize="18" FontWeight="Bold" Grid.Row="2" Tapped="trdFlr_Tapped" Background="Transparent">
+						<Grid>
+							<Image Source="Assets/button1.png" Stretch="Fill" VerticalAlignment="Top"/>
+							<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="Third Floor"/>
+						</Grid>
 					</Button>
 				</Grid>
 
@@ -1232,7 +1224,7 @@
 						<RowDefinition Height="3*"/>
 						<RowDefinition Height="3*"/>
 					</Grid.RowDefinitions>
-					<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="SECOND FLOOR"/>
+					<TextBlock x:Name="lb_currentFloor" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="SECOND FLOOR"/>
 					<!--<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Arial Narrow" FontSize="30" FontWeight="Bold" TextAlignment="Left" TextWrapping="Wrap" Text="Instructions : Tap the room"/>-->
 				</Grid>
 

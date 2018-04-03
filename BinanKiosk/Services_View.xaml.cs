@@ -113,12 +113,13 @@ namespace BinanKiosk
         {
 			if (Global.language == "Filipino")
             {
-                Searchbtn.Label = "Hanapin";
-                Mapbtn.Label = "Mapa";
-                Servicesbtn.Label = "Mga Serbisyo";
-                Jobsbtn.Label = "Mga Trabaho";
+				MainTitle.Text = "GABAY NG MAMAMAYAN";
 
-                MainTitle.Text = "MGA SERBISYO";
+				Searchbtn.Label = "Hanapin";
+				Mapbtn.Label = "Mapa";
+				Servicesbtn.Label = "Mga Serbisyo";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
 			}
 		}
 		private async void MyGrid_Tapped(object sender, TappedRoutedEventArgs e)

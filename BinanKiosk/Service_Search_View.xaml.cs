@@ -120,12 +120,13 @@ namespace BinanKiosk
 		{
 			if (Global.language == "Filipino")
 			{
+				MainTitle.Text = "SERBISYO";
+
 				Searchbtn.Label = "Hanapin";
 				Mapbtn.Label = "Mapa";
 				Servicesbtn.Label = "Mga Serbisyo";
-				Jobsbtn.Label = "Mga Trabaho";
-
-				MainTitle.Text = "RESULTA";
+				Jobsbtn.Label = "Mga Kategorya ng Trabaho";
+				Eventbtn.Label = "Mga Darating na Kaganapan";
 			}
 		}
 		private async void Goto_OtherForm(TappedRoutedEventArgs e)
@@ -134,6 +135,12 @@ namespace BinanKiosk
 			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+		}
+
+		private void btn_Find_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			this.Frame.Navigate(typeof(Map_1f), Global.Enum_Converter(service.office.Room_Name));
 		}
 	}
 }
