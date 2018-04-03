@@ -36,7 +36,7 @@
                            VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2"/>
 						<Border BorderBrush="Black" Background="Transparent" BorderThickness="0,2,0,0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 						<Button x:Name="bt_CitizenCharter" Background="Transparent" Content="{Binding Citizen_Charter}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="bt_CitizenCharter_Tapped"/>
-						<Button x:Name="bt_Locate" Background="Transparent" Content="{Binding Locate}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						<Button x:Name="bt_Locate" Background="Transparent" Content="{Binding Locate}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="bt_Locate_Tapped"/>
 					</Grid>
 				</Border>
 			</Grid>

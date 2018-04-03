@@ -139,7 +139,9 @@ namespace BinanKiosk
 					service = new Service {
 						Service_ID = service.Service_ID,
 						Service_Name = service.Service_Name,
-						Image_Path = service.Image_Path},
+						Image_Path = service.Image_Path,
+						office = new Office {  Office_ID = service.office.Office_ID, image_path = service.office.image_path, Office_Name = service.office.Office_Name, Room_Name = service.office.Room_Name}
+					},
 					Citizen_Charter = description,
 					Locate = Location
 					
@@ -219,6 +221,13 @@ namespace BinanKiosk
 			counter = 0;
 			await Global.Show_Ripple(e.GetPosition(MyGrid), MyImage);
 			this.NavigationCacheMode = NavigationCacheMode.Disabled;
+		}
+
+		private void bt_Locate_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			Goto_OtherForm(e);
+			var bindedItems = (sender as Button).DataContext as BindedItems;
+			this.Frame.Navigate(typeof(Map_1f), Global.Enum_Converter(bindedItems.service.office.Room_Name));
 		}
 	}
 }

@@ -458,11 +458,7 @@
 				<Rectangle x:ConnectionId='113' x:Name="rect_r102_45" Grid.Column="27" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
 				<Rectangle x:ConnectionId='114' x:Name="rect_r102_46" Grid.Column="26" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
 				<Rectangle x:ConnectionId='115' x:Name="rect_r102_47" Grid.Column="25" Grid.Row="16" Fill="Red" Visibility = "Collapsed"/>
-				<Rectangle x:ConnectionId='116' x:Name="rect_r102_48" Grid.Column="24" Grid.Row="15" Grid.RowSpan="3" Grid.ColumnSpan="2" Visibility = "Collapsed">
-					<Rectangle.Fill>
-						<ImageBrush ImageSource="Assets/LARROW.png" Stretch="Fill" />
-					</Rectangle.Fill>
-				</Rectangle>
+				<Rectangle x:ConnectionId='116' x:Name="rect_r102_48" Grid.Column="24" Grid.Row="16" Visibility = "Collapsed"/>
 
 				<!--R103-->
 				<Rectangle x:ConnectionId='117' x:Name="rect_r103_1" Grid.Column="37" Grid.Row="44" Fill="Red" Visibility="Collapsed" />
@@ -517,13 +513,8 @@
 				<Rectangle x:ConnectionId='166' x:Name="rect_r103_50" Grid.Column="28" Grid.Row="10" Fill="Red" Visibility="Collapsed"/>
 				<Rectangle x:ConnectionId='167' x:Name="rect_r103_51" Grid.Column="28" Grid.Row="9" Fill="Red" Visibility="Collapsed"/>
 				<Rectangle x:ConnectionId='168' x:Name="rect_r103_52" Grid.Column="28" Grid.Row="8" Fill="Red" Visibility="Collapsed"/>
-				<Rectangle x:ConnectionId='169' x:Name="rect_r103_53" Grid.Column="27" Grid.Row="8" Fill="Red" Visibility="Visible"/>
-				<Rectangle x:ConnectionId='170' x:Name="rect_r103_54" Grid.Column="26" Grid.Row="7" Grid.RowSpan="3" Grid.ColumnSpan="2" Visibility = "Visible">
-					<Rectangle.Fill>
-						<ImageBrush ImageSource="Assets/LARROW.png" Stretch="Fill" />
-				</Rectangle.Fill>
-				</Rectangle>
-
+				<Rectangle x:ConnectionId='169' x:Name="rect_r103_53" Grid.Column="27" Grid.Row="8" Fill="Red" Visibility="Collapsed"/>
+				<Rectangle x:ConnectionId='170' x:Name="rect_r103_54" Grid.Column="26" Grid.Row="8" Fill="Red" Visibility = "Collapsed"/>
 				<!--R104-->
 				<Rectangle x:ConnectionId='171' x:Name="rect_r104_1" Grid.Column="37" Grid.Row="44" Fill="Red" Visibility="Collapsed" />
 				<Rectangle x:ConnectionId='172' x:Name="rect_r104_2" Grid.Column="37" Grid.Row="45" Fill="Red" Visibility="Collapsed" />
